@@ -73,6 +73,15 @@ table td {
 .basic-table td {
   height: 35px;
 }
+.light {
+  font-weight: 300;
+}
+.color-red {
+  color: rgb(218, 3, 3);
+}
+.color-blue {
+  color: rgb(2, 2, 202);
+}
 
 /* ############################# Common.css ############################# */
 /* print icon */
@@ -658,6 +667,9 @@ input[type="checkbox"]:checked::after {
   transition: all 0.3s ease;
   font-size: 18px;
 }
+.menu-item > button a {
+  color: #fff;
+}
 .menu-item > button:hover {
   background-color: #084ab8;
 }
@@ -908,7 +920,6 @@ canvas {
 .main-container {
   padding: 20px;
   background: #DCE4F8;
-  height: 100vh;
 }
 .main-header {
   display: flex;
@@ -1021,16 +1032,17 @@ canvas {
   font-size: 16px;
 }
 .menu-link {
-  margin-left: 20px;
+  display: block;
+  /* margin-left: 20px; */
   transition: .3s ease;
   padding: 0px 10px;
   line-height: 1.6rem;
-  display: block;
 }
-.menu-link.active {
+.menu-link.active,
+.menu-link:hover {
   background: #001CA6;
   border-radius: 5px;
-  }
+}
 .submenu a:hover {
   font-weight: 400;
 }
@@ -2340,6 +2352,12 @@ input[type="time" i] {
   border-radius: 10px;
   font-size: 14px;
   padding: 30px 20px;
+}
+.modify-info-frame > div {
+  margin-bottom: 15px;
+}
+.modify-info-frame > div:last-child {
+  margin-bottom: 0;
 }
 .class-info-btns {
   text-align: center;

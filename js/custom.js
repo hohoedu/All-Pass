@@ -1,10 +1,17 @@
 // 수정 필요
-// $(document).ready(function() {
-//   $('.menu-link').click(function() {
-//     $('.menu-link').removeClass('active');
-//     $(this).addClass('active');
-//   });
+// $(document).on('click', '.menu-link', function() {
+//   $('.menu-link').removeClass('active');
+//   $(this).addClass('active');
 // });
+// Sidebar load
+const menu = document.querySelectorAll(".menu-link");
+
+for (let i = 0; i < menu.length; i++) {
+  menu[i].addEventListener("click", function () {
+    menu.forEach(link => link.classList.remove("active"));
+    this.classList.add("active");
+  });
+}
 
 $(document).ready(function() {
   /* ====== conslut.html ====== */
