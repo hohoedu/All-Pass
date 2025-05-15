@@ -978,7 +978,7 @@ canvas {
   display: flex;
 }
 #sidebar-load {
-  flex: 1;
+  flex: 1.2;
 }
 .main-info {
   flex: 9;
