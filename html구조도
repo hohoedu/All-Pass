@@ -57,3 +57,12 @@ section.class-status
       .new-regist
       
   section.info-desc
+
+
+  article.all-info
+    .all-left
+      .basic-info
+      .all-subject
+    .all-right
+      .attend-cal
+      .counsel-info

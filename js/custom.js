@@ -1,8 +1,3 @@
-// 수정 필요
-// $(document).on('click', '.menu-link', function() {
-//   $('.menu-link').removeClass('active');
-//   $(this).addClass('active');
-// });
 // Sidebar load
 const menu = document.querySelectorAll(".menu-link");
 
@@ -16,7 +11,7 @@ for (let i = 0; i < menu.length; i++) {
 $(document).ready(function() {
   /* ====== conslut.html ====== */
   // modal
-  $('.counsel-button').click(function() {
+  $('.counsel-button, .new-regist').click(function() {
     $('.modal').fadeIn()
   });
   $('.btn-close').click(function() {
@@ -56,14 +51,32 @@ $(document).ready(function() {
     
     /* ====== sidebar.html ====== */
     // side bar menu toggle
-    $(document).on('click', '.sidebar-item .menu-toggle', function() {
-      $(this).next('.submenu').stop().slideToggle(300);
-      $(this).toggleClass('active');
-    });
-    $('.sidebar-item .submenu').click(function(){
-      $(this).stop().slideUp(300);
-    });
+    // $(document).on('click', '.sidebar-item .menu-toggle', function() {
+    //   $(this).next('.submenu').stop().slideToggle(300);
+    //   $(this).toggleClass('active');
+    // });
+    // $('.sidebar-item .submenu').click(function(){
+    //   $(this).stop().slideUp(300);
+    // });
+      $(document).ready(function () {
+        $(".menu-toggle").click(function() {
+          // 왼쪽 메뉴 상태 초기화
+          $(".menu-toggle").removeClass("active");
+          $(".sidebar-right .submenu").removeClass("active");
 
+          // 현재 메뉴 활성화
+          $(this).addClass("active");
+          const target = $(this).data("target");
+
+          // 오른쪽 사이드바 열기 + 해당 submenu 표시
+          $(".sidebar-right").removeClass("collapsed");
+          $('.sidebar-right .submenu[data-menu="' + target + '"]').addClass("active");
+        });
+
+        $(".sidebar-close").click(function () {
+          $(".sidebar-right").toggleClass("collapsed");
+        });
+      });
 
     /* ====== student-main.html ====== */
     // student-main tab
@@ -79,6 +92,16 @@ $(document).ready(function() {
         document.getElementById(tabs).classList.add('active');
       });
     });
+
+    $('.btn-gender').click(function() {
+      $(this).closest('td').find('.btn-gender').removeClass('active');
+      $(this).addClass('active');
+    });
+
+    $('.status-buttons .btn-status').click(function() {
+      $('.reason-input').addClass('active');
+    })
+    
 
     /* ====== bfclass.html ====== */
     // class-timetable tab

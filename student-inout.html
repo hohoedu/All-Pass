@@ -21,43 +21,56 @@
       <!-- left nav bar -->
       <aside id="sidebar-load"></aside>
       <main class="main-info">
-        <div class="thrid-frame">
+        <div class="second-frame">
           <!-- section:left -->
           <section class="move-summary">
             <a class="print-title" href="print-student-inout.html">
               <div class="common-title">
                 <h2>전입 / 전출</h2>
               </div>
-              <div class="print">인쇄</div>
+              <div class="inout-btns">
+                <div class="print">인쇄</div>
+                <div class="common-btn inout-btn">전입/전출내역</div>
+              </div>
             </a>
             <div class="info-filters">
-              <div class="basic-select">
-                <select name="subject" id="subject-filter">
-                  <option value="all">과목 전체</option>
-                  <option value="">영재</option>
-                  <option value="">수재</option>
-                  <option value="">신동</option>
-                  <option value="">천재</option>
-                </select>
-              </div>
-              <div class="basic-select">
-                <select name="in-teacher" id="inTeacher">
-                  <option value="teacher1">김호호 선생님</option>
-                  <option value="teacher2">김호이 선생님</option>
-                  <option value="teacher3">김호삼 선생님</option>
-                </select>
-              </div>
-            </div>
-            <div class="student-search join-group">
-              <input type="text" id="search-name" name="searchName" placeholder="이름으로 검색">
-            </div>
-            <div class="time-order">
-              <div></div>
-              <div class="basic-select time-select">
-                <select name="timeLine" id="time-line">
-                  <option value="lately">최신 등록순</option>
-                  <option value="past">과거 등록순</option>
-                </select>
+              <div class="info-arrange">
+                <div class="stu-left">
+                  <div class="basic-select sl1">
+                    <select name="student" id="student-filter">
+                      <option value="student1">전체 학생</option>
+                      <option value="student2">김호일</option>
+                      <option value="student3">김호이</option>
+                      <option value="student3">김호삼</option>
+                    </select>
+                  </div>
+                  <div class="basic-select sl2">
+                    <select name="subject" id="subject-filter">
+                      <option value="all">화 19:00~19:50 초등천재 3호</option>
+                      <option value="">영재</option>
+                      <option value="">수재</option>
+                      <option value="">신동</option>
+                      <option value="">천재</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="stu-right">
+                  <div class="sl3">
+                    <div class="basic-select" style="flex: 1;">
+                      <select name="stuName" id="stu-name">
+                        <option value="all">이름</option>
+                        <option value="">김호호</option>
+                        <option value="">김호호</option>
+                        <option value="">김호호</option>
+                        <option value="">김호호</option>
+                      </select>
+                    </div>
+                    <div class="search-box" style="flex: 2;">
+                      <input type="text" id="search-name" name="searchName">
+                    </div>
+                  </div>
+                  <div class="explore common-btn sl4">검색</div>
+                </div>
               </div>
             </div>
             <div class="table-frame move-t-frame">
@@ -184,10 +197,14 @@
               </table>
             </div>
           </section>
-          <!-- section:right-top -->
+          <!-- section:right -->
           <section class="move-desc">
             <div class="move-reason">
               <div class="move-reason-frame">
+                <div class="common-title">
+                  <h2>전입 / 전출</h2>
+                </div>
+                
                 <form action="" class="student-form">
                   <div class="form-row">
                     <label for="out-date">전출 일자</label>
@@ -218,8 +235,8 @@
                 </form>
               </div>
             </div>
-            <!-- section:right-bottom -->
-            <div class="move-list">
+            <!-- section: 모달로 수정해야됨 -->
+            <!-- <div class="move-list">
               <div class="move-list-frame">
                 <div class="title">이전 내역</div>
                 <div class="month-navigation month-adjust">
@@ -299,7 +316,7 @@
                   </table>
                 </div>
               </div>
-            </div>
+            </div> -->
           </section>
         </div>
       </main>

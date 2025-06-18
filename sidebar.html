@@ -1,68 +1,78 @@
 <aside class="sidebar">
-  <ul class="sidebar-frame">
-    <li class="sidebar-item">
-      <a href="main.html" class="menu-toggle home-back">
-        <img src="image/menu-icon.png" alt=""><span>HOME</span>
-      </a>
-    </li>
-    <!-- column1 -->
-    <li class="sidebar-item">
-      <a href="#" class="menu-toggle">
-        <img src="image/menu-icon1.png" alt=""><span>학생 관리</span> 
-      </a>
-      <div class="submenu">
-        <a href="student-main.html" class="menu-link unselected">&nbsp;&nbsp;&nbsp;&nbsp;학생 정보</a>
-        <a href="student-inout.html" class="menu-link unselected">&nbsp;&nbsp;&nbsp;&nbsp;전입/전출</a>
-        <a href="student-out.html" class="menu-link unselected">&nbsp;&nbsp;&nbsp;&nbsp;입·탈퇴 관리</a>
+  <div class="sidebar-frame">
+    <div class="sidebar-left">
+      <div class="sidebar-item">
+        <a href="index.html" class="home-back" data-target="dashboard">
+          <img src="image/hoho-icon.png" alt="">
+        </a>
       </div>
-    </li>
-    <!-- column2 -->
-    <li class="sidebar-item">
-      <a href="#" class="menu-toggle">
-        <img src="image/menu-icon2.png" alt="">
-        <span>수업 관리</span> 
-      </a>
-      <div class="submenu">
-        <a href="class-titmetable.html" class="menu-link">&nbsp;&nbsp;&nbsp;&nbsp;시간표 등록</a>
-        <a href="timeview.html" class="menu-link">&nbsp;&nbsp;&nbsp;&nbsp;시간표 조회</a>
-        <a href="bfclass.html" class="menu-link">&nbsp;&nbsp;&nbsp;&nbsp;수업 안내</a>
-        <a href="afclass.html" class="menu-link">&nbsp;&nbsp;&nbsp;&nbsp;수업 일지</a>
-        <a href="class.html" class="menu-link">&nbsp;&nbsp;&nbsp;&nbsp;보강 관리</a>
+      <div class="sidebar-item">
+        <a href="main.html" class="menu-toggle" data-target="dashboard">
+          <img src="image/menu-icon.png" alt=""><span>대시보드</span> 
+        </a>
       </div>
-    </li>
-    <!-- column3 -->
-    <li class="sidebar-item">
-      <a class="menu-toggle">
-        <img src="image/menu-icon3.png" alt=""><span>상담 관리</span>
-      </a>
-      <div class="submenu">
-        <a href="consult.html" class="menu-link">&nbsp;&nbsp;&nbsp;&nbsp;상담문의 기록</a>
+      <div class="sidebar-item">
+        <a href="#" class="menu-toggle" data-target="student">
+          <img src="image/menu-icon1.png" alt=""><span>학생관리</span> 
+        </a>
       </div>
-    </li>
-    <!-- column4 -->
-    <li class="sidebar-item">
-      <a href="#" class="menu-toggle">
-        <img src="image/menu-icon4.png" alt="">
-        <span>교육 · 교재비 관리</span> 
-      </a>
-      <div class="submenu">
-        <a href="manage-deposit.html" class="menu-link">&nbsp;&nbsp;&nbsp;&nbsp;교육비</a>
-        <a href="book-fee.html" class="menu-link">&nbsp;&nbsp;&nbsp;&nbsp;교재비</a>
+      <div class="sidebar-item">
+        <a href="#" class="menu-toggle" data-target="class">
+          <img src="image/menu-icon2.png" alt=""><span>수업관리</span> 
+        </a>
       </div>
-    </li>
-    <!-- column5 -->
-    <li class="sidebar-item">
-      <a href="#" class="menu-toggle">
-        <img src="image/menu-icon5.png" alt="">
-        <span>운영 관리</span> 
-      </a>
-      <div class="submenu">
-        <a href="order.html" class="menu-link">&nbsp;&nbsp;&nbsp;&nbsp;교재 주문</a>
-        <a href="reorder.html" class="menu-link">&nbsp;&nbsp;&nbsp;&nbsp;교재 추가/반품</a>
-        <a href="manage-sms.html" class="menu-link">&nbsp;&nbsp;&nbsp;&nbsp;단체 알림</a>
-        <a href="manage-teacher.html" class="menu-link">&nbsp;&nbsp;&nbsp;&nbsp;선생님 관리</a>
-        <a href="manage-tuition.html" class="menu-link">&nbsp;&nbsp;&nbsp;&nbsp;교육비 관리</a>
+      <div class="sidebar-item">
+        <a href="#" class="menu-toggle" data-target="consult">
+          <img src="image/menu-icon3.png" alt=""><span>상담관리</span> 
+        </a>
       </div>
-    </li>
+      <div class="sidebar-item">
+        <a href="#" class="menu-toggle" data-target="tuition">
+          <img src="image/menu-icon4.png" alt=""><span>학원비</span> 
+        </a>
+      </div>
+      <div class="sidebar-item">
+        <a href="#" class="menu-toggle" data-target="operation">
+          <img src="image/menu-icon5.png" alt=""><span>운영관리</span> 
+        </a>
+      </div>
+    </div>
+    <div class="sidebar-right collapsed">
+      <div class="sub-frame">
+        <div class="submenu" data-menu="dashboard">
+          <p>왼쪽 메뉴를<br> 클릭해주세요</p>
+        </div>
+        <!-- 1 -->
+        <div class="submenu" data-menu="student">
+          <a href="student-main.html" class="menu-link">학생 정보</a>
+          <a href="student-inout.html" class="menu-link">전입/전출</a>
+          <a href="student-out.html" class="menu-link">입·탈퇴 관리</a>
+        </div>
+        <!-- 2 -->
+        <div class="submenu" data-menu="class">
+          <a href="class-titmetable.html" class="menu-link">시간표 등록</a>
+          <a href="timeview.html" class="menu-link">시간표 조회</a>
+          <a href="bfclass.html" class="menu-link">수업 안내</a>
+          <a href="afclass.html" class="menu-link">수업 일지</a>
+          <a href="class.html" class="menu-link">보강 관리</a>
+        </div>
+        <!-- 3 -->
+        <div class="submenu" data-menu="consult">
+          <a href="consult.html" class="menu-link">상담문의 기록</a>
+        </div>
+        <div class="submenu" data-menu="tuition">
+          <a href="manage-deposit.html" class="menu-link">교육비</a>
+          <a href="book-fee.html" class="menu-link">교재비</a>
+        </div>
+        <div class="submenu" data-menu="operation">
+          <a href="order.html" class="menu-link">교재 주문</a>
+          <a href="reorder.html" class="menu-link">교재 추가/반품</a>
+          <a href="manage-sms.html" class="menu-link">단체 알림</a>
+          <a href="manage-teacher.html" class="menu-link">선생님 관리</a>
+          <a href="manage-tuition.html" class="menu-link">교육비 관리</a>
+        </div>
+    </div>
+    </div>
+    </div>
   </ul>
 </aside>

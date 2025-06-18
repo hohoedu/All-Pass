@@ -2,7 +2,7 @@
 @media (min-width: 1000px) and (max-width: 1440px) {
   body {
     font-size: 14px;
-    background-color: lightgray;
+    /* background-color: lightgray; */
   }
   section {
     height: auto;
@@ -87,14 +87,39 @@
   .student-form .phone-group input {
     padding: 4px;
   }
-  .event {
-    padding: 8px 0px;
-  }
   #tab2 .save-btn {
     margin-bottom: 10px;
   }
+  .stu-m-con {
+    width: 80%;
+  }
+  .modal-scroll {
+    display: flex;
+    justify-content: center;
+  }
+  .all-info {
+    width: 100%;
+  }
+  .card-left {
+    width: 40%;
+  }
+  .student-card {
+    width: 100%;
+  }
+  .card-right {
+    width: 60%;
+    margin-right: 10px;
+  }
+  .calendar-container {
+    width: 100%;
+  }
+  .modal-inner {
+    padding: 0 30px 0 0;
+  }
   
   /* ======================= student-inout page ======================= */
+  .info-arrange {
+  }
   .move-summary {
     flex: 4;
   }
@@ -287,9 +312,6 @@
   /* ======================= index page ======================= */
   .welcome-greet h1 {
     font-size: 1.6rem;
-  }
-  .welcome-greet {
-    transform: translate(-43%);
   }
   .class-title {
     font-size: 16px;
