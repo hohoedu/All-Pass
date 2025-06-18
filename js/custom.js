@@ -103,6 +103,11 @@ $(document).ready(function() {
     })
     
 
+    /* ====== student-inout.html ====== */
+    $('.icon-btn').on('click', function () {
+      $(this).siblings('input[type="date"]')[0].showPicker();
+    });
+
     /* ====== bfclass.html ====== */
     // class-timetable tab
     const tabButtons = document.querySelectorAll('.class-before-after a');

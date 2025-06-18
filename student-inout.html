@@ -30,7 +30,7 @@
               </div>
               <div class="inout-btns">
                 <div class="print">인쇄</div>
-                <div class="common-btn inout-btn">전입/전출내역</div>
+                <div class="common-btn inout-btn" id="btn-inout" data-type="inout">전입/전출내역</div>
               </div>
             </a>
             <div class="info-filters">
@@ -204,21 +204,30 @@
                 <div class="common-title">
                   <h2>전입 / 전출</h2>
                 </div>
-                
-                <form action="" class="student-form">
-                  <div class="form-row">
-                    <label for="out-date">전출 일자</label>
-                    <input type="date" id="out-date" name="outDate" class="date-input">
-                    <label for="out-subject">전출과목</label>
-                    <div class="basic-select">
-                      <select id="out-subject" name="outSubject">
-                        <option value="">한스쿨</option>
-                        <option value="">북스쿨</option>
-                      </select>
+                <form action="" class="inout-form">
+                  <div class="detail-sub"><h4>전출과목</h4></div>
+                  <div class="input-row">
+                    <div class="checkbox-group">
+                      <input type="checkbox" id="inout-han" name="inoutHan"><p style="margin-right: 10px;">한자수업</p>
+                      <input type="checkbox" id="inout-read" name="inoutRead">독서수업
                     </div>
                   </div>
-                  <div class="form-row">
-                    <label for="teacher-filter">전입할 선생님</label>
+                  <div class="form-line"></div>
+                  <div class="detail-sub"><h4>전출 일자</h4></div>
+                  <div class="input-row">
+                    <div class="icon-field">
+                      <label class="birth-display">2016년 07월 11일</label>
+                      <div>
+                        <input type="date" class="hidden-date">
+                        <button class="icon-btn">
+                          <img src="image/calendar.png" alt="달력 아이콘">
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-line"></div>
+                  <div class="detail-sub"><h4>전입할 선생님</h4></div>
+                  <div class="input-row">
                     <div class="basic-select">
                       <select name="teacher" id="teacher-filter">
                         <option value="teacher1">김호호 선생님</option>
@@ -227,9 +236,10 @@
                       </select>
                     </div>
                   </div>
-                  <div class="form-row">
-                    <label for="consult-content">상담내용</label>
-                    <textarea id="consult-content" name="consultContent" rows="7" placeholder="상담 내용을 작성해 주세요."></textarea>
+                  <div class="form-line"></div>
+                  <div class="detail-sub"><h4>사유</h4></div>
+                  <div class="input-row">
+                    <textarea id="consult-content" name="consultContent" rows="7" placeholder="전출 사유를 작성해 주세요."></textarea>
                   </div>
                   <button type="submit" class="save-btn">저장하기</button>
                 </form>
