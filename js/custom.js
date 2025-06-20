@@ -78,6 +78,19 @@ $(document).ready(function() {
         });
       });
 
+    // 모든 달력
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll('.calendar-open').forEach(btn => {
+        btn.addEventListener('click', function () {
+          const input = this.previousElementSibling;
+          if (input && input.showPicker) {
+            input.showPicker();
+          }
+        });
+      });
+    });
+    
+
     /* ====== student-main.html ====== */
     // student-main tab
     const btns = document.querySelectorAll('.info-tab-btn a');

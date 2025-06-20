@@ -14,7 +14,7 @@
   <title>전입/전출</title>
 </head>
 <body>
-  <div class="main-container">
+  <div class="main-container" style="overflow-y: hidden;">
     <!-- header -->
     <div id="header-load"></div>
     <div class="main-frame">
@@ -216,10 +216,10 @@
                   <div class="detail-sub"><h4>전출 일자</h4></div>
                   <div class="input-row">
                     <div class="icon-field">
-                      <label class="birth-display">2016년 07월 11일</label>
-                      <div>
-                        <input type="date" class="hidden-date">
-                        <button class="icon-btn">
+                      <label>생년월일</label>
+                      <div style="position: relative;">
+                        <input type="date" class="hidden-date" />
+                        <button type="button" class="icon-btn calendar-open">
                           <img src="image/calendar.png" alt="달력 아이콘">
                         </button>
                       </div>
