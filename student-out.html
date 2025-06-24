@@ -11,10 +11,11 @@
   <script src="js/custom.js"></script>
   <!-- Html menu Load -->
   <script src="js/loadHTML.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <title>입·탈퇴 관리</title>
 </head>
 <body>
-  <div class="main-container">
+  <div class="main-info">
     <!-- header -->
     <div id="header-load"></div>
     <div class="main-frame">
@@ -26,291 +27,298 @@
           <section>
             <a class="print-title" href="print-student-out.html">
               <div class="common-title">
-                <h2>입·탈퇴 관리</h2>
+                <h2>학생현황 통계</h2>
               </div>
               <div class="print">인쇄</div>
             </a>
-            <div class="student-out-inner">
-              <div>
-                <div class="student-out-calender">
-                  <div class="month-navigation month-adjust">
-                    <button class="arrow-left"></button>
-                    <span class="current-month">2025년 1월</span>
-                    <button class="arrow-right"></button>
-                  </div>
-                  <div class="student-num-frame">
-                    <div class="student-common-box">
-                      입회한 학생 수<span id="joined-students">5</span>
-                    </div>
-                    <div class="student-common-box">
-                      탈퇴한 학생 수<span id="withdrawn-students">2</span>
-                    </div>
-                    <div class="student-common-box">
-                      최근 3개월 변동 <span id="recent-change">+7</span>
-                    </div>
-                    <div class="student-common-box">
-                      총 학생 수<span id="total-students">61</span>
-                    </div>
-                  </div>
+            <div class="stats-filter">
+              <!-- 좌측: 기간 선택 -->
+              <div class="stats-item-left">
+                <div class="radio-group">
+                  <input type="radio" name="period" id="period-1year" value="1y" checked>
+                  <label for="period-1year">1년</label>
+                  <input type="radio" name="period" id="period-6month" value="6m">
+                  <label for="period-6month">6개월</label>
+                  <input type="radio" name="period" id="period-3month" value="3m">
+                  <label for="period-3month">3개월</label>
+                  <input type="radio" name="period" id="period-custom" value="custom">
+                  <label for="period-custom">일자지정</label>
                 </div>
-                <div class="entry-list-frame">
-                  <div class="entry-list">
-                    <div class="small-title">입회 리스트</div>
-                    <div class="table-frame out-frame">
-                      <table class="basic-table yh">
-                        <colgroup>
-                          <col style="width: 10%;">
-                          <col style="width: 10%;">
-                          <col style="width: 20%;">
-                          <col style="width: 10%;">
-                          <col style="width: 30%;">
-                          <col style="width: 20%;">
-                        </colgroup>
-                        <thead>
-                          <tr>
-                            <th class="checkbox-group">
-                              <input type="checkbox" id="" name="" value="">
-                            </th>
-                            <th>이름</th>
-                            <th>학교/유치원</th>
-                            <th>학년</th>
-                            <th>수강과목</th>
-                            <th>입회일</th>
-                          </tr>
-                        </thead>
-                        <tbody id="" class="stripe">
-                          <tr>
-                            <td class="checkbox-group">
-                              <input type="checkbox" id="" name="" value="">
-                            </td>
-                            <td>김호호</td>
-                            <td>호호초등학교</td>
-                            <td>초1</td>
-                            <td>초등전체, 새움, 독클</td>
-                            <td>2025.1.12</td>
-                          </tr>
-                          <tr>
-                            <td class="checkbox-group">
-                              <input type="checkbox" id="" name="" value="">
-                            </td>
-                            <td>김호이</td>
-                            <td>호호유치원</td>
-                            <td>예비</td>
-                            <td>호호하니, 호호루키</td>
-                            <td>2025.1.12</td>
-                          </tr>                
-                          <tr>
-                            <td class="checkbox-group">
-                              <input type="checkbox" id="" name="" value="">
-                            </td>
-                            <td>김호이</td>
-                            <td>호호유치원</td>
-                            <td>예비</td>
-                            <td>호호하니, 호호루키</td>
-                            <td>2025.1.12</td>
-                          </tr>                
-                          <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>                
-                          <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>                
-                          <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>                
-                          <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>                
-                          <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>                
-                          <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>                
-                        </tbody>
-                      </table>
-                    </div>
-                    <div class="cancel-enroll">
-                      <img src="image/cancel-icon.png" alt="">선택 학생 입회 취소
-                    </div>
-                  </div>
-                  <div class="exit-list">
-                    <div class="small-title">탈퇴 리스트</div>
-                    <div class="table-frame out-frame">
-                      <table class="basic-table yh">
-                        <colgroup>
-                          <col style="width: 10%;">
-                          <col style="width: 10%;">
-                          <col style="width: 20%;">
-                          <col style="width: 10%;">
-                          <col style="width: 30%;">
-                          <col style="width: 20%;">
-                        </colgroup>
-                        <thead>
-                          <tr>
-                            <th class="checkbox-group">
-                              <input type="checkbox" id="" name="" value="">
-                            </th>
-                            <th>이름</th>
-                            <th>학교/유치원</th>
-                            <th>학년</th>
-                            <th>수강과목</th>
-                            <th>입회일</th>
-                          </tr>
-                        </thead>
-                        <tbody id="" class="stripe">
-                          <tr>
-                            <td class="checkbox-group">
-                              <input type="checkbox" id="" name="" value="">
-                            </td>
-                            <td>김호호</td>
-                            <td>호호초등학교</td>
-                            <td>초1</td>
-                            <td>초등전체, 새움, 독클</td>
-                            <td>2025.1.12</td>
-                          </tr>
-                          <tr>
-                            <td class="checkbox-group">
-                              <input type="checkbox" id="" name="" value="">
-                            </td>
-                            <td>김호이</td>
-                            <td>호호유치원</td>
-                            <td>예비</td>
-                            <td>호호하니, 호호루키</td>
-                            <td>2025.1.12</td>
-                          </tr>                
-                          <tr>
-                            <td class="checkbox-group">
-                              <input type="checkbox" id="" name="" value="">
-                            </td>
-                            <td>김호이</td>
-                            <td>호호유치원</td>
-                            <td>예비</td>
-                            <td>호호하니, 호호루키</td>
-                            <td>2025.1.12</td>
-                          </tr>                
-                          <tr>
-                            <td class="checkbox-group">
-                              <input type="checkbox" id="" name="" value="">
-                            </td>
-                            <td>김호이</td>
-                            <td>호호유치원</td>
-                            <td>예비</td>
-                            <td>호호하니, 호호루키</td>
-                            <td>2025.1.12</td>
-                          </tr>                
-                          <tr>
-                            <td class="checkbox-group">
-                              <input type="checkbox" id="" name="" value="">
-                            </td>
-                            <td>김호이</td>
-                            <td>호호유치원</td>
-                            <td>예비</td>
-                            <td>호호하니, 호호루키</td>
-                            <td>2025.1.12</td>
-                          </tr>                
-                          <tr>
-                            <td class="checkbox-group">
-                              <input type="checkbox" id="" name="" value="">
-                            </td>
-                            <td>김호이</td>
-                            <td>호호유치원</td>
-                            <td>예비</td>
-                            <td>호호하니, 호호루키</td>
-                            <td>2025.1.12</td>
-                          </tr>                
-                          <tr>
-                            <td class="checkbox-group">
-                              <input type="checkbox" id="" name="" value="">
-                            </td>
-                            <td>김호이</td>
-                            <td>호호유치원</td>
-                            <td>예비</td>
-                            <td>호호하니, 호호루키</td>
-                            <td>2025.1.12</td>
-                          </tr>                
-                          <tr>
-                            <td class="checkbox-group">
-                              <input type="checkbox" id="" name="" value="">
-                            </td>
-                            <td>김호이</td>
-                            <td>호호유치원</td>
-                            <td>예비</td>
-                            <td>호호하니, 호호루키</td>
-                            <td>2025.1.12</td>
-                          </tr>                
-                          <tr>
-                            <td class="checkbox-group">
-                              <input type="checkbox" id="" name="" value="">
-                            </td>
-                            <td>김호이</td>
-                            <td>호호유치원</td>
-                            <td>예비</td>
-                            <td>호호하니, 호호루키</td>
-                            <td>2025.1.12</td>
-                          </tr>                
-                          <tr>
-                            <td class="checkbox-group">
-                              <input type="checkbox" id="" name="" value="">
-                            </td>
-                            <td>김호이</td>
-                            <td>호호유치원</td>
-                            <td>예비</td>
-                            <td>호호하니, 호호루키</td>
-                            <td>2025.1.12</td>
-                          </tr>                
-                          <tr>
-                            <td class="checkbox-group">
-                              <input type="checkbox" id="" name="" value="">
-                            </td>
-                            <td>김호이</td>
-                            <td>호호유치원</td>
-                            <td>예비</td>
-                            <td>호호하니, 호호루키</td>
-                            <td>2025.1.12</td>
-                          </tr>                
-                        </tbody>
-                      </table>
-                    </div>
-                    <div class="restore-enroll">
-                      <img src="image/undo-icon.png" alt="">
-                      선택 학생 탈퇴 취소 (복구)
-                    </div>
-                  </div>
+                <div class="icon-field basic-input cal-adjust" style="margin-bottom: 0;">
+                  <span>2024-07 ~ 2025-06</span>
+                  <button class="icon-btn" style="background: transparent;">
+                    <img src="image/calendar.png" alt="달력 아이콘">
+                  </button>
                 </div>
               </div>
-              <div class="delete-student">
-                <div class="delete-student-btn">탈퇴 학생 데이터 삭제</div>
+              <!-- 우측: 선택 필터 + 버튼 -->
+              <div class="teacher-search">
+                <div class="basic-select" style="box-sizing: border-box;">
+                  <select name="teacher" id="teacher-select" style="width: 200px;">
+                    <option value="all">선생님 전체</option>
+                    <option value="t1">김쌤</option>
+                    <option value="t2">이쌤</option>
+                  </select>
+                </div>
+                <div class="explore common-btn">검색</div>
+              </div>
+            </div>
+            <div class="student-out-inner">
+              <div class="second-frame">
+                <div class="stats-left">
+                  <div class="table-frame stats-frame">
+                    <table class="basic-table yh table-head">
+                      <colgroup>
+                        <col width="20%">
+                        <col width="15%">
+                        <col width="15%">
+                        <col width="15%">
+                        <col width="15%">
+                        <col width="15%">
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th>연도-월</th>
+                          <th>재원</th>
+                          <th>진입</th>
+                          <th>전출</th>
+                          <th>입회</th>
+                          <th>탈퇴</th>
+                        </tr>
+                      </thead>
+                    </table>
+                  
+                    <div class="table-body-scroll">
+                      <table class="basic-table yh table-body">
+                        <colgroup>
+                          <col width="20%">
+                          <col width="15%">
+                          <col width="15%">
+                          <col width="15%">
+                          <col width="15%">
+                          <col width="15%">
+                        </colgroup>
+                        <tbody id="student-tbody" class="stripe">
+                          <tr>
+                            <td>2024-07</td>
+                            <td>76</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>3</td>
+                          </tr>
+                          <tr>
+                            <td>2024-07</td>
+                            <td>76</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>3</td>
+                          </tr>
+                          <tr>
+                            <td>2024-07</td>
+                            <td>76</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>3</td>
+                          </tr>
+                          <tr>
+                            <td>2024-07</td>
+                            <td>76</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>3</td>
+                          </tr>
+                          <tr>
+                            <td>2024-07</td>
+                            <td>76</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>3</td>
+                          </tr>
+                          <tr>
+                            <td>2024-07</td>
+                            <td>76</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>3</td>
+                          </tr>
+                          <tr>
+                            <td>2024-07</td>
+                            <td>76</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>3</td>
+                          </tr>
+                          <tr>
+                            <td>2024-07</td>
+                            <td>76</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>3</td>
+                          </tr>
+                          <tr>
+                            <td>2024-07</td>
+                            <td>76</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>3</td>
+                          </tr>
+                          <tr>
+                            <td>2024-07</td>
+                            <td>76</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>3</td>
+                          </tr>
+                          <tr>
+                            <td>2024-07</td>
+                            <td>76</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>3</td>
+                          </tr>
+                          <tr>
+                            <td>2024-07</td>
+                            <td>76</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>3</td>
+                          </tr>
+                          <tr>
+                            <td>2024-07</td>
+                            <td>76</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>3</td>
+                          </tr>
+                          <tr>
+                            <td>2024-07</td>
+                            <td>76</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <table class="basic-table yh table-foot">
+                      <colgroup>
+                        <col width="20%">
+                        <col width="15%">
+                        <col width="15%">
+                        <col width="15%">
+                        <col width="15%">
+                        <col width="15%">
+                      </colgroup>
+                      <tfoot>
+                        <tr>
+                          <td>합계</td>
+                          <td>890</td>
+                          <td>49</td>
+                          <td>49</td>
+                          <td>157</td>
+                          <td>140</td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                </div>
+                <div class="stats-right">
+                  <div class="chart-box">
+                    <h2>현황 그래프</h2>
+                    <div class="chart-buttons">
+                      <button class="active-재원">재원</button>
+                      <button>전입</button>
+                      <button>전출</button>
+                      <button class="active-입회">입회</button>
+                      <button class="active-탈퇴">탈퇴</button>
+                    </div>
+                    <canvas id="studentChart" width="800" height="950" style="background: #fff;"></canvas>
+                  </div>
+                  <script>
+                    const rawData = [
+                      { month: "2024-07", 재원: 65, 전입: 5, 전출: 2, 입회: 3, 탈퇴: 1 },
+                      { month: "2024-08", 재원: 66, 전입: 7, 전출: 3, 입회: 6, 탈퇴: 2 },
+                      { month: "2024-09", 재원: 62, 전입: 4, 전출: 5, 입회: 9, 탈퇴: 3 },
+                      { month: "2024-10", 재원: 59, 전입: 3, 전출: 2, 입회: 2, 탈퇴: 4 },
+                      { month: "2024-11", 재원: 54, 전입: 2, 전출: 3, 입회: 0, 탈퇴: 1 },
+                      { month: "2024-12", 재원: 55, 전입: 1, 전출: 0, 입회: 0, 탈퇴: 0 },
+                      { month: "2025-01", 재원: 60, 전입: 4, 전출: 1, 입회: 15, 탈퇴: 7 },
+                      { month: "2025-02", 재원: 70, 전입: 5, 전출: 2, 입회: 17, 탈퇴: 5 },
+                      { month: "2025-03", 재원: 80, 전입: 6, 전출: 3, 입회: 20, 탈퇴: 6 },
+                      { month: "2025-04", 재원: 90, 전입: 4, 전출: 1, 입회: 13, 탈퇴: 9 },
+                      { month: "2025-05", 재원: 85, 전입: 5, 전출: 2, 입회: 6, 탈퇴: 11 },
+                      { month: "2025-06", 재원: 83, 전입: 3, 전출: 1, 입회: 2, 탈퇴: 6 },
+                    ];
+                    const labels = rawData.map(item => item.month);
+                    const datasets = [
+                      {
+                        label: "재원",
+                        data: rawData.map(item => item.재원),
+                        borderColor: "#06a645",
+                        backgroundColor: "#06a645",
+                        tension: 0,
+                        pointRadius: 3,
+                      },
+                      {
+                        label: "입회",
+                        data: rawData.map(item => item.입회),
+                        borderColor: "#35c3e7",
+                        backgroundColor: "#35c3e7",
+                        tension: 0,
+                        pointRadius: 3,
+                      },
+                      {
+                        label: "탈퇴",
+                        data: rawData.map(item => item.탈퇴),
+                        borderColor: "#ee4d79",
+                        backgroundColor: "#ee4d79",
+                        tension: 0,
+                        pointRadius: 3,
+                      },
+                    ];
+                    const ctx = document.getElementById("studentChart").getContext("2d");
+                    new Chart(ctx, {
+                      type: "line",
+                      data: {
+                        labels: labels,
+                        datasets: datasets,
+                      },
+                      options: {
+                        responsive: true,
+                        plugins: {
+                          legend: { display: false },
+                          tooltip: {
+                            callbacks: {
+                              label: function (context) {
+                                return `${context.dataset.label}: ${context.parsed.y}`;
+                              }
+                            }
+                          }
+                        },
+                        scales: {
+                          y: {
+                            beginAtZero: true,
+                            ticks: { stepSize: 10 }
+                          }
+                        }
+                      }
+                    });
+                  </script>
+                </div>
               </div>
             </div>
           </section>

@@ -120,6 +120,10 @@ $(document).ready(function() {
     $('.icon-btn').on('click', function () {
       $(this).siblings('input[type="date"]')[0].showPicker();
     });
+    // btn-inout modal
+    $('#btn-inout').click(function() {
+      $('.modal').fadeIn();
+    });
 
     /* ====== bfclass.html ====== */
     // class-timetable tab

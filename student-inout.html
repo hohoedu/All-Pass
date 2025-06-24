@@ -14,7 +14,7 @@
   <title>전입/전출</title>
 </head>
 <body>
-  <div class="main-container" style="overflow-y: hidden;">
+  <div class="main-container">
     <!-- header -->
     <div id="header-load"></div>
     <div class="main-frame">
@@ -24,15 +24,17 @@
         <div class="second-frame">
           <!-- section:left -->
           <section class="move-summary">
-            <a class="print-title" href="print-student-inout.html">
+            <div class="inout-head">
               <div class="common-title">
                 <h2>전입 / 전출</h2>
               </div>
               <div class="inout-btns">
-                <div class="print">인쇄</div>
+                <div class="print">
+                  <a class="print-title" href="print-student-inout.html">인쇄</a>
+                </div>
                 <div class="common-btn inout-btn" id="btn-inout" data-type="inout">전입/전출내역</div>
               </div>
-            </a>
+            </div>
             <div class="info-filters">
               <div class="info-arrange">
                 <div class="stu-left">
@@ -74,125 +76,184 @@
               </div>
             </div>
             <div class="table-frame move-t-frame">
-              <table class="basic-table move-table yh">
+              <table class="basic-table yh">
                 <colgroup>
+                  <col width="5%">
+                  <col width="5%">
+                  <col width="15%">
                   <col width="10%">
+                  <col width="20%">
                   <col width="15%">
-                  <col width="25%">
-                  <col width="15%">
-                  <col width="35%">
+                  <col width="20%">
                 </colgroup>
                 <thead>
                   <tr>
                     <th class="checkbox-group">
                       <input type="checkbox" id="" name="">
                     </th>
-                    <th>이름</th>
-                    <th>학교/유치원</th>
-                    <th>학년</th>
-                    <th>수강과목</th>
+                    <th>No</th>
+                    <th><img src="image/sort_checked.svg" alt="" class="svg-sort">이름</th>
+                    <th><img src="image/sort.svg" alt="" class="svg-sort">학년</th>
+                    <th><img src="image/sort.svg" alt="" class="svg-sort">수강과목</th>
+                    <th><img src="image/sort.svg" alt="" class="svg-sort">전입일</th>
+                    <th><img src="image/sort.svg" alt="" class="svg-sort">담임</th>
                   </tr>
                 </thead>
-                <tbody id="" class="stripe">
+                <tbody id="student-tbody" class="stripe">
                   <tr>
                     <td class="checkbox-group">
                       <input type="checkbox" id="" name="">
                     </td>
-                    <td>김호호</td>
-                    <td>호호초등학교</td>
+                    <td>1</td>
+                    <td>김호일</td>
                     <td>초1</td>
-                    <td>초등전체, 새움, 독클</td>
+                    <td>초등천재, 새움, 독클</td>
+                    <td>2024.09.20.</td>
+                    <td>김하나(한), 김다섯(독)</td>
                   </tr>
                   <tr>
                     <td class="checkbox-group">
                       <input type="checkbox" id="" name="">
                     </td>
-                    <td>김호이</td>
-                    <td>호호유치원</td>
-                    <td>예비</td>
-                    <td>호호하니, 호호루키</td>
-                  </tr>                
+                    <td>2</td>
+                    <td>김호일</td>
+                    <td>초1</td>
+                    <td>초등천재, 새움, 독클</td>
+                    <td>2024.09.20.</td>
+                    <td>김하나(한), 김다섯(독)</td>
+                  </tr>
                   <tr>
                     <td class="checkbox-group">
                       <input type="checkbox" id="" name="">
                     </td>
-                    <td>김호이</td>
-                    <td>호호유치원</td>
-                    <td>예비</td>
-                    <td>호호하니, 호호루키</td>
-                  </tr>                
+                    <td>3</td>
+                    <td>김호일</td>
+                    <td>초1</td>
+                    <td>초등천재, 새움, 독클</td>
+                    <td>2024.09.20.</td>
+                    <td>김하나(한), 김다섯(독)</td>
+                  </tr>
                   <tr>
                     <td class="checkbox-group">
                       <input type="checkbox" id="" name="">
                     </td>
-                    <td>김호이</td>
-                    <td>호호유치원</td>
-                    <td>예비</td>
-                    <td>호호하니, 호호루키</td>
-                  </tr>                
+                    <td>4</td>
+                    <td>김호일</td>
+                    <td>초1</td>
+                    <td>초등천재, 새움, 독클</td>
+                    <td>2024.09.20.</td>
+                    <td>김하나(한), 김다섯(독)</td>
+                  </tr>
                   <tr>
                     <td class="checkbox-group">
                       <input type="checkbox" id="" name="">
                     </td>
-                    <td>김호이</td>
-                    <td>호호유치원</td>
-                    <td>예비</td>
-                    <td>호호하니, 호호루키</td>
-                  </tr>                
+                    <td>5</td>
+                    <td>김호일</td>
+                    <td>초1</td>
+                    <td>초등천재, 새움, 독클</td>
+                    <td>2024.09.20.</td>
+                    <td>김하나(한), 김다섯(독)</td>
+                  </tr>
                   <tr>
                     <td class="checkbox-group">
                       <input type="checkbox" id="" name="">
                     </td>
-                    <td>김호이</td>
-                    <td>호호유치원</td>
-                    <td>예비</td>
-                    <td>호호하니, 호호루키</td>
-                  </tr>                
+                    <td>6</td>
+                    <td>김호일</td>
+                    <td>초1</td>
+                    <td>초등천재, 새움, 독클</td>
+                    <td>2024.09.20.</td>
+                    <td>김하나(한), 김다섯(독)</td>
+                  </tr>
                   <tr>
                     <td class="checkbox-group">
                       <input type="checkbox" id="" name="">
                     </td>
-                    <td>김호이</td>
-                    <td>호호유치원</td>
-                    <td>예비</td>
-                    <td>호호하니, 호호루키</td>
-                  </tr>                
+                    <td>7</td>
+                    <td>김호일</td>
+                    <td>초1</td>
+                    <td>초등천재, 새움, 독클</td>
+                    <td>2024.09.20.</td>
+                    <td>김하나(한), 김다섯(독)</td>
+                  </tr>
                   <tr>
                     <td class="checkbox-group">
                       <input type="checkbox" id="" name="">
                     </td>
-                    <td>김호이</td>
-                    <td>호호유치원</td>
-                    <td>예비</td>
-                    <td>호호하니, 호호루키</td>
-                  </tr>                
+                    <td>8</td>
+                    <td>김호일</td>
+                    <td>초1</td>
+                    <td>초등천재, 새움, 독클</td>
+                    <td>2024.09.20.</td>
+                    <td>김하나(한), 김다섯(독)</td>
+                  </tr>
                   <tr>
                     <td class="checkbox-group">
                       <input type="checkbox" id="" name="">
                     </td>
-                    <td>김호이</td>
-                    <td>호호유치원</td>
-                    <td>예비</td>
-                    <td>호호하니, 호호루키</td>
-                  </tr>                
+                    <td>9</td>
+                    <td>김호일</td>
+                    <td>초1</td>
+                    <td>초등천재, 새움, 독클</td>
+                    <td>2024.09.20.</td>
+                    <td>김하나(한), 김다섯(독)</td>
+                  </tr>
                   <tr>
                     <td class="checkbox-group">
                       <input type="checkbox" id="" name="">
                     </td>
-                    <td>김호이</td>
-                    <td>호호유치원</td>
-                    <td>예비</td>
-                    <td>호호하니, 호호루키</td>
-                  </tr>                
+                    <td>10</td>
+                    <td>김호일</td>
+                    <td>초1</td>
+                    <td>초등천재, 새움, 독클</td>
+                    <td>2024.09.20.</td>
+                    <td>김하나(한), 김다섯(독)</td>
+                  </tr>
                   <tr>
                     <td class="checkbox-group">
                       <input type="checkbox" id="" name="">
                     </td>
-                    <td>김호이</td>
-                    <td>호호유치원</td>
-                    <td>예비</td>
-                    <td>호호하니, 호호루키</td>
-                  </tr>                
+                    <td>11</td>
+                    <td>김호일</td>
+                    <td>초1</td>
+                    <td>초등천재, 새움, 독클</td>
+                    <td>2024.09.20.</td>
+                    <td>김하나(한), 김다섯(독)</td>
+                  </tr>
+                  <tr>
+                    <td class="checkbox-group">
+                      <input type="checkbox" id="" name="">
+                    </td>
+                    <td>12</td>
+                    <td>김호일</td>
+                    <td>초1</td>
+                    <td>초등천재, 새움, 독클</td>
+                    <td>2024.09.20.</td>
+                    <td>김하나(한), 김다섯(독)</td>
+                  </tr>
+                  <tr>
+                    <td class="checkbox-group">
+                      <input type="checkbox" id="" name="">
+                    </td>
+                    <td>13</td>
+                    <td>김호일</td>
+                    <td>초1</td>
+                    <td>초등천재, 새움, 독클</td>
+                    <td>2024.09.20.</td>
+                    <td>김하나(한), 김다섯(독)</td>
+                  </tr>
+                  <tr>
+                    <td class="checkbox-group">
+                      <input type="checkbox" id="" name="">
+                    </td>
+                    <td>14</td>
+                    <td>김호일</td>
+                    <td>초1</td>
+                    <td>초등천재, 새움, 독클</td>
+                    <td>2024.09.20.</td>
+                    <td>김하나(한), 김다섯(독)</td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -245,88 +306,239 @@
                 </form>
               </div>
             </div>
-            <!-- section: 모달로 수정해야됨 -->
-            <!-- <div class="move-list">
-              <div class="move-list-frame">
-                <div class="title">이전 내역</div>
-                <div class="month-navigation month-adjust">
-                  <button class="arrow-left"></button>
-                  <span class="current-month">2025년 1월</span>
-                  <button class="arrow-right"></button>
-                </div>
-                <div class="table-frame move-frame">
-                  <table class="basic-table content-table yh">
-                    <colgroup>
-                      <col width="15%">
-                      <col width="15%">
-                      <col width="20%">
-                      <col width="20%">
-                      <col width="35%">
-                    </colgroup>
-                    <thead>
-                      <tr>
-                        <th>이름</th>
-                        <th>전출과목</th>
-                        <th>전입한 선생님</th>
-                        <th>날짜</th>
-                        <th>사유</th>
-                      </tr>
-                    </thead>
-                    <tbody id="consult-tbody" class="stripe">
-                      <tr>
-                        <td>김호일</td>
-                        <td>한스쿨</td>
-                        <td>김호호</td>
-                        <td>2025-01-30</td>
-                        <td>기존 선생님 퇴사 및 신규 선생님 이동</td>
-                      </tr>
-                      <tr>
-                        <td>김호이</td>
-                        <td>한스쿨</td>
-                        <td>김호호</td>
-                        <td>2025-01-30</td>
-                        <td>기존 선생님 퇴사 및 신규 선생님 이동</td>
-                      </tr>
-                      <tr>
-                        <td>김호삼</td>
-                        <td>한스쿨</td>
-                        <td>김호호</td>
-                        <td>2025-01-30</td>
-                        <td>기존 선생님 퇴사 및 신규 선생님 이동</td>
-                      </tr>
-                      <tr>
-                        <td>김호사</td>
-                        <td>한스쿨</td>
-                        <td>김호호</td>
-                        <td>2025-01-30</td>
-                        <td>기존 선생님 퇴사 및 신규 선생님 이동</td>
-                      </tr>
-                      <tr>
-                        <td>김호오</td>
-                        <td>한스쿨</td>
-                        <td>김호호</td>
-                        <td>2025-01-30</td>
-                        <td>기존 선생님 퇴사 및 신규 선생님 이동</td>
-                      </tr>
-                      <tr>
-                        <td>김호육</td>
-                        <td>한스쿨</td>
-                        <td>김호호</td>
-                        <td>2025-01-30</td>
-                        <td>기존 선생님 퇴사 및 신규 선생님 이동</td>
-                      </tr>
-                      <tr>
-                        <td>김호칠</td>
-                        <td>한스쿨</td>
-                        <td>김호호</td>
-                        <td>2025-01-30</td>
-                        <td>기존 선생님 퇴사 및 신규 선생님 이동</td>
-                      </tr>
-                    </tbody>
-                  </table>
+            
+            <!-- section: inout-modal -->
+            <div class="modal inout-modal">
+              <div class="move-list">
+                <div class="move-list-frame">
+                  <div class="m-t-line">
+                    <div class="title">전체 전입/전출 내역</div>
+                    <a href="#" class="btn-close"></a>
+                  </div>
+                  <div class="icon-field basic-input cal-adjust">
+                    <span>2024-07 ~ 2025-06</span>
+                    <button class="icon-btn" style="background: transparent;">
+                      <img src="image/calendar.png" alt="달력 아이콘">
+                    </button>
+                  </div>
+                  <div class="table-frame move-frame">
+                    <table class="basic-table content-table yh">
+                      <colgroup>
+                        <col width="10%">
+                        <col width="15%">
+                        <col width="10%">
+                        <col width="15%">
+                        <col width="15%">
+                        <col width="15%">
+                        <col width="20%">
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th>No</th>
+                          <th>일자</th>
+                          <th>이름</th>
+                          <th>수강과목</th>
+                          <th>전출 선생님</th>
+                          <th>전입 선생님</th>
+                          <th>사유</th>
+                        </tr>
+                      </thead>
+                      <tbody id="consult-tbody" class="stripe">
+                        <tr>
+                          <td>1</td>
+                          <td>2025-06-01</td>
+                          <td>김호일</td>
+                          <td>한스쿨</td>
+                          <td>김하나</td>
+                          <td>이성하</td>
+                          <td>인원 미달로 합반</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>2025-06-01</td>
+                          <td>김호일</td>
+                          <td>한스쿨</td>
+                          <td>김하나</td>
+                          <td>이성하</td>
+                          <td>인원 미달로 합반</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>2025-06-01</td>
+                          <td>김호일</td>
+                          <td>한스쿨</td>
+                          <td>김하나</td>
+                          <td>이성하</td>
+                          <td>인원 미달로 합반</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>2025-06-01</td>
+                          <td>김호일</td>
+                          <td>한스쿨</td>
+                          <td>김하나</td>
+                          <td>이성하</td>
+                          <td>인원 미달로 합반</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>2025-06-01</td>
+                          <td>김호일</td>
+                          <td>한스쿨</td>
+                          <td>김하나</td>
+                          <td>이성하</td>
+                          <td>인원 미달로 합반</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>2025-06-01</td>
+                          <td>김호일</td>
+                          <td>한스쿨</td>
+                          <td>김하나</td>
+                          <td>이성하</td>
+                          <td>인원 미달로 합반</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>2025-06-01</td>
+                          <td>김호일</td>
+                          <td>한스쿨</td>
+                          <td>김하나</td>
+                          <td>이성하</td>
+                          <td>인원 미달로 합반</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>2025-06-01</td>
+                          <td>김호일</td>
+                          <td>한스쿨</td>
+                          <td>김하나</td>
+                          <td>이성하</td>
+                          <td>인원 미달로 합반</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>2025-06-01</td>
+                          <td>김호일</td>
+                          <td>한스쿨</td>
+                          <td>김하나</td>
+                          <td>이성하</td>
+                          <td>인원 미달로 합반</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>2025-06-01</td>
+                          <td>김호일</td>
+                          <td>한스쿨</td>
+                          <td>김하나</td>
+                          <td>이성하</td>
+                          <td>인원 미달로 합반</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>2025-06-01</td>
+                          <td>김호일</td>
+                          <td>한스쿨</td>
+                          <td>김하나</td>
+                          <td>이성하</td>
+                          <td>인원 미달로 합반</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>2025-06-01</td>
+                          <td>김호일</td>
+                          <td>한스쿨</td>
+                          <td>김하나</td>
+                          <td>이성하</td>
+                          <td>인원 미달로 합반</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>2025-06-01</td>
+                          <td>김호일</td>
+                          <td>한스쿨</td>
+                          <td>김하나</td>
+                          <td>이성하</td>
+                          <td>인원 미달로 합반</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>2025-06-01</td>
+                          <td>김호일</td>
+                          <td>한스쿨</td>
+                          <td>김하나</td>
+                          <td>이성하</td>
+                          <td>인원 미달로 합반</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>2025-06-01</td>
+                          <td>김호일</td>
+                          <td>한스쿨</td>
+                          <td>김하나</td>
+                          <td>이성하</td>
+                          <td>인원 미달로 합반</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>2025-06-01</td>
+                          <td>김호일</td>
+                          <td>한스쿨</td>
+                          <td>김하나</td>
+                          <td>이성하</td>
+                          <td>인원 미달로 합반</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>2025-06-01</td>
+                          <td>김호일</td>
+                          <td>한스쿨</td>
+                          <td>김하나</td>
+                          <td>이성하</td>
+                          <td>인원 미달로 합반</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>2025-06-01</td>
+                          <td>김호일</td>
+                          <td>한스쿨</td>
+                          <td>김하나</td>
+                          <td>이성하</td>
+                          <td>인원 미달로 합반</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>2025-06-01</td>
+                          <td>김호일</td>
+                          <td>한스쿨</td>
+                          <td>김하나</td>
+                          <td>이성하</td>
+                          <td>인원 미달로 합반</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>2025-06-01</td>
+                          <td>김호일</td>
+                          <td>한스쿨</td>
+                          <td>김하나</td>
+                          <td>이성하</td>
+                          <td>인원 미달로 합반</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>2025-06-01</td>
+                          <td>김호일</td>
+                          <td>한스쿨</td>
+                          <td>김하나</td>
+                          <td>이성하</td>
+                          <td>인원 미달로 합반</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
-            </div> -->
+            </div>
           </section>
         </div>
       </main>

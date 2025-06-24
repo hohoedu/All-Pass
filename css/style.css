@@ -19,7 +19,6 @@ body {
   font-family: "Noto Sans KR", sans-serif;
   font-weight: normal;
   background-color: #fff;
-  height: 100vh;
   color: #222;
 }
 a {
@@ -158,6 +157,9 @@ textarea::-webkit-scrollbar-thumb:hover,
 tbody tr {
   transition: .3s ease;
 }
+tbody tr td:first-child {
+  color: #a8a8a8;
+}
 .table-frame {
   border-top: .5px solid #494470;
   overflow: hidden;
@@ -219,6 +221,9 @@ input[type="text"]:focus {
   background: #FFFBEB;
   border: 1px solid #e2e2e2;
 }
+.basic-select select {
+  width: 100%;
+}
 .normal-input,
 .basic-input,
 .basic-select select,
@@ -232,9 +237,6 @@ input[type="text"]:focus {
   height: 36px;
   width: 100%;
   font-size: 14px;
-}
-.basic-select {
-  width: 100%;
 }
 .normal-input,
 .normal-date-input,
@@ -323,6 +325,12 @@ input[type="text"]:focus {
   background-color: #fff;
   border: 1px solid #C2C9D7;
   vertical-align: middle;
+}
+.radio-group input[type="radio"] {
+  background: #d6d6d6;
+}
+.checkbox-group input[type="checkbox"] {
+  background: #fff;
 }
 .radio-group,
 .checkbox-group,
@@ -932,10 +940,6 @@ canvas {
 }
 
 /* ======================= main page (sidebar)======================= */
-.main-container {
-  background: #F7F7F7;
-  height: 100%;
-}
 .main-frame {
   display: flex;
   height: 100%;
@@ -962,6 +966,7 @@ canvas {
   flex-direction: column;
   align-items: center;
   background: #1A1543;
+  height: 100%;
   width: 59px;
 }
 .sidebar-item:hover .sidebar-right {
@@ -1426,7 +1431,7 @@ canvas {
 }
 .search-box input:not([type="checkbox"]) {
   padding: 15px;
-  height: 30px;
+  height: 36px;
   border: 1px solid #e2e2e2;
   background: #FFFBEB;
   border-radius: 5px 30px 30px 5px;
@@ -1539,6 +1544,10 @@ canvas {
 }
 .title {
   font-weight: 500;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
 }
 .form-row label:not(.radio-group label) {
   font-weight: 500;
@@ -2272,22 +2281,59 @@ canvas {
 }
 
 /* ======================= student-inout page ======================= */
+.move-list {
+  position: absolute;
+  width: 75%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: #fff;
+  height: 80%;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.move-list-frame {
+  width: 95%;
+}
+.m-t-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.m-t-line .btn-close {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  text-decoration: none;
+  font-size: 18px;
+}
+.cal-adjust {
+  width: 200px;
+  margin-bottom: 15px;
+}
 .second-frame {
   display: flex;
   gap: 30px;
   background: #fff;
   height: 100%;
-}
-.move-summary {
-  flex: 5;
+  width: 100%;
+  padding: 20px;
 }
 .move-desc {
   flex: 2;
   border-left: 1px solid #d6d6d6;
 }
+.move-summary {
+  flex: 6;
+}
 .move-summary,
-.move-reason,
-.move-list {
+.move-reason {
   height: 100%;
   background: #fff;
   border-radius: 20px;
@@ -2299,8 +2345,10 @@ canvas {
 .move-reason {
   flex: 3;
 }
-.move-list {
-  flex: 7;
+.inout-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .inout-btns {
   display: flex;
@@ -2308,10 +2356,6 @@ canvas {
 .inout-btn {
   background: #009844;
   margin-left: 10px;
-}
-.move-reason-frame,
-.move-list-frame {
-  width: 90%;
 }
 .move-t-frame {
   max-height: 60vh;
@@ -2334,7 +2378,7 @@ canvas {
   margin: 15px;
 }
 .move-frame {
-  max-height: 300px;
+  max-height: 50%;
 }
 .detail-sub h4 {
   color: #8f8f8f;
@@ -2354,100 +2398,88 @@ canvas {
   gap: 10px;
 }
 
-/* ======================= student-out page ======================= */
-.out-section {
-  width: 100%;
+/* ======================= student-inout modal ======================= */
+.student-frame {
+  height: 100%;
 }
 .student-out-inner {
-  height: 80vh;
   display: flex;
-  flex-direction: column;
+  height: 100%;
+}
+.stats-left {
+  flex: 2;
+}
+.stats-right {
+  flex: 3;
+}
+.stats-filter {
+  display: flex;
   justify-content: space-between;
-}
-.student-num-frame {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  height: 80px;
-  gap: 15px;
+  margin-bottom: 20px;
 }
-.student-common-box {
-  border: 1px solid transparent;
-  width: 230px;
-  height: 70px;
-  border-radius: 10px;
+.stats-item-left {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  color: #fff;
-  font-size: 14px;
+  gap: 10px;
 }
-.student-common-box span {
-  font-size: 40px;
-  font-weight: bold;
-}
-.student-common-box:nth-child(1) {
-  background: #02A7AF;
-  border: 1px solid #00787E;
-}
-.student-common-box:nth-child(2) {
-  background: #E05F55;
-  border: 1px solid #BC3F36;
-}
-.student-common-box:nth-child(3) {
-  background: #1FAC52;
-  border: 1px solid #128A3E;
-}
-.student-common-box:nth-child(4) {
-  background: #6B91EA;
-  border: 1px solid #2B5DD0;
-}
-.entry-list-frame {
-  display: flex;
-  justify-content: space-around;
-  gap: 20px;
-}
-.out-frame {
-  height: 50vh;
-}
-.cancel-enroll,
-.restore-enroll {
+.teacher-search {
   display: flex;
   align-items: center;
-  font-size: 14px;
-  margin-top: 10px;
+}
+.teacher-search .explore {
+  margin-left: 10px;
+}
+.stats-frame {
+  max-height: 80vh;
+}
+.table-foot tfoot td {
+  border-top: 1px solid #494470;
+  border-bottom: 1px solid #494470;
+}
+.table-head,
+.table-foot {
+  table-layout: fixed;
+}
+.table-body {
+  table-layout: fixed;
+  width: 100%;
+}
+.table-body-scroll {
+  height: 80%;
+}
+.chart-box {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  text-align: center;
+}
+.chart-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #74747b;
   font-weight: 500;
-  cursor: pointer;
 }
-.cancel-enroll {
-  color: #E16258;
+.chart-buttons {
+  margin-bottom: 20px;
 }
-.restore-enroll {
-  color: #2273BF;
-}
-.cancel-enroll img,
-.restore-enroll img {
-  margin-right: 5px;
-}
-.delete-student {
-  display: flex;
-  justify-content: flex-end;
-}
-.delete-student-btn {
+.chart-buttons button {
+  border: 1px solid #a7a7a7;
+  background: #fff;
+  color: #a7a7a7;
+  border-radius: 6px;
+  padding: 4px 16px;
   font-size: 14px;
-  border: 1px solid #807F7F;
-  color: #807F7F;
-  display: inline-block;
-  padding: 2px 10px;
-  border-radius: 15px;
-  font-weight: 500;
   cursor: pointer;
-  transition: .3s ease;
+  transition: 0.2s ease;
 }
-.delete-student-btn:hover {
-  background-color: #807F7F;
-  color: #fff;
-}
+.chart-buttons button.active-재원 { background: #06a645; color: #fff; border-color: #06a645; }
+.chart-buttons button.active-입회 { background: #35c3e7; color: #fff; border-color: #35c3e7; }
+.chart-buttons button.active-탈퇴 { background: #ee4d79; color: #fff; border-color: #ee4d79; }
 
 /* ======================= class-timetable page ======================= */
 
@@ -2461,10 +2493,6 @@ canvas {
 }
 .time-frame {
   width: 85%;
-}
-.time-table-index {
-  display: flex;
-  flex: 5;
 }
 .time-name-list {
   flex: 2;
@@ -2673,91 +2701,191 @@ input[type="time" i] {
   height: auto;
   width: 75%;
 }
-.timeview-table-frame {
-  max-height: none;
-}
-.timeview-table {
-  table-layout: fixed;
-  height: auto;
-}
-.timeview-table th {
-  background: #5A7CE2;
-  border-color: transparent;
-  color: #fff;
-}
-.timeview-table th,
-.timeview-table td {
-  border: 1px solid #CCD8F1;
-  text-align: center;
-}
-.timeview-table tr {
-  line-height: 1.6rem;
-}
-.timeview-table .merged {
-  background: #F7F9FF;
-  border-bottom: none;
-  min-height: 50px;
-  height: 50px;
-  font-weight: bold;
-  color: #7E8FB5;
-}
-.timeview-table .dotted {
-  border-bottom: none;
-}
-.timeview-table td {
-  height: 20px;
-  min-height: 20px;
-}
-.timeview-table .dotted .name-tag {
-  border-bottom: 1px dotted #CCD8F1;
-  min-height: 20px;
-  height: 20px;
+.month-header {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  margin-bottom: 16px;
 }
-.name-tag img {
-  margin-right: 3px;
+.month-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  text-align: center;
+  flex: 1;
+  font-size: 24px;
+  color: #686868;
+  font-weight: bold;
 }
-.timeview-table .dotted .name:last-child {
-  border-bottom: none;
+.current-month {
+  display: inline-block;
 }
-.timetable-time {
-  margin-bottom: 0;
+.time-table-index {
+  flex: 2;
 }
-.merged .badge-han,
-.merged .badge-book {
+.member {
+  flex: 1;
+  border-left: 1px solid #d6d6d6;
+  padding: 0 30px;
+}
+/* timeview 테이블 */
+.timetable-lookup-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.timetable-lookup-table tbody tr td:first-child {
+  color: #404040;
+}
+.timetable-lookup-table th,
+.timetable-lookup-table td {
+  border-right: 1px solid #949cb4;
+  text-align: center;
+  padding: 5px;
+}
+.timetable-lookup-table th {
+  border-top: 1px solid #494470;
+  border-bottom: 1px solid #494770;
+  padding: 15px;
+}
+.timetable-lookup-table tbody {
+  border-bottom: 1px solid #494770;
+}
+.timetable-lookup-table th:first-child,
+.timetable-lookup-table td:first-child {
+  border-left: none;
+}
+.timetable-lookup-table th:last-child,
+.timetable-lookup-table td:last-child {
+  border-right: none;
+}
+.timetable-lookup-table tbody tr:nth-child(odd) td {
+  background-color: #f9f9fa;
+}
+.timetable-lookup-table tbody tr:nth-child(even) td {
+  background-color: #ffffff;
+}
+.timetable-lookup-table thead tr th:nth-child(1) { width: 7%; }
+.timetable-lookup-table thead tr th:nth-child(n+2):nth-child(-n+7) { width: 15%; }
+.timetable-lookup-box {
+  border-radius: 10px;
+  width: 100%;
   font-size: 12px;
 }
-.timeview-tfoot {
-  table-layout: fixed;
+.timetable-lookup-box.blue {
+  border: 2px solid #60c0d4;
+  background-color: #e9f7fb;
 }
-.vertical-header {
-  background: red;
-  writing-mode: vertical-rl;
-  background-color: #f4f4f4;
-  border: 1px solid #ddd;
-  font-weight: 400;
-  width: 30px;
-}
-.timeview-tfoot-header {
-  background-color: #F7F9FF;
-}
-.timeview-tfoot tr {
-  line-height: 1.6rem;
-}
-.timeview-tfoot td,
-.jumpup-test td {
-  border-right: 1px solid #ddd;
-}
-.name-details {
-  height: 50px;
-}
-.all-hands {
-  background: #5A7CE2;
-  color: #fff;
+.timetable-lookup-box.blue .header {
+  background-color: #60c0d4;
+  color: white;
+  padding: 6px;
+  font-weight: bold;
   text-align: center;
+  border-bottom: 1px dashed #60c0d4;
+}
+.timetable-lookup-box.pink {
+  border: 2px solid #eb8baf;
+  background-color: #fff2f7;
+}
+.timetable-lookup-box.pink .header {
+  background-color: #eb8baf;
+  color: white;
+  padding: 6px;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px dashed #eb8baf;
+}
+/* 작은 박스 */
+.inner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.inner-grid > div {
+  border-bottom: 1px dashed;
+  border-color: inherit;
+  border-right: 1px dashed;
+  text-align: center;
+  line-height: 1.8;
+  font-size: 13px;
+}
+.inner-grid > div:nth-last-child(-n+2) {
+  border-bottom: none;
+}
+.inner-grid > div:nth-child(2n) {
+  border-right: none;
+}
+/* 마지막 줄은 border 제거 */
+.inner-grid > div.col-span-2 {
+  border-bottom: none;
+  grid-column: span 2;
+}
+.timetable-lookup-box.blue .inner-grid > div {
+  border-color: #60c0d4;
+}
+.timetable-lookup-box.pink .inner-grid > div {
+  border-color: #eb8baf;
+}
+/* 회원현황 */
+.member-status-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  border-top: 1px solid #494470;
+  color: #323232;
+}
+.member-status-table tbody tr,
+.member-status-table tbody td {
+  padding: 20px 15px;
+}
+.member-status-table tbody td:nth-child(odd) {
+  background-color: #f7f7f7;
+}
+.member-status-table tbody td:nth-child(even) {
+  background-color: #ececec;
+}
+.member-status-table td {
+  border-bottom: 1px dashed #d6d6d6;
+  text-align: left;
+  vertical-align: middle;
+}
+.member-status-table td:nth-child(1),
+.member-status-table td:nth-child(2) {
+  color: #8f8f8f;
+  font-weight: 500;
+  text-align: center;
+}
+.member-status-table td:nth-child(1) {
+  width: 25%;
+}
+.member-status-table td:nth-child(2) {
+  width: 15%;
+}
+.member-status-table td:nth-child(3) {
+  color: #323232;
+  font-weight: 400;
+  width: 60%;
+}
+/* 마지막 총원 행 */
+.member-status-table tfoot td {
+  border-top: 1px solid #494470;
+  border-bottom: 1px solid #494470;
+  color: #8f8f8f;
+  font-weight: 600;
+  padding: 12px 10px;
+  background-color: white;
+}
+.pax-people {
+  font-size: 20px;
+  color: #1f1f1f;
+}
+.member-status-table td:first-child,
+.member-status-table td:last-child,
+.member-status-table tfoot td:first-child,
+.member-status-table tfoot td:last-child {
+  border-left: none;
+  border-right: none;
 }
 
 /* ======================= bfclass page ======================= */
