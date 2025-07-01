@@ -124,8 +124,16 @@ $(document).ready(function() {
     $('#btn-inout').click(function() {
       $('.modal').fadeIn();
     });
-
+    
     /* ====== bfclass.html ====== */
+    // remarks modal
+    $('.remarks').click(function() {
+      $('.remarks-modal').fadeIn();
+    });
+    // class-guide modal
+    $('.class-guide').click(function() {
+      $('.calss-guide-modal').fadeIn();
+    });
     // class-timetable tab
     const tabButtons = document.querySelectorAll('.class-before-after a');
     const tabContents = document.querySelectorAll('.ctab');
@@ -142,7 +150,7 @@ $(document).ready(function() {
 
     /* ====== class-timetable.html ====== */
     // class-timetable tab
-    const buttons = document.querySelectorAll('.time-tab-button');
+    const buttons = document.querySelectorAll('.time-tab-btn');
     const contents = document.querySelectorAll('.time-tab-content');
     
     buttons.forEach(button => {

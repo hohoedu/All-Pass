@@ -11,1726 +11,726 @@
   <script src="js/custom.js"></script>
   <!-- Html menu Load -->
   <script src="js/loadHTML.js"></script>
-  <title>시간표 등록</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <title>수업 일지</title>
 </head>
 <body>
   <div class="main-container">
     <!-- header -->
-    <div id="header-load"></div>
     <div class="main-frame">
       <!-- left nav bar -->
       <aside id="sidebar-load"></aside>
       <main class="main-info">
-        <div class="student-frame time-frame">
-          <!-- section:left -->
-          <section class="time-table-index">
-            <div class="manager-frame">
-              <div class="common-title">
-                <h2>시간표 등록</h2>
-              </div>
-              <div class="month-navigation month-adjust">
-                <button class="arrow-left"></button>
-                <span class="current-month">2025년 1월</span>
-                <button class="arrow-right"></button>
-              </div>
-              <div class="calendar-overview">
-                <div class="prev-month-btn">전월 정보 불러오기</div>
-                <div class="schedule-btn">시간표 정보 변경</div>
-              </div>
-              <div class="time-tab-menu">
-                <button class="time-tab-button active" data-tab="mon">월</button>
-                <button class="time-tab-button" data-tab="tue">화</button>
-                <button class="time-tab-button" data-tab="wed">수</button>
-                <button class="time-tab-button" data-tab="thu">목</button>
-                <button class="time-tab-button" data-tab="fri">금</button>
-              </div>
-              <div class="time-table-frame">
-                <div class="time-tab-content active" id="mon">
-                  <table class="time-table">
-                    <colgroup>
-                      <col width="10%">
-                      <col width="20%">
-                      <col width="20%">
-                      <col width="35%">
-                      <col width="15%">
-                    </colgroup>
-                    <thead>
-                      <tr>
-                        <th>교시</th>
-                        <th>시간</th>
-                        <th>과목</th>
-                        <th>학생명</th>
-                        <th>총 인원</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>15:00-15:50</td>
-                        <td>
-                          <span class="badge-han">한</span>초등박사 1호</td>
-                        <td>
-                          <div class="student-badge" data-name="김호일" data-week="2주">
-                            <span class="badge-name">김호일
-                              <span class="badge-week">(2주)</span>
-                            </span>
-                          </div>
-                          <div class="student-badge" data-name="김호팔" data-week="">
-                            <span class="badge-name">김호팔
-                              <span class="badge-week"></span>
-                            </span>
-                          </div>
-                          <div class="student-badge" data-name="김호팔" data-week="">
-                            <span class="badge-name">김호팔
-                              <span class="badge-week"></span>
-                            </span>
-                          </div>
-                          <div class="student-badge" data-name="김호팔" data-week="">
-                            <span class="badge-name">김호팔
-                              <span class="badge-week"></span>
-                            </span>
-                          </div>
-                        </td>
-                        <td>8</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>16:00-16:50</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>
-                          16:00-16:50
-                        </td>
-                        <td>
-                          <span class="badge-book">북</span> 새움 1호
-                        </td>
-                        <td>-</td>
-                        <td>-</td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>16:00-16:50</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                      </tr>
-                    </tbody>
-                  </table>
+        <div class="student-frame time-regist-frame">
+          <!-- section:top -->
+          <section class="class-info-section">
+            <div class="class-desc">
+              <div class="class-header">
+                <div class="common-title">
+                  <h2>시간표 등록</h2>
                 </div>
-                <div class="time-tab-content" id="tue">
-                  <p>화요일 데이터</p>
+                <div class="class-btns">
+                  <div class="common-btn reset-btn">전체 초기화</div>
+                  <div class="common-btn last-data">전월 데이터 불러오기</div>
+                  <div class="common-btn record-save">저장</div>
                 </div>
-                <div class="time-tab-content" id="wed">
-                  <p>수요일 데이터</p>
+              </div>
+              <div class="month-header2">
+                <div class="month-title2">
+                  <span class="current-month">2025년 6월 12일 (목)</span>
+                  <div style="position: relative;">
+                    <input type="date" class="hidden-date" />
+                    <button type="button" class="icon-btn calendar-open">
+                      <img src="image/calendar.png" alt="달력 아이콘">
+                    </button>
+                  </div>
                 </div>
-                <div class="time-tab-content" id="thu">
-                  <p>목요일 데이터</p>
-                </div>
-                <div class="time-tab-content" id="fri">
-                  <p>금요일 데이터</p>
+                <div class="basic-select">
+                  <select name="teacher" id="teacher-select" style="width: 200px;">
+                    <option value="all">선생님 전체</option>
+                    <option value="t1">김쌤</option>
+                    <option value="t2">이쌤</option>
+                  </select>
                 </div>
               </div>
             </div>
           </section>
-          <!-- section:right -->
-          <section class="time-name-list">
-            <div class="info-filters">
-              <div class="basic-select">
-                <select name="" id="">
-                  <option value="all">과목 전체</option>
-                  <option value="">영재</option>
-                  <option value="">수재</option>
-                  <option value="">신동</option>
-                  <option value="">천재</option>
-                </select>
+          <!-- section:bottom -->
+          <div class="second-frame">
+            <section class="student-pick-left">
+              <div class="student-content">
+                <h4>학생 선택</h4>
+                <div class="add-inform">
+                  <p>선택한 학생을 <span>월요일 초등신동 1호</span><br>클래스에 추가합니다.</p>
+                  <button class="add-btn">
+                    추가
+                  </button>
+                </div>
+                <div class="bt">
+                  <div class="table-frame stu-chocie-frame">
+                    <table class="basic-table stu-chocie-table stripe">
+                      <thead>
+                        <tr>
+                          <th>
+                            <div class="checkbox-group">
+                              <input type="checkbox">
+                            </div>
+                          </th>
+                          <th><img src="image/sort_checked.svg" alt="" class="svg-sort">이름</th>
+                          <th><img src="image/sort.svg" alt="" class="svg-sort">학년</th>
+                          <th>수업 주차 선택</th>
+                        </tr>
+                      </thead>
+                      <tbody id="" class="stripe">
+                        <colgroup>
+                          <col width="15%">
+                          <col width="15%">
+                          <col width="20%">
+                          <col width="50%">
+                        </colgroup>
+                        <!-- tr 1번째 줄 -->
+                        <tr>
+                          <td class="checkbox-group"><input type="checkbox"></td>
+                          <td>김호일</td>
+                          <td>초1</td>
+                          <td>
+                            <div class="tab-radio">
+                              <input type="radio" id="1-week-0" name="weeks-0" value="1" checked>
+                              <label for="1-week-0">1주</label>
+                              <input type="radio" id="2-week-0" name="weeks-0" value="2">
+                              <label for="2-week-0">2주</label>
+                              <input type="radio" id="3-week-0" name="weeks-0" value="3">
+                              <label for="3-week-0">3주</label>
+                              <input type="radio" id="4-week-0" name="weeks-0" value="4">
+                              <label for="4-week-0">4주</label>
+                            </div>
+                          </td>
+                        </tr>
+                        <!-- tr 2번째 줄 -->
+                        <tr>
+                          <td class="checkbox-group"><input type="checkbox"></td>
+                          <td>김호이</td>
+                          <td>초2</td>
+                          <td>
+                            <div class="tab-radio">
+                              <input type="radio" id="1-week-1" name="weeks-1" value="1" checked>
+                              <label for="1-week-1">1주</label>
+                              <input type="radio" id="2-week-1" name="weeks-1" value="2">
+                              <label for="2-week-1">2주</label>
+                              <input type="radio" id="3-week-1" name="weeks-1" value="3">
+                              <label for="3-week-1">3주</label>
+                              <input type="radio" id="4-week-1" name="weeks-1" value="4">
+                              <label for="4-week-1">4주</label>
+                            </div>
+                          </td>
+                        </tr>
+                        <!-- t3 3번째 줄 -->
+                        <tr>
+                          <td class="checkbox-group"><input type="checkbox"></td>
+                          <td>김호삼</td>
+                          <td>7세</td>
+                          <td>
+                            <div class="tab-radio">
+                              <input type="radio" id="1-week-2" name="weeks-2" value="1" checked>
+                              <label for="1-week-2">1주</label>
+                              <input type="radio" id="2-week-2" name="weeks-2" value="2">
+                              <label for="2-week-2">2주</label>
+                              <input type="radio" id="3-week-2" name="weeks-2" value="3">
+                              <label for="3-week-2">3주</label>
+                              <input type="radio" id="4-week-2" name="weeks-2" value="4">
+                              <label for="4-week-2">4주</label>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
               </div>
-              <div class="basic-select">
-                <select name="teacher" id="">
-                  <option value="teacher1">김호호 선생님</option>
-                  <option value="teacher2">김호이 선생님</option>
-                  <option value="teacher3">김호삼 선생님</option>
-                </select>
+            </section>
+            <section class="student-pick-right">
+              <div class="table-frame student-pick-frame" style="border-top: none;">
+                <div class="time-tab-menu">
+                  <button class="time-tab-btn active" data-tab="mon">월</button>
+                  <button class="time-tab-btn" data-tab="tue">화</button>
+                  <button class="time-tab-btn" data-tab="wed">수</button>
+                  <button class="time-tab-btn" data-tab="thu">목</button>
+                  <button class="time-tab-btn" data-tab="fri">금</button>
+                </div>
+                <div class="bt" style="margin-top: 20px;">
+                  <div class="table-frame time-table-frame">
+                    <div class="time-tab-content active" id="mon">
+                      <table class="basic-table time-table stripe">
+                        <colgroup>
+                          <col width="10%">
+                          <col width="10%">
+                          <col width="15%">
+                          <col width="20%">
+                          <col width="50%">
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th></th>
+                            <th>교시</th>
+                            <th>시간</th>
+                            <th>과목</th>
+                            <th>학생</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="checkbox-group round">
+                              <input type="checkbox">
+                            </td>
+                            <td>1</td>
+                            <td>
+                              <div class="time-boxes">
+                                <div class="time-start">시작 <span>14:00</span></div>
+                                <div class="time-end">시작 <span>14:50</span></div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="basic-select square size-160">
+                                <select name="" id="">
+                                  <option value="">초등신동</option>
+                                  <option value="">초등수재</option>
+                                </select>
+                              </div>
+                              <div class="mini-select size-160">
+                                <div class="basic-select square">
+                                  <select name="" id="">
+                                    <option value="">1호</option>
+                                    <option value="">2호</option>
+                                    <option value="">3호</option>
+                                  </select>
+                                </div>
+                                <div class="basic-select square">
+                                  <select name="" id="">
+                                    <option value="">초1</option>
+                                    <option value="">초2</option>
+                                    <option value="">초3</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="student-badge" data-name="김호일">
+                                <span class="badge-name">김호일
+                                </span>
+                                <span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호이">
+                                <span class="badge-name">김호이
+                                </span><span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호삼">
+                                <span class="badge-name">김호삼
+                                </span><span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호사">
+                                <span class="badge-name">김호사
+                                </span><span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호오">
+                                <span class="badge-name">김호오
+                                </span><span class="badge-close"></span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="checkbox-group round">
+                              <input type="checkbox">
+                            </td>
+                            <td>1</td>
+                            <td>
+                              <div class="time-boxes">
+                                <div class="time-start">시작 <span>14:00</span></div>
+                                <div class="time-end">시작 <span>14:50</span></div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="basic-select square size-160">
+                                <select name="" id="">
+                                  <option value="">초등신동</option>
+                                  <option value="">초등수재</option>
+                                </select>
+                              </div>
+                              <div class="mini-select size-160">
+                                <div class="basic-select square">
+                                  <select name="" id="">
+                                    <option value="">1호</option>
+                                    <option value="">2호</option>
+                                    <option value="">3호</option>
+                                  </select>
+                                </div>
+                                <div class="basic-select square">
+                                  <select name="" id="">
+                                    <option value="">초1</option>
+                                    <option value="">초2</option>
+                                    <option value="">초3</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="student-badge" data-name="김호일">
+                                <span class="badge-name">김호일
+                                </span>
+                                <span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호이">
+                                <span class="badge-name">김호이
+                                </span><span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호삼">
+                                <span class="badge-name">김호삼
+                                </span><span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호사">
+                                <span class="badge-name">김호사
+                                </span><span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호오">
+                                <span class="badge-name">김호오
+                                </span><span class="badge-close"></span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="checkbox-group round">
+                              <input type="checkbox">
+                            </td>
+                            <td>1</td>
+                            <td>
+                              <div class="time-boxes">
+                                <div class="time-start">시작 <span>14:00</span></div>
+                                <div class="time-end">시작 <span>14:50</span></div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="basic-select square size-160">
+                                <select name="" id="">
+                                  <option value="">초등신동</option>
+                                  <option value="">초등수재</option>
+                                </select>
+                              </div>
+                              <div class="mini-select size-160">
+                                <div class="basic-select square">
+                                  <select name="" id="">
+                                    <option value="">1호</option>
+                                    <option value="">2호</option>
+                                    <option value="">3호</option>
+                                  </select>
+                                </div>
+                                <div class="basic-select square">
+                                  <select name="" id="">
+                                    <option value="">초1</option>
+                                    <option value="">초2</option>
+                                    <option value="">초3</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="student-badge" data-name="김호일">
+                                <span class="badge-name">김호일
+                                </span>
+                                <span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호이">
+                                <span class="badge-name">김호이
+                                </span><span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호삼">
+                                <span class="badge-name">김호삼
+                                </span><span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호사">
+                                <span class="badge-name">김호사
+                                </span><span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호오">
+                                <span class="badge-name">김호오
+                                </span><span class="badge-close"></span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="checkbox-group round">
+                              <input type="checkbox">
+                            </td>
+                            <td>1</td>
+                            <td>
+                              <div class="time-boxes">
+                                <div class="time-start">시작 <span>14:00</span></div>
+                                <div class="time-end">시작 <span>14:50</span></div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="basic-select square size-160">
+                                <select name="" id="">
+                                  <option value="">초등신동</option>
+                                  <option value="">초등수재</option>
+                                </select>
+                              </div>
+                              <div class="mini-select size-160">
+                                <div class="basic-select square">
+                                  <select name="" id="">
+                                    <option value="">1호</option>
+                                    <option value="">2호</option>
+                                    <option value="">3호</option>
+                                  </select>
+                                </div>
+                                <div class="basic-select square">
+                                  <select name="" id="">
+                                    <option value="">초1</option>
+                                    <option value="">초2</option>
+                                    <option value="">초3</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="student-badge" data-name="김호일">
+                                <span class="badge-name">김호일
+                                </span>
+                                <span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호이">
+                                <span class="badge-name">김호이
+                                </span><span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호삼">
+                                <span class="badge-name">김호삼
+                                </span><span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호사">
+                                <span class="badge-name">김호사
+                                </span><span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호오">
+                                <span class="badge-name">김호오
+                                </span><span class="badge-close"></span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="checkbox-group round">
+                              <input type="checkbox">
+                            </td>
+                            <td>1</td>
+                            <td>
+                              <div class="time-boxes">
+                                <div class="time-start">시작 <span>14:00</span></div>
+                                <div class="time-end">시작 <span>14:50</span></div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="basic-select square size-160">
+                                <select name="" id="">
+                                  <option value="">초등신동</option>
+                                  <option value="">초등수재</option>
+                                </select>
+                              </div>
+                              <div class="mini-select size-160">
+                                <div class="basic-select square">
+                                  <select name="" id="">
+                                    <option value="">1호</option>
+                                    <option value="">2호</option>
+                                    <option value="">3호</option>
+                                  </select>
+                                </div>
+                                <div class="basic-select square">
+                                  <select name="" id="">
+                                    <option value="">초1</option>
+                                    <option value="">초2</option>
+                                    <option value="">초3</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="student-badge" data-name="김호일">
+                                <span class="badge-name">김호일
+                                </span>
+                                <span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호이">
+                                <span class="badge-name">김호이
+                                </span><span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호삼">
+                                <span class="badge-name">김호삼
+                                </span><span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호사">
+                                <span class="badge-name">김호사
+                                </span><span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호오">
+                                <span class="badge-name">김호오
+                                </span><span class="badge-close"></span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="checkbox-group round">
+                              <input type="checkbox">
+                            </td>
+                            <td>1</td>
+                            <td>
+                              <div class="time-boxes">
+                                <div class="time-start">시작 <span>14:00</span></div>
+                                <div class="time-end">시작 <span>14:50</span></div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="basic-select square size-160">
+                                <select name="" id="">
+                                  <option value="">초등신동</option>
+                                  <option value="">초등수재</option>
+                                </select>
+                              </div>
+                              <div class="mini-select size-160">
+                                <div class="basic-select square">
+                                  <select name="" id="">
+                                    <option value="">1호</option>
+                                    <option value="">2호</option>
+                                    <option value="">3호</option>
+                                  </select>
+                                </div>
+                                <div class="basic-select square">
+                                  <select name="" id="">
+                                    <option value="">초1</option>
+                                    <option value="">초2</option>
+                                    <option value="">초3</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="student-badge" data-name="김호일">
+                                <span class="badge-name">김호일
+                                </span>
+                                <span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호이">
+                                <span class="badge-name">김호이
+                                </span><span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호삼">
+                                <span class="badge-name">김호삼
+                                </span><span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호사">
+                                <span class="badge-name">김호사
+                                </span><span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호오">
+                                <span class="badge-name">김호오
+                                </span><span class="badge-close"></span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="checkbox-group round">
+                              <input type="checkbox">
+                            </td>
+                            <td>1</td>
+                            <td>
+                              <div class="time-boxes">
+                                <div class="time-start">시작 <span>14:00</span></div>
+                                <div class="time-end">시작 <span>14:50</span></div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="basic-select square size-160">
+                                <select name="" id="">
+                                  <option value="">초등신동</option>
+                                  <option value="">초등수재</option>
+                                </select>
+                              </div>
+                              <div class="mini-select size-160">
+                                <div class="basic-select square">
+                                  <select name="" id="">
+                                    <option value="">1호</option>
+                                    <option value="">2호</option>
+                                    <option value="">3호</option>
+                                  </select>
+                                </div>
+                                <div class="basic-select square">
+                                  <select name="" id="">
+                                    <option value="">초1</option>
+                                    <option value="">초2</option>
+                                    <option value="">초3</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="student-badge" data-name="김호일">
+                                <span class="badge-name">김호일
+                                </span>
+                                <span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호이">
+                                <span class="badge-name">김호이
+                                </span><span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호삼">
+                                <span class="badge-name">김호삼
+                                </span><span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호사">
+                                <span class="badge-name">김호사
+                                </span><span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호오">
+                                <span class="badge-name">김호오
+                                </span><span class="badge-close"></span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="checkbox-group round">
+                              <input type="checkbox">
+                            </td>
+                            <td>1</td>
+                            <td>
+                              <div class="time-boxes">
+                                <div class="time-start">시작 <span>14:00</span></div>
+                                <div class="time-end">시작 <span>14:50</span></div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="basic-select square size-160">
+                                <select name="" id="">
+                                  <option value="">초등신동</option>
+                                  <option value="">초등수재</option>
+                                </select>
+                              </div>
+                              <div class="mini-select size-160">
+                                <div class="basic-select square">
+                                  <select name="" id="">
+                                    <option value="">1호</option>
+                                    <option value="">2호</option>
+                                    <option value="">3호</option>
+                                  </select>
+                                </div>
+                                <div class="basic-select square">
+                                  <select name="" id="">
+                                    <option value="">초1</option>
+                                    <option value="">초2</option>
+                                    <option value="">초3</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="student-badge" data-name="김호일">
+                                <span class="badge-name">김호일
+                                </span>
+                                <span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호이">
+                                <span class="badge-name">김호이
+                                </span><span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호삼">
+                                <span class="badge-name">김호삼
+                                </span><span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호사">
+                                <span class="badge-name">김호사
+                                </span><span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호오">
+                                <span class="badge-name">김호오
+                                </span><span class="badge-close"></span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="checkbox-group round">
+                              <input type="checkbox">
+                            </td>
+                            <td>1</td>
+                            <td>
+                              <div class="time-boxes">
+                                <div class="time-start">시작 <span>14:00</span></div>
+                                <div class="time-end">시작 <span>14:50</span></div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="basic-select square size-160">
+                                <select name="" id="">
+                                  <option value="">초등신동</option>
+                                  <option value="">초등수재</option>
+                                </select>
+                              </div>
+                              <div class="mini-select size-160">
+                                <div class="basic-select square">
+                                  <select name="" id="">
+                                    <option value="">1호</option>
+                                    <option value="">2호</option>
+                                    <option value="">3호</option>
+                                  </select>
+                                </div>
+                                <div class="basic-select square">
+                                  <select name="" id="">
+                                    <option value="">초1</option>
+                                    <option value="">초2</option>
+                                    <option value="">초3</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="student-badge" data-name="김호일">
+                                <span class="badge-name">김호일
+                                </span>
+                                <span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호이">
+                                <span class="badge-name">김호이
+                                </span><span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호삼">
+                                <span class="badge-name">김호삼
+                                </span><span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호사">
+                                <span class="badge-name">김호사
+                                </span><span class="badge-close"></span>
+                              </div>
+                              <div class="student-badge" data-name="김호오">
+                                <span class="badge-name">김호오
+                                </span><span class="badge-close"></span>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="time-tab-content" id="tue">
+                      <p>화요일 데이터</p>
+                    </div>
+                    <div class="time-tab-content" id="wed">
+                      <p>수요일 데이터</p>
+                    </div>
+                    <div class="time-tab-content" id="thu">
+                      <p>목요일 데이터</p>
+                    </div>
+                    <div class="time-tab-content" id="fri">
+                      <p>금요일 데이터</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="student-search join-group">
-              <input type="text" id="student-name" name="studentName" placeholder="이름으로 검색">
-            </div>
-            <div class="time-order">
-              <div></div>
-              <div class="basic-select time-select">
-                <select name="timeLine" id="time-line">
-                  <option value="lately">최신 등록순</option>
-                  <option value="past">과거 등록순</option>
-                </select>
-              </div>
-            </div>
-            <div class="table-frame time-chocie-frame">
-              <table class="basic-table">
-                <thead>
-                  <tr>
-                    <th>이름</th>
-                    <th>학년</th>
-                    <th>수업 주차 선택</th>
-                  </tr>
-                </thead>
-                <tbody id="">
-                  <colgroup>
-                    <col width="20%">
-                    <col width="20%">
-                    <col width="60%">
-                  </colgroup>
-                  <tr>
-                    <td>김호호</td>
-                    <td>초1</td>
-                    <td>
-                      <div class="radio-group">
-                        <input type="radio" id="1-week" name="weeks" value="1-week" checked>
-                        <label for="1-week">1주</label>
-                        
-                        <input type="radio" id="2-week" name="weeks" value="2-week">
-                        <label for="2-week">2주</label>
-                        
-                        <input type="radio" id="3-week" name="weeks" value="3-week">
-                        <label for="3-week">3주</label>
-                        
-                        <input type="radio" id="4-week" name="weeks" value="4-week">
-                        <label for="4-week">4주</label>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>김호호</td>
-                    <td>초1</td>
-                    <td>
-
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>김호호</td>
-                    <td>초1</td>
-                    <td>
-
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>김호호</td>
-                    <td>초1</td>
-                    <td>
-
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>김호호</td>
-                    <td>초1</td>
-                    <td>
-
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>김호호</td>
-                    <td>초1</td>
-                    <td>
-
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>김호호</td>
-                    <td>초1</td>
-                    <td>
-
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>김호호</td>
-                    <td>초1</td>
-                    <td>
-
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>김호호</td>
-                    <td>초1</td>
-                    <td>
-
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>김호호</td>
-                    <td>초1</td>
-                    <td>
-
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>김호호</td>
-                    <td>초1</td>
-                    <td>
-
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>김호호</td>
-                    <td>초1</td>
-                    <td>
-
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>김호호</td>
-                    <td>초1</td>
-                    <td>
-
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </section>
+            </section>
+          </div>
         </div>
       </main>
-    </div>
-  </div>
-  <!-- modal -->
-  <div class="modal time-change-modal">
-    <div class="modal-content time-change-modal-content">
-      <div class="modal-header line-modal-header">
-        <h2 class="icon-text-frame">
-          <div class="blackboard-icon">
-            <img src="image/blackboard-icon.png" alt="">
-          </div>관리자 추가
-        </h2>
-        <a href="#" class="btn-close"></a>
-      </div>
-      <div class="modal-notice">
-        <div class="modal-frame manager-add">
-          <div class="radio-group">
-            <input type="radio" name="timeInfo" id="prev-info" checked>
-            <label for="prev-info">이전 달 정보 불러오기</label>
-            <input type="radio" name="timeInfo" id="time-new-regist">
-            <label for="time-new-regist">새로 등록하기</label>
-          </div>
-          <div class="table-frame ma-modal">
-            <table class="time-table time-adjust-table">
-              <thead>
-                <tr>
-                  <th>요일</th>
-                  <th>교시</th>
-                  <th>시작시간</th>
-                  <th>종료시간</th>
-                  <th>과목</th>
-                  <th>교재</th>
-                  <th>학년</th>
-                </tr>
-              </thead>
-              <tbody>
-                <!-- 월 -->
-                <tr>
-                  <td rowspan="6">월</td>
-                  <td>1</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1호">1호</option>
-                        <option value="2호">2호</option>
-                        <option value="3호">3호</option>
-                        <option value="4호">4호</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <!-- 화 -->
-                <tr>
-                  <td rowspan="6">화</td>
-                  <td>1</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1호">1호</option>
-                        <option value="2호">2호</option>
-                        <option value="3호">3호</option>
-                        <option value="4호">4호</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <!-- 수 -->
-                <tr>
-                  <td rowspan="6">수</td>
-                  <td>1</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1호">1호</option>
-                        <option value="2호">2호</option>
-                        <option value="3호">3호</option>
-                        <option value="4호">4호</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <!-- 목 -->
-                <tr>
-                  <td rowspan="6">목</td>
-                  <td>1</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1호">1호</option>
-                        <option value="2호">2호</option>
-                        <option value="3호">3호</option>
-                        <option value="4호">4호</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <!-- 금 -->
-                <tr>
-                  <td rowspan="6">금</td>
-                  <td>1</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1호">1호</option>
-                        <option value="2호">2호</option>
-                        <option value="3호">3호</option>
-                        <option value="4호">4호</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="time-picker">
-                      <input type="time" class="date-input" value="">
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select name="" id="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="">초등수재</option>
-                        <option value="">초등천재</option>
-                        <option value="">초등박사</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="basic-select">
-                      <select id="" name="">
-                        <option value="" disabled selected hidden>선택해주세요</option>
-                        <option value="1">1학년</option>
-                        <option value="2">2학년</option>
-                        <option value="3">3학년</option>
-                        <option value="4">4학년</option>
-                        <option value="5">5학년</option>
-                        <option value="6">6학년</option>
-                      </select>
-                    </div>
-                  </td>
-                </tr>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="save-btn-frame">
-            <button type="submit" class="save-btn">저장하기</button>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </body>
