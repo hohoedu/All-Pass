@@ -11,8 +11,8 @@ for (let i = 0; i < menu.length; i++) {
 $(document).ready(function() {
   /* ====== conslut.html ====== */
   // modal
-  $('.counsel-button, .new-regist').click(function() {
-    $('.modal').fadeIn()
+  $('.counsel-button, #student-tbody tr').click(function() {
+    $('.student-modal').fadeIn()
   });
   $('.btn-close').click(function() {
     $('.modal').fadeOut();
@@ -114,7 +114,28 @@ $(document).ready(function() {
     $('.status-buttons .btn-status').click(function() {
       $('.reason-input').addClass('active');
     })
-    
+    // join
+    $('.new-regist').click(function() {
+      window.open(
+        'join.html',
+        'joinPopup',
+        'width=auto,height=auto,scrollbars=yes,resizable=yes'
+      );
+    });
+    // caleneder
+    // 날짜 선택 시 div 안에 반영
+    $('#birth-date').on('change', function () {
+      const val = this.value; // yyyy-mm-dd
+      if (val) {
+        const formatted = formatKoreanDate(val);
+        $('.birth-display').text(formatted);
+      }
+    });
+    const initVal = $('#birth-date').val();
+    if (initVal) {
+      $('.birth-display').text(formatKoreanDate(initVal));
+    }
+
 
     /* ====== student-inout.html ====== */
     $('.icon-btn').on('click', function () {
@@ -130,6 +151,15 @@ $(document).ready(function() {
     $('.remarks').click(function() {
       $('.remarks-modal').fadeIn();
     });
+    $('.class-guide').click(function() {
+      $('.class-guide-modal').fadeIn();
+    });
+    // 시간 선택 시 표시되는 텍스트 업데이트
+    $('.timepicker').on('input', function () {
+      const timeValue = $(this).val(); // ex: "14:30"
+      $(this).siblings('.display-time').text(timeValue || '--:--');
+    });
+
     // class-guide modal
     $('.class-guide').click(function() {
       $('.calss-guide-modal').fadeIn();
@@ -147,6 +177,21 @@ $(document).ready(function() {
       document.getElementById(tabId).classList.add('active');
     });
   });
+    // 주차 버튼
+    $('.week-btn').click(function () {
+      $('.week-btn').removeClass('active');
+      $(this).addClass('active');
+    });
+    // 클래스 버튼
+    $('.class-btn').click(function () {
+      $('.class-btn').removeClass('active');
+      $(this).addClass('active');
+    });
+    // 컨설트 버튼
+    $('.counsel-type button').click(function () {
+      $('.counsel-type button').removeClass('active');
+      $(this).addClass('active');
+    });
 
     /* ====== class-timetable.html ====== */
     // class-timetable tab
