@@ -666,17 +666,17 @@
                     
                       <tr>
                         <th>생년월일</th>
-                        <td class="icon-field">
-                          <div class="birth-display"></div> <!-- 날짜 표시 영역 -->
+                        <td class="icon-field day-picker" style="position: relative;">
+                          <div class="day-display"></div> <!-- 표시 영역 -->
                           <div>
-                            <input type="date" class="hidden-date" id="birth-date">
-                            <button type="button" class="icon-btn" onclick="document.getElementById('birth-date').showPicker()">
-                              <img src="image/calendar.png" alt="달력 아이콘">
+                            <input type="date" class="birth-input hidden-picker" />
+                            <button type="button" class="icon-btn birth-btn">
+                              <img src="image/calendar.png" alt="달력 아이콘" />
                             </button>
                           </div>
                         </td>
                         <th>성별</th>
-                        <td>
+                        <td class="choose-group">
                           <button type="button" class="btn-choose" data-value="남자">남자</button>
                           <button type="button" class="btn-choose active" data-value="여자">여자</button>
                           <input type="hidden" name="gender" value="여자">
@@ -713,7 +713,7 @@
                           <input type="tel" name="parentPhone" value="010-1234-5678">
                         </td>
                         <th>학생과의 관계</th>
-                        <td>
+                        <td class="choose-group">
                           <button type="button" class="btn-choose" data-value="부">부</button>
                           <button type="button" class="btn-choose active" data-value="모">모</button>
                           <button type="button" class="btn-choose" data-value="기타">기타</button>
@@ -729,22 +729,22 @@
                     <tbody>
                       <tr>
                         <th>한자 입회</th>
-                        <td class="icon-field">
-                          <div class="date-display">2025년 6월 4일</div> <!-- 표시용 -->
+                        <td class="icon-field day-picker" style="position: relative;">
+                          <div class="day-display"></div> <!-- 표시 영역 -->
                           <div>
-                            <input type="date" class="hidden-date date-input" data-target=".hanja-date">
-                            <button class="icon-btn" onclick="this.previousElementSibling.showPicker()">
-                              <img src="image/calendar.png" alt="달력 아이콘">
+                            <input type="date" class="birth-input hidden-picker" />
+                            <button type="button" class="icon-btn birth-btn">
+                              <img src="image/calendar.png" alt="달력 아이콘" />
                             </button>
                           </div>
                         </td>
                         <th>독서 입회</th>
-                        <td class="icon-field">
-                          <div class="date-display">2025년 2월 20일</div> <!-- 표시용 -->
+                        <td class="icon-field day-picker" style="position: relative;">
+                          <div class="day-display"></div> <!-- 표시 영역 -->
                           <div>
-                            <input type="date" class="hidden-date date-input" data-target=".reading-date">
-                            <button class="icon-btn" onclick="this.previousElementSibling.showPicker()">
-                              <img src="image/calendar.png" alt="달력 아이콘">
+                            <input type="date" class="birth-input hidden-picker" />
+                            <button type="button" class="icon-btn birth-btn">
+                              <img src="image/calendar.png" alt="달력 아이콘" />
                             </button>
                           </div>
                         </td>
@@ -778,11 +778,10 @@
                       </td>
                       <th>수강 상태</th>
                       <td>
-                        <div>
-                          <input type="radio" name="hanjaStatus" id="study-yes" value="수강" checked>
-                          <label for="study-yes" class="btn-choose active">수강</label>
-                          <input type="radio" name="hanjaStatus" id="study-no" value="미수강">
-                          <label for="study-no" class="btn-choose">미수강</label>
+                        <div class="choose-group">
+                          <button class="btn-choose active" data-value="수강">수강</button>
+                          <button class="btn-choose" data-value="미수강">미수강</button>
+                          <input type="hidden" name="status" value="수강" />
                         </div>
                       </td>
                     </tr>
@@ -792,12 +791,12 @@
                         <input type="text" name="teacherName" value="이하정">
                       </td>
                       <th>시작일자</th>
-                      <td class="icon-field">
-                        <div class="date-display">2025년 6월 4일</div>
+                      <td class="icon-field day-picker" style="position: relative;">
+                        <div class="day-display"></div> <!-- 표시 영역 -->
                         <div>
-                          <input type="date" class="hidden-date date-input" name="startDate" value="2025-06-04" data-target=".date-display">
-                          <button class="icon-btn" onclick="this.previousElementSibling.showPicker()">
-                            <img src="image/calendar.png" alt="달력 아이콘">
+                          <input type="date" class="birth-input hidden-picker" />
+                          <button type="button" class="icon-btn birth-btn">
+                            <img src="image/calendar.png" alt="달력 아이콘" />
                           </button>
                         </div>
                       </td>
@@ -832,9 +831,10 @@
                       </td>
                       <th>수강 상태</th>
                       <td>
-                        <div>
-                          <button class="btn-choose active">수강</button>
-                          <button class="btn-choose">미수강</button>
+                        <div class="choose-group">
+                          <button class="btn-choose active" data-value="수강">수강</button>
+                          <button class="btn-choose" data-value="미수강">미수강</button>
+                          <input type="hidden" name="status" value="수강" />
                         </div>
                       </td>
                     </tr>
@@ -842,12 +842,12 @@
                       <th>담당 선생님</th>
                       <td><span>유슬기</span></td>
                       <th>시작일자</th>
-                      <td class="icon-field">
-                        <span>2025년 6월 4일</span>
+                      <td class="icon-field day-picker" style="position: relative;">
+                        <div class="day-display"></div> <!-- 표시 영역 -->
                         <div>
-                          <input type="date" class="hidden-date">
-                          <button class="icon-btn" onclick="document.getElementById('birth-date').showPicker()">
-                            <img src="image/calendar.png" alt="달력 아이콘">
+                          <input type="date" class="birth-input hidden-picker" />
+                          <button type="button" class="icon-btn birth-btn">
+                            <img src="image/calendar.png" alt="달력 아이콘" />
                           </button>
                         </div>
                       </td>
@@ -950,7 +950,7 @@
             <div class="modal-scroll">
               <div class="card-common" style="border: none;">
                 <div class="small-title" style="margin-bottom: 30px;">상담내역</div>
-                <div class="table-frame">
+                <div class="table-frame bt">
                   <table class="basic-table content-table">
                     <colgroup>
                       <col width="20%">

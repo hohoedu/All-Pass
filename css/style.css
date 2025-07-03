@@ -19,6 +19,7 @@ body, textarea {
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: normal;
   color: #222;
+  overflow-x: hidden;
 }
 body {
   background-color: #fff;
@@ -37,6 +38,7 @@ button,
 input, select {
   outline: none;
   border: none;
+  font-size: 16px;
 }
 button {
   cursor: pointer;
@@ -175,6 +177,9 @@ textarea::-webkit-scrollbar-thumb:hover,
   background: #d5dfed;
   cursor: pointer;
 }
+.modal-scroll {
+  overflow-x: hidden;
+}
 /* table yellow hover */
 .yh tbody tr:hover {
   background: #FFD236;
@@ -244,6 +249,12 @@ input[type="text"]:focus {
   outline: none;
   box-shadow: 0 0 3px rgba(46, 71, 197, 0.5);
   transition: box-shadow 0.3s ease;
+}
+.time-input {
+  border: 1px solid #bcbec1;
+  background: #FFFBEB;
+  border-radius: 5px;
+  height: 37px;
 }
 .basic-input,
 .basic-select select,
@@ -486,6 +497,39 @@ table .normal-checkbox {
 }
 .class-guide {
   background: #ee4d79;
+
+}/* 아이콘 달력 */
+.icon-btn {
+  background: #F6F0E3;
+  border-radius: 5px;
+  padding: 6px 8px;
+  border: none;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.icon-btn img {
+  width: 14px;
+  margin-bottom: -3px;
+}
+.icon-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  height: 100%;
+}
+.hidden-picker {
+  position: absolute;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  pointer-events: none;
+  width: auto;
+  height: auto;
+  z-index: 1000;
+}
+.selected-datetime {
+  padding-left: 5px;
 }
 
 /* ======================= login page ======================= */
@@ -999,6 +1043,7 @@ textarea {
 }
 .sidebar {
   height: 100%;
+  transition: .3s ease;
 }
 .sidebar-frame {
   display: flex;
@@ -1022,6 +1067,7 @@ textarea {
   position: relative;
   width: 127px;
   z-index: 10000;
+  transition: width 0.3s ease;
 }
 .sidebar-right.collapsed {
   width: 0 !important;
@@ -1793,6 +1839,9 @@ textarea {
 #tab2 .save-btn {
   margin-top: 0px;
 }
+#tab2 table td {
+  height: 67px;
+}
 .han-logo,
 .book-logo {
   display: flex;
@@ -1844,6 +1893,10 @@ textarea {
 }
 #tab3 .title {
   margin-top: 20px;
+}
+#tab3 select,
+#tab3 select option {
+  font-size: 16px;
 }
 /* calendar */
 .calendar-container {
@@ -2139,9 +2192,9 @@ textarea {
   left: 0;
   width: 100%;
   height: 100vh;
-  /* display: none; */
+  display: none;
   z-index: 100;
-  display: block;
+  /* display: block; */
 }
 .modal > div {
   background: #fff;
@@ -2283,23 +2336,7 @@ textarea {
   vertical-align: middle;
   min-height: 63px;
 }
-.icon-btn {
-  background: #F6F0E3;
-  border-radius: 5px;
-  padding: 6px 8px;
-  border: none;
-  margin-left: 10px;
-  vertical-align: middle;
-}
-.icon-btn img {
-  width: 14px;
-  margin-bottom: -3px;
-}
-.icon-field {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+
 .book-fee span {
   color: #c1c1c1;
 }
@@ -3604,42 +3641,19 @@ input[type="time" i] {
   font-size: 14px;
 }
 
-/* ======================= class page ======================= */
-.book-list {
-  width: 100%;
-}
-.makeup-section {
+/* ======================= supplement page ======================= */
+.sup-left {
   flex: 1;
 }
-.online-section {
+.sup-right {
   flex: 1;
 }
-.makeup-search {
-  display: flex;
-  width: 80%;
-  align-items: center;
-  gap: 10px;
+.last-modify {
+  color: #848484;
+  margin: auto;
 }
-.makeup-search .date-input {
-  width: 30%;
-}
-.makeup-select {
-  display: flex;
-  justify-content: flex-end;
-}
-.makeup-select .basic-select {
-  width: 100px;
-}
-.makeup-table {
-  max-height: 500px;
-}
-.makeup-done {
-  margin-top: 10px;
-  color: gray;
-  font-size: 14px;
-}
-.online-search {
-  width: 30%;
+.sup-left .icon-field {
+  width: 160px;
 }
 
 

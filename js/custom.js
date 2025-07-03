@@ -122,19 +122,95 @@ $(document).ready(function() {
         'width=auto,height=auto,scrollbars=yes,resizable=yes'
       );
     });
-    // caleneder
-    // 날짜 선택 시 div 안에 반영
-    $('#birth-date').on('change', function () {
-      const val = this.value; // yyyy-mm-dd
-      if (val) {
-        const formatted = formatKoreanDate(val);
-        $('.birth-display').text(formatted);
-      }
+    // caleneder (년월)
+    document.querySelectorAll('.month-today').forEach(header => {
+      const input = header.querySelector('.hidden-date');
+      const trigger = header.querySelector('.calendar-open');
+      const display = header.querySelector('.current-month');
+    
+      // 초기값: 오늘 날짜의 연/월 표시
+      const today = new Date();
+      const initialText = `${today.getFullYear()}년 ${today.getMonth() + 1}월`;
+      display.textContent = initialText;
+    
+      // 버튼 클릭 → 달력 열기
+      trigger.addEventListener('click', e => {
+        e.preventDefault();
+        input.showPicker();
+      });
+    
+      // 날짜 선택 시 → 연/월만 표시
+      input.addEventListener('change', () => {
+        const date = new Date(input.value);
+        if (!isNaN(date)) {
+          const year = date.getFullYear();
+          const month = date.getMonth() + 1;
+          display.textContent = `${year}년 ${month}월`;
+        }
+      });
     });
-    const initVal = $('#birth-date').val();
-    if (initVal) {
-      $('.birth-display').text(formatKoreanDate(initVal));
-    }
+
+    // calender2 (연월시분초)
+    document.querySelectorAll('.icon-field.time-input.cal-adjust').forEach(picker => {
+      const input = picker.querySelector('.datetime-input');
+      const trigger = picker.querySelector('.calendar-btn');
+      const display = picker.querySelector('.selected-datetime');
+      
+      trigger.addEventListener('click', function (e) {
+        e.preventDefault();
+        input.showPicker();
+      });
+      
+      input.addEventListener('change', function () {
+        const selected = this.value.replace('T', ' ');
+        display.textContent = selected;
+      });
+    });
+    
+    // calender3 (연월시분)
+    document.querySelectorAll('.day-picker').forEach(picker => {
+      const input = picker.querySelector('.birth-input');
+      const trigger = picker.querySelector('.birth-btn');
+      const display = picker.querySelector('.day-display');
+    
+      display.textContent = "yyyy년 m월 d일";
+    
+      trigger.addEventListener('click', e => {
+        e.preventDefault();
+        input.showPicker();
+      });
+    
+      // 선택 시 YYYY년 M월 D일 포맷으로 표시
+      input.addEventListener('change', () => {
+        const date = new Date(input.value);
+        if (!isNaN(date)) {
+          const year = date.getFullYear();
+          const month = date.getMonth() + 1;
+          const day = date.getDate();
+          display.textContent = `${year}년 ${month}월 ${day}일`;
+        }
+      });
+    });
+    
+    // active 파란색 변경
+    document.querySelectorAll('.choose-group').forEach(group => {
+      const buttons = group.querySelectorAll('.btn-choose');
+      const hiddenInput = group.querySelector('input[type="hidden"]');
+    
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          // 1. 기존 active 모두 제거
+          buttons.forEach(btn => btn.classList.remove('active'));
+          // 2. 클릭한 버튼에 active 추가
+          button.classList.add('active');
+          // 3. hidden input 값 업데이트
+          if (hiddenInput) {
+            hiddenInput.value = button.dataset.value;
+          }
+        });
+      });
+    });
+    
 
 
     /* ====== student-inout.html ====== */
