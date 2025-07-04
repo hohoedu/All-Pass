@@ -210,7 +210,13 @@ $(document).ready(function() {
         });
       });
     });
-    
+
+
+    /* ====== monthly-test.html ====== */
+    // modal
+    $('.pre-search').click(function() {
+      $('.modal').fadeIn();
+    });
 
 
     /* ====== student-inout.html ====== */
@@ -218,7 +224,7 @@ $(document).ready(function() {
       $(this).siblings('input[type="date"]')[0].showPicker();
     });
     // btn-inout modal
-    $('#btn-inout').click(function() {
+    $('#btn-inout, #preSearch').click(function() {
       $('.modal').fadeIn();
     });
     

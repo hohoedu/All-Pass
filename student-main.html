@@ -777,12 +777,10 @@
                         </div>
                       </td>
                       <th>수강 상태</th>
-                      <td>
-                        <div class="choose-group">
-                          <button class="btn-choose active" data-value="수강">수강</button>
-                          <button class="btn-choose" data-value="미수강">미수강</button>
-                          <input type="hidden" name="status" value="수강" />
-                        </div>
+                      <td class="choose-group">
+                        <button type="button" class="btn-choose active" data-value="수강">수강</button>
+                        <button type="button" class="btn-choose" data-value="미수강">미수강</button>
+                        <input type="hidden" name="status" value="수강" />
                       </td>
                     </tr>
                     <tr>
@@ -803,12 +801,12 @@
                     </tr>
                     <tr>
                       <th>교육비</th>
-                      <td class="icon-field">
-                        <input type="number" name="tuition" value="100000"> 원
+                      <td>
+                        <input type="number" name="tuition" class="no-spin">
                       </td>
                       <th>교재비</th>
                       <td>
-                        <input type="number" name="bookFee" value="15000"> 원
+                        <input type="number" name="bookFee" class="no-spin">
                       </td>
                     </tr>
                   </tbody>
@@ -830,12 +828,10 @@
                         </div>
                       </td>
                       <th>수강 상태</th>
-                      <td>
-                        <div class="choose-group">
-                          <button class="btn-choose active" data-value="수강">수강</button>
-                          <button class="btn-choose" data-value="미수강">미수강</button>
-                          <input type="hidden" name="status" value="수강" />
-                        </div>
+                      <td class="choose-group">
+                        <button type="button" class="btn-choose active" data-value="수강">수강</button>
+                        <button type="button" class="btn-choose" data-value="미수강">미수강</button>
+                        <input type="hidden" name="status" value="수강" />
                       </td>
                     </tr>
                     <tr>
@@ -854,12 +850,12 @@
                     </tr>
                     <tr>
                       <th>교육비</th>
-                      <td class="icon-field">
-                        <span>100,000원</span>
+                      <td>
+                        <input type="number" name="tuition" class="no-spin">
                       </td>
                       <th>교재비</th>
-                      <td class="book-fee">
-                        <span>15,000원</span>
+                      <td>
+                        <input type="number" name="bookFee" class="no-spin">
                       </td>
                     </tr>
                   </tbody>
