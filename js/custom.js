@@ -11,7 +11,7 @@ for (let i = 0; i < menu.length; i++) {
 $(document).ready(function() {
   /* ====== conslut.html ====== */
   // modal
-  $('.counsel-button, #student-tbody tr').click(function() {
+  $('.counsel-button, #student-tbody td').click(function() {
     $('.student-modal').fadeIn()
   });
   $('.btn-close').click(function() {
@@ -41,23 +41,71 @@ $(document).ready(function() {
     
     /* ====== manage-sms.html ====== */
     // word-modify modal
-    $('#word-modify').click(function() {
-      $('.sms-modal').fadeIn();
+    $('.notice-regist').click(function() {
+      $('.modal').fadeIn();
     });
-    // point-charge modal
-    $('#check-point').click(function() {
-      $('.point-modal').fadeIn();
-    });
+
+    // ============== 이미지 추가 ===================
+    const imageInput = document.getElementById('imageInput');
+    const uploadBtn = document.getElementById('uploadBtn');
+    const removeBtn = document.getElementById('removeBtn');
+    const imageNameWrapper = document.getElementById('imageNameWrapper');
+    const fileNameSpan = document.getElementById('fileName');
+
+    if (imageInput && uploadBtn && removeBtn && imageNameWrapper && fileNameSpan) {
+      uploadBtn.addEventListener('click', () => {
+        imageInput.click();
+      });
     
+      imageInput.addEventListener('change', () => {
+        if (imageInput.files.length > 0) {
+          fileNameSpan.textContent = imageInput.files[0].name;
+          imageNameWrapper.style.display = 'flex';
+        }
+      });
+    
+      removeBtn.addEventListener('click', () => {
+        imageInput.value = '';
+        imageNameWrapper.style.display = 'none';
+        fileNameSpan.textContent = '';
+      });
+    }
+
+
+   //================= 아이콘 custom select =================
+const select = document.getElementById('noticeSelect');
+
+if (select) {
+  const selected = select.querySelector('.selected');
+  const options = select.querySelectorAll('.select-options li');
+  const hiddenInput = document.getElementById('noticeValue');
+
+  selected.addEventListener('click', () => {
+    select.classList.toggle('open');
+  });
+
+  options.forEach(option => {
+    option.addEventListener('click', () => {
+      const html = option.innerHTML;
+      const value = option.getAttribute('data-value');
+
+      selected.innerHTML = html + '<span class="arrow"><i class="xi-angle-down"></i></span>';
+      hiddenInput.value = value;
+
+      select.classList.remove('open');
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!select.contains(e.target)) {
+      select.classList.remove('open');
+    }
+  });
+}
+
+
+
     /* ====== sidebar.html ====== */
-    // side bar menu toggle
-    // $(document).on('click', '.sidebar-item .menu-toggle', function() {
-    //   $(this).next('.submenu').stop().slideToggle(300);
-    //   $(this).toggleClass('active');
-    // });
-    // $('.sidebar-item .submenu').click(function(){
-    //   $(this).stop().slideUp(300);
-    // });
       $(document).ready(function () {
         $(".menu-toggle").click(function() {
           // 왼쪽 메뉴 상태 초기화
@@ -212,10 +260,34 @@ $(document).ready(function() {
     });
 
 
+    /* ====== pay-edu.html ====== */
+  // modal
+  $('.pay-table td').click(function (e) {
+    // 클릭한 대상이 체크박스면 함수 종료
+    if ($(e.target).is('input[type="checkbox"]')) return;
+    $('.personal-modal').fadeIn();
+  });
+  
+  $('.btn-close').click(function() {
+    $('.personal-modal').fadeOut();
+  });
+  // modal
+  $('#btn-pay').click(function() {
+    $('.tuition-modal').fadeIn()
+  });
+  $('.btn-close').click(function() {
+    $('.tuition-modal').fadeOut();
+  });
+
+
+
     /* ====== monthly-test.html ====== */
     // modal
     $('.pre-search').click(function() {
-      $('.modal').fadeIn();
+      $('.pre-modal').fadeIn();
+    });
+    $('.class-comment').click(function() {
+      $('.send-info-modal').fadeIn();
     });
 
 

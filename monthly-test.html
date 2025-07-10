@@ -43,7 +43,7 @@
                 </div>
               </div>
               <div class="month-header">
-                <div class="month-title">
+                <div class="month-title month-today">
                   <span class="current-month">2025년 6월</span>
                   <div style="position: relative;">
                     <input type="date" class="hidden-date" />
@@ -148,14 +148,16 @@
                             </div>
                           </div>
                         </td>
-                        <td>
+                        <td class="cell-middle">
                           <div class="after-comment">
                             <textarea class="comment-text" placeholder="내용을 입력해주세요.">{name} 학생은 어휘의 정의를 정확히 이해하고, 유사 단어 사이에서도 핵심 의미를 잘 구분 했습니다. 다만, 비슷한 자형의 한자들이 함게 제시될 때는 의미를 중심으로 구별하는 연습이 더 필요합니다.</textarea>
                           </div>
                         </td>
                         <td>
-                          <div class="after-comment">
-                            <textarea class="comment-text" placeholder="내용을 입력해주세요."></textarea>
+                          <div class="cell-middle">
+                            <div class="after-comment">
+                              <textarea class="comment-text" placeholder="내용을 입력해주세요."></textarea>
+                            </div>
                           </div>
                         </td>
                         <td class="send-ornot">
@@ -187,14 +189,16 @@
                             </div>
                           </div>
                         </td>
-                        <td>
+                        <td class="cell-middle">
                           <div class="after-comment">
                             <textarea class="comment-text" placeholder="내용을 입력해주세요.">{name} 학생은 어휘의 정의를 정확히 이해하고, 유사 단어 사이에서도 핵심 의미를 잘 구분 했습니다. 다만, 비슷한 자형의 한자들이 함게 제시될 때는 의미를 중심으로 구별하는 연습이 더 필요합니다.</textarea>
                           </div>
                         </td>
                         <td>
-                          <div class="after-comment">
-                            <textarea class="comment-text" placeholder="내용을 입력해주세요."></textarea>
+                          <div class="cell-middle">
+                            <div class="after-comment">
+                              <textarea class="comment-text" placeholder="내용을 입력해주세요."></textarea>
+                            </div>
                           </div>
                         </td>
                         <td class="send-ornot">
@@ -226,14 +230,16 @@
                             </div>
                           </div>
                         </td>
-                        <td>
+                        <td class="cell-middle">
                           <div class="after-comment">
                             <textarea class="comment-text" placeholder="내용을 입력해주세요.">{name} 학생은 어휘의 정의를 정확히 이해하고, 유사 단어 사이에서도 핵심 의미를 잘 구분 했습니다. 다만, 비슷한 자형의 한자들이 함게 제시될 때는 의미를 중심으로 구별하는 연습이 더 필요합니다.</textarea>
                           </div>
                         </td>
                         <td>
-                          <div class="after-comment">
-                            <textarea class="comment-text" placeholder="내용을 입력해주세요."></textarea>
+                          <div class="cell-middle">
+                            <div class="after-comment">
+                              <textarea class="comment-text" placeholder="내용을 입력해주세요."></textarea>
+                            </div>
                           </div>
                         </td>
                         <td class="send-ornot">
@@ -256,8 +262,8 @@
   <!-- section: 월간평가 modal -->
   <div class="modal pre-modal">
     <div class="pre-view">
-      <div class="remarks-frame">
-          <div class="m-t-line">
+      <div class="remarks-frame mf">
+          <div class="m-t-line" style="margin-top: 10px;">
             <div>
               <div class="pre-title">김호호 학생의 월간평가 미리보기</div>
             </div>
@@ -269,13 +275,153 @@
                 <li>이 평가는 <strong>한자 및 어휘의 정확한 이해와</strong></li>
                 <li><strong>일상 활용 능력</strong>을 종합적으로 확인하였습니다.</li>
               </ul>
+                <div class="table-frame bt">
+                  <table class="basic-table pre-table stripe">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>문제 유형</th>
+                        <th>난이도</th>
+                        <th>정답</th>
+                      </tr>
+                    </thead>
+                    <tbody id="" class="stripe">
+                      <colgroup>
+                        <col width="20%">
+                        <col width="30%">
+                        <col width="30%">
+                        <col width="20%">
+                      </colgroup>
+                      <!-- tr 1번째 줄 -->
+                      <tr>
+                        <td>1</td>
+                        <td>뜻소리 구별하기</td>
+                        <td>★</td>
+                        <td>○</td>
+                      </tr>
+                      <!-- tr 2번째 줄 -->
+                      <tr>
+                        <td>2</td>
+                        <td>한자어 읽기</td>
+                        <td>★★★</td>
+                        <td>○</td>
+                      </tr>
+                      <!-- tr 3번째 줄 -->
+                      <tr>
+                        <td>3</td>
+                        <td>어휘 이해</td>
+                        <td>★★</td>
+                        <td>○</td>
+                      </tr>
+                      <!-- tr 4번째 줄 -->
+                      <tr>
+                        <td>4</td>
+                        <td>어휘 활용</td>
+                        <td>★</td>
+                        <td>○</td>
+                      </tr>
+                      <!-- tr 5번째 줄 -->
+                      <tr>
+                        <td>5</td>
+                        <td>한자의 쓰임 알기</td>
+                        <td>★★★</td>
+                        <td>X</td>
+                      </tr>
+                      <!-- tr 6번째 줄 -->
+                      <tr>
+                        <td>6</td>
+                        <td>의미 이해</td>
+                        <td>★★</td>
+                        <td>○</td>
+                      </tr>
+                      <!-- tr 7번째 줄 -->
+                      <tr>
+                        <td>7</td>
+                        <td>문장 읽기</td>
+                        <td>★★★★</td>
+                        <td>○</td>
+                      </tr>
+                      <!-- tr 8번째 줄 -->
+                      <tr>
+                        <td>8</td>
+                        <td>문장 이해</td>
+                        <td>★★★★★</td>
+                        <td>X</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
             </div>
             <div class="pre-right">
-
+              <div class="overall">
+                <div class="overall-top">
+                  <div class="overall-t">월간 평가 총평</div>
+                  <p>김호호 학생은 어휘의 정의를 정확히 이해하고, 
+                    유사 단어들 사이에서도 핵심 의미를 잘 
+                    구분했습니다.  다만, 비슷한 자형의 한자들이 
+                    함께 제시될 때는 의미를 중심으로 구별하는 
+                    연습이 더 필요합니다.</p>
+                </div>
+                <div class="overall-bottom">
+                  <div class="overall-t">월간 수업 코멘트</div>
+                  <p>김호호 학생은 어휘의 정의를 정확히 이해하고, 
+                    유사 단어들 사이에서도 핵심 의미를 잘 
+                    구분했습니다.  다만, 비슷한 자형의 한자들이 
+                    함께 제시될 때는 의미를 중심으로 구별하는 
+                    연습이 더 필요합니다.</p>
+                </div>
+              </div>
             </div>
           </div>
       </div>
     </div>
   </div>
+
+  <!-- section: 확인해주세요 modal -->
+  <div class="modal result-modal">
+    <div class="information">
+      <div class="inform-frame">
+        <div class="m-t-line">
+          <div>
+            <div class="title">확인해주세요!</div>
+          </div>
+          <a href="#" class="btn-close"></a>
+        </div>
+        <p class="inform-desc">
+          결과보기를 다시 불러올 경우,<br>
+          작성되어있는 <span>월간평가 총평이 모두 초기화</span>됩니다.<br>
+          결과보기를 리셋하시겠습니까?
+        </p>
+        <div class="save-btn-frame" style="margin-top: 10px;">
+          <button type="submit" class="save-btn gray" name="action" value="cancel">취소</button>
+          <button type="submit" class="save-btn" name="action" value="send">발송</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- section: 발송 안내 modal -->
+  <div class="modal send-info-modal">
+    <div class="information">
+      <div class="inform-frame">
+        <div class="m-t-line">
+          <div>
+            <div class="title">발송 안내</div>
+          </div>
+          <a href="#" class="btn-close"></a>
+        </div>
+        <p class="inform-desc">
+          작성된 내용을 저장하고<br>
+          선택하신 <span>2명</span>의 학생에게 월간평가 내용을 발송합니다.<br>
+          <small>(내용만 수정을 원하시는 경우 저장버튼을 눌러주세요.)</small>
+        </p>
+        <div class="save-btn-frame" style="margin-top: 10px;">
+          <button type="submit" class="save-btn gray" name="action" value="cancel">취소</button>
+          <button type="submit" class="save-btn" name="action" value="send">발송</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

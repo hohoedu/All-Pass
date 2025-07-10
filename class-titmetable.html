@@ -23,7 +23,7 @@
       <main class="main-info">
         <div class="student-frame time-regist-frame">
           <!-- section:top -->
-          <section class="class-info-section">
+          <section>
             <div class="class-desc">
               <div class="class-header">
                 <div class="common-title">
@@ -149,7 +149,7 @@
               </div>
             </section>
             <section class="student-pick-right">
-              <div class="table-frame student-pick-frame" style="border-top: none;">
+              <div class="table-frame " style="border-top: none;">
                 <div class="time-tab-menu">
                   <button class="time-tab-btn active" data-tab="mon">월</button>
                   <button class="time-tab-btn" data-tab="tue">화</button>
@@ -157,8 +157,7 @@
                   <button class="time-tab-btn" data-tab="thu">목</button>
                   <button class="time-tab-btn" data-tab="fri">금</button>
                 </div>
-                <div style="margin-top: 20px; border-top: 1px solid #494470;">
-                  <div class="table-frame time-table-frame">
+                  <div class="table-frame time-table-frame bt">
                     <div class="time-tab-content active" id="mon">
                       <table class="basic-table time-table stripe">
                         <colgroup>
@@ -170,7 +169,9 @@
                         </colgroup>
                         <thead>
                           <tr>
-                            <th></th>
+                            <th class="checkbox-group round">
+                                <input type="checkbox">
+                            </th>
                             <th>교시</th>
                             <th>시간</th>
                             <th>과목</th>
@@ -725,7 +726,6 @@
                       <p>금요일 데이터</p>
                     </div>
                   </div>
-                </div>
               </div>
             </section>
           </div>

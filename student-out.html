@@ -213,7 +213,7 @@
                           </tbody>
                         </table>
                       </div>
-                      <table class="basic-table yh table-foot">
+                      <table class="basic-table yh out-tfoot">
                         <colgroup>
                           <col width="20%">
                           <col width="15%">
@@ -222,18 +222,23 @@
                           <col width="15%">
                           <col width="15%">
                         </colgroup>
-                        <tfoot>
-                          <tr>
-                            <td>합계</td>
-                            <td>890</td>
-                            <td>49</td>
-                            <td>49</td>
-                            <td>157</td>
-                            <td>140</td>
-                          </tr>
-                        </tfoot>
+                        <div class="mt">
+                          <tfoot>
+                            <tr>
+                              <td>합계</td>
+                              <td>890</td>
+                              <td>49</td>
+                              <td>49</td>
+                              <td>157</td>
+                              <td>140</td>
+                            </tr>
+                          </tfoot>
+                        </div>
                       </table>
                     </div>
+                  </div>
+                  <div class="graduate">
+                    *졸업자: <span>5</span>명
                   </div>
                 </div>
                 <div class="stats-right">
@@ -298,24 +303,30 @@
                         datasets: datasets,
                       },
                       options: {
-                        responsive: true,
-                        plugins: {
-                          legend: { display: false },
-                          tooltip: {
-                            callbacks: {
-                              label: function (context) {
-                                return `${context.dataset.label}: ${context.parsed.y}`;
-                              }
+                      responsive: true,
+                      plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                          backgroundColor: 'rgba(0,0,0,0.5)',
+                          titleColor: '#fff',
+                          bodyColor: '#fff',
+                          borderRadius: 8,
+                          padding: 10,
+                          displayColors: true,
+                          callbacks: {
+                            label: function (context) {
+                              return `${context.dataset.label}: ${context.parsed.y}`;
                             }
                           }
-                        },
-                        scales: {
-                          y: {
-                            beginAtZero: true,
-                            ticks: { stepSize: 10 }
-                          }
+                        }
+                      },
+                      scales: {
+                        y: {
+                          beginAtZero: true,
+                          ticks: { stepSize: 10 }
                         }
                       }
+}
                     });
                   </script>
                 </div>
