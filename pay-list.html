@@ -24,9 +24,12 @@
           <section>
             <div class="common-title">
               <h2>월별 결제 내역</h2>
-              <div>
+              <div class="header-btns">
+                <div class="issue-payment common-btn">현금영수증 발행</div>
+                <div class="cancel-cash common-btn">현금영수증 취소</div>
                 <div class="cancel-payment common-btn">결제 취소</div>
                 <div class="add-payment common-btn">+ 납부내역 추가</div>
+                <div class="pay-save common-btn">검색</div>
               </div>
             </div>
             <div class="month-header">
@@ -71,18 +74,17 @@
             </div>
             <div class="bt">
               <div class="table-frame stu-info-t">
-                <table class="basic-table yh">
+                <table class="basic-table pay-list-t yh">
                   <colgroup>
                     <col width="5%">
-                    <col width="5%">
+                    <col width="4%">
+                    <col width="11%">
+                    <col width="7%">
+                    <col width="12%">
+                    <col width="23%">
+                    <col width="12%">
                     <col width="10%">
-                    <col width="10%">
-                    <col width="10%">
-                    <col width="10%">
-                    <col width="10%">
-                    <col width="10%">
-                    <col width="10%">
-                    <col width="10%">
+                    <col width="8%">
                   </colgroup>
                   <thead>
                     <tr>
@@ -92,13 +94,11 @@
                       <th>No</th>
                       <th><img src="image/sort.svg" alt="" class="svg-sort">결제일</th>
                       <th><img src="image/sort_checked.svg" alt="" class="svg-sort">이름</th>
-                      <th>청구항목</th>
-                      <th>원수강료</th>
+                      <th>청구 내역</th>
+                      <th>결제금액</th>
                       <th><img src="image/sort.svg" alt="" class="svg-sort">수납방법</th>
-                      <th>온라인 카드</th>
-                      <th>오프라인 카드</th>
-                      <th>현금/계좌이체</th>
                       <th><img src="image/sort.svg" alt="" class="svg-sort">잔여금액</th>
+                      <th><img src="image/sort.svg" alt="" class="svg-sort">현금영수증</th>
                     </tr>
                   </thead>
                   <tbody id="student-tbody" class="stripe">
@@ -107,315 +107,103 @@
                         <input type="checkbox">
                       </td>
                       <td>1</td>
-                      <td>2026-06-13 13:50</td>
-                      <td>김호일</td>
-                      <td>초등천재, 다움 교재비</td>
-                      <td class="origin">30,000</td>
-                      <td><button class="method-box card-offline">오프라인 카드</button></td>
+                      <td class="pay-day">2026-06-13 13:50</td>
+                      <td class="stu-name">김호일</td>
                       <td>
-                        <input type="text" name="onlineCard" value="0" class="money-input">
+                        <p class="ask-list">초등천재, 다움 교재비</p>
+                        <span class="origin">30,000</span>
                       </td>
                       <td>
-                        <input type="text" name="offlineCard" value="0" class="money-input">
+                        <div class="method-boxes">
+                          <button class="method-box card-offline">
+                            <span>오프라인 카드</span>
+                            <span class="total-amount">30,000</span>
+                          </button>
+                          <button class="method-box mthod-total">
+                            <span>합계</span>
+                            <span class="total-amount">30,000</span>
+                          </button>
+                        </div>
                       </td>
                       <td>
-                        <input type="text" name="cashTransfer" value="0" class="money-input">
+                        <div class="money-range">
+                          <input type="text" name="overpayment" value="0" class="money-input">
+                        </div>
                       </td>
                       <td>0</td>
+                      <td>
+                        <img src="image/bill1.png" class="bill-icon" alt="영수증아이콘">
+                      </td>
                     </tr>
                     <tr>
                       <td class="checkbox-group">
                         <input type="checkbox">
                       </td>
                       <td>1</td>
-                      <td>2026-06-13 13:50</td>
-                      <td>김호일</td>
-                      <td>초등천재, 다움 교재비</td>
-                      <td class="origin">30,000</td>
-                      <td><button class="method-box card-online">온라인 카드</button></td>
+                      <td class="pay-day">2026-06-13 13:50</td>
+                      <td class="stu-name">김호일</td>
                       <td>
-                        <input type="text" name="onlineCard" value="0" class="money-input">
+                        <p class="ask-list">초등천재, 다움 교재비</p>
+                        <span class="origin">30,000</span>
                       </td>
                       <td>
-                        <input type="text" name="offlineCard" value="0" class="money-input">
+                        <div class="method-boxes">
+                          <button class="method-box card-online">
+                            <span>온라인 카드</span>
+                            <span class="total-amount">30,000</span>
+                          </button>
+                          <button class="method-box mthod-total">
+                            <span>합계</span>
+                            <span class="total-amount">30,000</span>
+                          </button>
+                        </div>
                       </td>
                       <td>
-                        <input type="text" name="cashTransfer" value="0" class="money-input">
+                        <div class="money-range">
+                          <input type="text" name="overpayment" value="0" class="money-input">
+                        </div>
                       </td>
                       <td>0</td>
+                      <td>
+                        <img src="image/bill1.png" class="bill-icon" alt="영수증아이콘">
+                      </td>
                     </tr>
                     <tr>
                       <td class="checkbox-group">
                         <input type="checkbox">
                       </td>
                       <td>1</td>
-                      <td>2026-06-13 13:50</td>
-                      <td>김호일</td>
-                      <td>초등천재, 다움 교재비</td>
-                      <td class="origin">30,000</td>
-                      <td><button class="method-box cash-only">현금/계좌이체</button></td>
+                      <td class="pay-day">2026-06-13 13:50</td>
+                      <td class="stu-name">김호일</td>
                       <td>
-                        <input type="text" name="onlineCard" value="0" class="money-input">
+                        <p class="ask-list">초등천재, 다움 교재비</p>
+                        <span class="origin">30,000</span>
                       </td>
                       <td>
-                        <input type="text" name="offlineCard" value="0" class="money-input">
+                        <div class="method-boxes">
+                          <button class="method-box cash-only">
+                            <span>현금</span>
+                            <span class="total-amount">30,000</span>
+                          </button>
+                          <button class="method-box account-transfer">
+                            <span>현금</span>
+                            <span class="total-amount">30,000</span>
+                          </button>
+                          <button class="method-box mthod-total">
+                            <span>합계</span>
+                            <span class="total-amount">30,000</span>
+                          </button>
+                        </div>
                       </td>
                       <td>
-                        <input type="text" name="cashTransfer" value="0" class="money-input">
+                        <div class="money-range">
+                          <input type="text" name="overpayment" value="0" class="money-input">
+                        </div>
                       </td>
                       <td>0</td>
-                    </tr>
-                    <tr>
-                      <td class="checkbox-group">
-                        <input type="checkbox">
-                      </td>
-                      <td>1</td>
-                      <td>2026-06-13 13:50</td>
-                      <td>김호일</td>
-                      <td>초등천재, 다움 교재비</td>
-                      <td class="origin">30,000</td>
-                      <td><button class="method-box card-offline">오프라인 카드</button></td>
                       <td>
-                        <input type="text" name="onlineCard" value="0" class="money-input">
+                        <img src="image/bill1.png" class="bill-icon" alt="영수증아이콘">
                       </td>
-                      <td>
-                        <input type="text" name="offlineCard" value="0" class="money-input">
-                      </td>
-                      <td>
-                        <input type="text" name="cashTransfer" value="0" class="money-input">
-                      </td>
-                      <td>0</td>
-                    </tr>
-                    <tr>
-                      <td class="checkbox-group">
-                        <input type="checkbox">
-                      </td>
-                      <td>1</td>
-                      <td>2026-06-13 13:50</td>
-                      <td>김호일</td>
-                      <td>초등천재, 다움 교재비</td>
-                      <td class="origin">30,000</td>
-                      <td><button class="method-box card-online">온라인 카드</button></td>
-                      <td>
-                        <input type="text" name="onlineCard" value="0" class="money-input">
-                      </td>
-                      <td>
-                        <input type="text" name="offlineCard" value="0" class="money-input">
-                      </td>
-                      <td>
-                        <input type="text" name="cashTransfer" value="0" class="money-input">
-                      </td>
-                      <td>0</td>
-                    </tr>
-                    <tr>
-                      <td class="checkbox-group">
-                        <input type="checkbox">
-                      </td>
-                      <td>1</td>
-                      <td>2026-06-13 13:50</td>
-                      <td>김호일</td>
-                      <td>초등천재, 다움 교재비</td>
-                      <td class="origin">30,000</td>
-                      <td><button class="method-box cash-only">현금/계좌이체</button></td>
-                      <td>
-                        <input type="text" name="onlineCard" value="0" class="money-input">
-                      </td>
-                      <td>
-                        <input type="text" name="offlineCard" value="0" class="money-input">
-                      </td>
-                      <td>
-                        <input type="text" name="cashTransfer" value="0" class="money-input">
-                      </td>
-                      <td>0</td>
-                    </tr>
-                    <tr>
-                      <td class="checkbox-group">
-                        <input type="checkbox">
-                      </td>
-                      <td>1</td>
-                      <td>2026-06-13 13:50</td>
-                      <td>김호일</td>
-                      <td>초등천재, 다움 교재비</td>
-                      <td class="origin">30,000</td>
-                      <td><button class="method-box card-offline">오프라인 카드</button></td>
-                      <td>
-                        <input type="text" name="onlineCard" value="0" class="money-input">
-                      </td>
-                      <td>
-                        <input type="text" name="offlineCard" value="0" class="money-input">
-                      </td>
-                      <td>
-                        <input type="text" name="cashTransfer" value="0" class="money-input">
-                      </td>
-                      <td>0</td>
-                    </tr>
-                    <tr>
-                      <td class="checkbox-group">
-                        <input type="checkbox">
-                      </td>
-                      <td>1</td>
-                      <td>2026-06-13 13:50</td>
-                      <td>김호일</td>
-                      <td>초등천재, 다움 교재비</td>
-                      <td class="origin">30,000</td>
-                      <td><button class="method-box card-online">온라인 카드</button></td>
-                      <td>
-                        <input type="text" name="onlineCard" value="0" class="money-input">
-                      </td>
-                      <td>
-                        <input type="text" name="offlineCard" value="0" class="money-input">
-                      </td>
-                      <td>
-                        <input type="text" name="cashTransfer" value="0" class="money-input">
-                      </td>
-                      <td>0</td>
-                    </tr>
-                    <tr>
-                      <td class="checkbox-group">
-                        <input type="checkbox">
-                      </td>
-                      <td>1</td>
-                      <td>2026-06-13 13:50</td>
-                      <td>김호일</td>
-                      <td>초등천재, 다움 교재비</td>
-                      <td class="origin">30,000</td>
-                      <td><button class="method-box cash-only">현금/계좌이체</button></td>
-                      <td>
-                        <input type="text" name="onlineCard" value="0" class="money-input">
-                      </td>
-                      <td>
-                        <input type="text" name="offlineCard" value="0" class="money-input">
-                      </td>
-                      <td>
-                        <input type="text" name="cashTransfer" value="0" class="money-input">
-                      </td>
-                      <td>0</td>
-                    </tr>
-                    <tr>
-                      <td class="checkbox-group">
-                        <input type="checkbox">
-                      </td>
-                      <td>1</td>
-                      <td>2026-06-13 13:50</td>
-                      <td>김호일</td>
-                      <td>초등천재, 다움 교재비</td>
-                      <td class="origin">30,000</td>
-                      <td><button class="method-box card-offline">오프라인 카드</button></td>
-                      <td>
-                        <input type="text" name="onlineCard" value="0" class="money-input">
-                      </td>
-                      <td>
-                        <input type="text" name="offlineCard" value="0" class="money-input">
-                      </td>
-                      <td>
-                        <input type="text" name="cashTransfer" value="0" class="money-input">
-                      </td>
-                      <td>0</td>
-                    </tr>
-                    <tr>
-                      <td class="checkbox-group">
-                        <input type="checkbox">
-                      </td>
-                      <td>1</td>
-                      <td>2026-06-13 13:50</td>
-                      <td>김호일</td>
-                      <td>초등천재, 다움 교재비</td>
-                      <td class="origin">30,000</td>
-                      <td><button class="method-box card-online">온라인 카드</button></td>
-                      <td>
-                        <input type="text" name="onlineCard" value="0" class="money-input">
-                      </td>
-                      <td>
-                        <input type="text" name="offlineCard" value="0" class="money-input">
-                      </td>
-                      <td>
-                        <input type="text" name="cashTransfer" value="0" class="money-input">
-                      </td>
-                      <td>0</td>
-                    </tr>
-                    <tr>
-                      <td class="checkbox-group">
-                        <input type="checkbox">
-                      </td>
-                      <td>1</td>
-                      <td>2026-06-13 13:50</td>
-                      <td>김호일</td>
-                      <td>초등천재, 다움 교재비</td>
-                      <td class="origin">30,000</td>
-                      <td><button class="method-box cash-only">현금/계좌이체</button></td>
-                      <td>
-                        <input type="text" name="onlineCard" value="0" class="money-input">
-                      </td>
-                      <td>
-                        <input type="text" name="offlineCard" value="0" class="money-input">
-                      </td>
-                      <td>
-                        <input type="text" name="cashTransfer" value="0" class="money-input">
-                      </td>
-                      <td>0</td>
-                    </tr>
-                    <tr>
-                      <td class="checkbox-group">
-                        <input type="checkbox">
-                      </td>
-                      <td>1</td>
-                      <td>2026-06-13 13:50</td>
-                      <td>김호일</td>
-                      <td>초등천재, 다움 교재비</td>
-                      <td class="origin">30,000</td>
-                      <td><button class="method-box card-offline">오프라인 카드</button></td>
-                      <td>
-                        <input type="text" name="onlineCard" value="0" class="money-input">
-                      </td>
-                      <td>
-                        <input type="text" name="offlineCard" value="0" class="money-input">
-                      </td>
-                      <td>
-                        <input type="text" name="cashTransfer" value="0" class="money-input">
-                      </td>
-                      <td>0</td>
-                    </tr>
-                    <tr>
-                      <td class="checkbox-group">
-                        <input type="checkbox">
-                      </td>
-                      <td>1</td>
-                      <td>2026-06-13 13:50</td>
-                      <td>김호일</td>
-                      <td>초등천재, 다움 교재비</td>
-                      <td class="origin">30,000</td>
-                      <td><button class="method-box card-online">온라인 카드</button></td>
-                      <td>
-                        <input type="text" name="onlineCard" value="0" class="money-input">
-                      </td>
-                      <td>
-                        <input type="text" name="offlineCard" value="0" class="money-input">
-                      </td>
-                      <td>
-                        <input type="text" name="cashTransfer" value="0" class="money-input">
-                      </td>
-                      <td>0</td>
-                    </tr>
-                    <tr>
-                      <td class="checkbox-group">
-                        <input type="checkbox">
-                      </td>
-                      <td>1</td>
-                      <td>2026-06-13 13:50</td>
-                      <td>김호일</td>
-                      <td>초등천재, 다움 교재비</td>
-                      <td class="origin">30,000</td>
-                      <td><button class="method-box cash-only">현금/계좌이체</button></td>
-                      <td>
-                        <input type="text" name="onlineCard" value="0" class="money-input">
-                      </td>
-                      <td>
-                        <input type="text" name="offlineCard" value="0" class="money-input">
-                      </td>
-                      <td>
-                        <input type="text" name="cashTransfer" value="0" class="money-input">
-                      </td>
-                      <td>0</td>
                     </tr>
                   </tbody>
                 </table>

@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <title>수업 일지</title>
   <style>
-    .main-container, .main-frame, .sidebar-load, .main-info, .time-regist-frame {
+    .main-container, .main-frame, .sidebar-load, .main-info, .student-frame, .student-frame > section {
       background: #f7f7f7;
     }
   </style>
@@ -25,7 +25,7 @@
       <!-- left nav bar -->
       <aside id="sidebar-load"></aside>
       <main class="main-info">
-        <div class="time-regist-frame">
+        <div class="student-frame">
           <!-- section:top -->
           <section class="class-info-section">
             <div class="class-desc">
@@ -36,7 +36,7 @@
                   </div>
                   <div class="basic-select">
                     <select name="student" id="student-select" style="width: 137px;">
-                      <option value="all">전체학생</option>
+                      <option value="all">전체</option>
                       <option value="s1">김호호</option>
                       <option value="s2">이호이</option>
                     </select>
@@ -283,7 +283,7 @@
             </article>
             <article class="makeup-card">
               <div class="student-info">
-                <h2 class="subtitle">오늘 수업 목록</h2>
+                <h2 class="subtitle">오늘의 보강 목록</h2>
                 <div class="class-button">
                   <a class="class-next" href="#"></a>
                 </div>
@@ -305,105 +305,135 @@
                       <td>초등천재</td>
                       <td>3/8</td>
                       <td>이한나</td>
-                      <td><button class="class-action-btn">수업 관리</button></td>
+                      <td class="checkbox-group">
+                        <input type="checkbox">
+                      </td>
                     </tr>
                     <tr>
                       <td>16:30</td>
                       <td>초등수재</td>
                       <td>4/8</td>
                       <td>이한나</td>
-                      <td><button class="class-action-btn">수업 관리</button></td>
+                      <td class="checkbox-group">
+                        <input type="checkbox">
+                      </td>
                     </tr>
                     <tr>
                       <td>17:30</td>
                       <td>신동</td>
                       <td>7/8</td>
                       <td>김유영</td>
-                      <td><button class="class-action-btn">수업 관리</button></td>
+                      <td class="checkbox-group">
+                        <input type="checkbox">
+                      </td>
                     </tr>
                     <tr>
                       <td>18:30</td>
                       <td>초등박사</td>
                       <td>5/8</td>
                       <td>이한나</td>
-                      <td><button class="class-action-btn">수업 관리</button></td>
+                      <td class="checkbox-group">
+                        <input type="checkbox">
+                      </td>
                     </tr>
                     <tr>
                       <td>19:30</td>
                       <td>한스쿨 II</td>
                       <td>8/8</td>
                       <td>서진수</td>
-                      <td><button class="class-action-btn">수업 관리</button></td>
+                      <td class="checkbox-group">
+                        <input type="checkbox">
+                      </td>
                     </tr>
                     <tr>
                       <td>15:30</td>
                       <td>초등천재</td>
                       <td>3/8</td>
                       <td>이한나</td>
-                      <td><button class="class-action-btn">수업 관리</button></td>
+                      <td class="checkbox-group">
+                        <input type="checkbox">
+                      </td>
                     </tr>
                     <tr>
                       <td>16:30</td>
                       <td>초등수재</td>
                       <td>4/8</td>
                       <td>이한나</td>
-                      <td><button class="class-action-btn">수업 관리</button></td>
+                      <td class="checkbox-group">
+                        <input type="checkbox">
+                      </td>
                     </tr>
                     <tr>
                       <td>17:30</td>
                       <td>신동</td>
                       <td>7/8</td>
                       <td>김유영</td>
-                      <td><button class="class-action-btn">수업 관리</button></td>
+                      <td class="checkbox-group">
+                        <input type="checkbox">
+                      </td>
                     </tr>
                     <tr>
                       <td>18:30</td>
                       <td>초등박사</td>
                       <td>5/8</td>
                       <td>이한나</td>
-                      <td><button class="class-action-btn">수업 관리</button></td>
+                      <td class="checkbox-group">
+                        <input type="checkbox">
+                      </td>
                     </tr>
                     <tr>
                       <td>19:30</td>
                       <td>한스쿨 II</td>
                       <td>8/8</td>
                       <td>서진수</td>
-                      <td><button class="class-action-btn">수업 관리</button></td>
+                      <td class="checkbox-group">
+                        <input type="checkbox">
+                      </td>
                     </tr>
                     <tr>
                       <td>15:30</td>
                       <td>초등천재</td>
                       <td>3/8</td>
                       <td>이한나</td>
-                      <td><button class="class-action-btn">수업 관리</button></td>
+                      <td class="checkbox-group">
+                        <input type="checkbox">
+                      </td>
                     </tr>
                     <tr>
                       <td>16:30</td>
                       <td>초등수재</td>
                       <td>4/8</td>
                       <td>이한나</td>
-                      <td><button class="class-action-btn">수업 관리</button></td>
+                      <td class="checkbox-group">
+                        <input type="checkbox">
+                      </td>
                     </tr>
                     <tr>
                       <td>17:30</td>
                       <td>신동</td>
                       <td>7/8</td>
                       <td>김유영</td>
-                      <td><button class="class-action-btn">수업 관리</button></td>
+                      <td class="checkbox-group">
+                        <input type="checkbox">
+                      </td>
                     </tr>
                     <tr>
                       <td>18:30</td>
                       <td>초등박사</td>
                       <td>5/8</td>
                       <td>이한나</td>
-                      <td><button class="class-action-btn">수업 관리</button></td>
+                      <td class="checkbox-group">
+                        <input type="checkbox">
+                      </td>
                     </tr>
                     <tr>
                       <td>19:30</td>
                       <td>한스쿨 II</td>
                       <td>8/8</td>
                       <td>서진수</td>
-                      <td><button class="class-action-btn">수업 관리</button></td>
+                      <td class="checkbox-group">
+                        <input type="checkbox">
+                      </td>
                     </tr>
                   </tbody>
                 </table>

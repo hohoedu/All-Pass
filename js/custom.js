@@ -221,7 +221,7 @@ if (select) {
       const trigger = picker.querySelector('.birth-btn');
       const display = picker.querySelector('.day-display');
     
-      display.textContent = "yyyy년 m월 d일";
+      display.textContent = "2018년 1월 1일";
     
       trigger.addEventListener('click', e => {
         e.preventDefault();

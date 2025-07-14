@@ -201,7 +201,7 @@ textarea::-webkit-scrollbar-thumb:hover,
 }
 /* table yellow hover */
 .yh tbody tr:hover {
-  background: #FFD236;
+  background: #fffac3;
 }
 /* odd stripe hover */
 .stripe tr:nth-child(odd) {
@@ -314,14 +314,21 @@ input[type="text"]:focus {
 .radio-group input[type="radio"] {
   border-radius: 50%;
 }
-.checkbox-group input[type="checkbox"] {
+.checkbox-group2 input[type="checkbox"],
+.radio-group input[type="radio"],
+.join-group input[type="checkbox"] {
+  margin-right: 5px;
+}
+.checkbox-group input[type="checkbox"],
+.checkbox-group2 input[type="checkbox"] {
   border-radius: 20%;
 }
 .checkbox-group.round input[type="checkbox"] {
   border-radius: 50%;
 }
 .radio-group input[type="radio"],
-.checkbox-group input[type="checkbox"] {
+.checkbox-group input[type="checkbox"],
+.checkbox-group2 input[type="checkbox"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -329,7 +336,6 @@ input[type="text"]:focus {
   width: 25px;
   height: 25px;
   position: relative;
-  margin-right: 5px;
   background-color: #fff;
   border: 1px solid #C2C9D7;
   vertical-align: middle;
@@ -337,16 +343,19 @@ input[type="text"]:focus {
 .radio-group input[type="radio"] {
   background: #d6d6d6;
 }
-.checkbox-group input[type="checkbox"] {
+.checkbox-group input[type="checkbox"],
+.checkbox-group2 input[type="checkbox"] {
   background: #fff;
 }
 .radio-group input[type="radio"]:checked,
-.checkbox-group input[type="checkbox"]:checked {
+.checkbox-group input[type="checkbox"]:checked,
+.checkbox-group2 input[type="checkbox"]:checked {
   background-color: #4C3FBC;
   border-color: transparent;
 }
 .radio-group input[type="radio"]:checked::after,
-.checkbox-group input[type="checkbox"]:checked::after {
+.checkbox-group input[type="checkbox"]:checked::after,
+.checkbox-group2 input[type="checkbox"]:checked::after {
   content: "\e928";
   font-family: xeicon;
   font-size: 18px;
@@ -408,10 +417,13 @@ table .checkbox-group {
   text-align: right;
   margin-bottom: 20px;
 }
+.header-btns {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
 .common-btn {
   padding: 5px 18px;
-  /* width: 112px; */
-  /* height: 34px; */
   border-radius: 20px;
   color: #fff;
   cursor: pointer;
@@ -419,10 +431,20 @@ table .checkbox-group {
   margin-left: auto;
   border: none;
 }
+.cancel-cash {
+  background: #f05a21;
+}
+.issue-payment {
+  background: #03adaa;
+}
+.checked-btn {
+  background-color: #DB6747;
+}
 .explore,
 .record-save,
 .stas-btn,
-.join-link {
+.join-link,
+.pay-save {
   background: #4C3FBC;
 }
 .grade-up,
@@ -478,7 +500,7 @@ table .checkbox-group {
 
 /* ======================= pay-list.html ======================= */
 .money-input {
-  width: 85px;
+  width: 130px;
   height: 27px;
   border: 1px solid #bdbdbd;
   border-radius: 5px;
@@ -487,14 +509,52 @@ table .checkbox-group {
   color: #404040;
   text-align: center;
 }
+.money-range {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.method-boxes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.method-box:not(:last-child) {
+  margin-bottom: 5px;
+}
 .method-box {
-  padding: 1px 7px;
+  padding: 5px 10px;
   border-radius: 3px;
   font-size: 14px;
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ask-list {
+  color: #7b7e90;
+  margin-bottom: -15px;
+}
+.pay-day {
+  color: #646464;
+}
+.stu-name {
+  color: #404040;
+  font-size: 18px;
+  font-weight: 500;
+}
+.card-online,
+.card-offline,
+.cash-only,
+.account-transfer,
+.mthod-total,
+.origin {
+  font-weight: 500;
 }
 .card-online {
-  background: #f7d206;
-  color: #6e5d02;
+  background: #f7c106;
+  color: #9b5102;
 }
 .card-offline {
   background: #7adfd2;
@@ -504,9 +564,25 @@ table .checkbox-group {
   background: #7fb0e7;
   color: #265992;
 }
+.account-transfer {
+  background: #b9de55;
+  color: #6b8c05;
+}
+.mthod-total {
+  background: #d2d6e1;
+  color: #78819c;
+}
 .origin {
   font-weight: bold;
+  font-size: 20px;
   color: #241d5e;
+}
+.total-amount {
+  color: #fff;
+  font-size: 18px;
+}
+.bill-icon {
+  width: 20px;
 }
 
 /* ======================= login page ======================= */
@@ -566,7 +642,6 @@ input[type="checkbox"] {
   height: 18px;
   border-radius: 50%;
   position: relative;
-  margin-right: 5px;
 }
 input[type="checkbox"]:checked {
   background-color: #334DD7;
@@ -1012,7 +1087,6 @@ textarea {
   background: #fff;
   padding-bottom: 20px;
   margin-left: -120px;
-  width: 90%;
 }
 .sidebar {
   height: 100%;
@@ -1089,7 +1163,7 @@ textarea {
 .submenu p {
   color: #fff;
   font-size: 14px;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 .submenu a:hover {
   font-weight: 400;
@@ -1524,7 +1598,25 @@ textarea {
 /* ======================= student-main page ======================= */
 .student-frame > section {
   background: #fff;
-  padding: 20px 30px 0px 30px;
+  padding: 20px 15px 0 15px;
+}
+.third-frame {
+  display: flex;
+  gap: 40px;
+  padding: 10px 15px;
+}
+.second-frame {
+  display: flex;
+  gap: 30px;
+  background: #fff;
+  height: 100%;
+  width: 100%;
+  padding: 20px 15px;
+}
+.line-second-frame {
+  display: flex;
+  gap: 30px;
+  height: 100%;
 }
 .info-table {
   max-height: 400px;
@@ -1543,7 +1635,7 @@ textarea {
 .makeup-table-frame,
 .stu-info-t,
 .move-t-frame,
-.move-list-frame,
+.move-frame,
 .class-list,
 .consult-frame,
 .pay-frame,
@@ -1552,9 +1644,6 @@ textarea {
 .time-table-frame {
   overflow: hidden;
   overflow-y: auto;
-}
-.info-summary {
-  width: 94%;
 }
 .info-filters {
   display: flex;
@@ -1737,6 +1826,11 @@ textarea {
   padding-bottom: 30px;
   width: 100%;
 }
+#tab2 input,
+#tab3 input,
+.day-display {
+  padding-left: 8px;
+}
 .tab.active {
   display: block;
 }
@@ -1758,6 +1852,13 @@ textarea {
   display: flex;
   justify-content: center;
   margin: 10px;
+}
+.book-fee {
+  color: #C1C1C1 !important;
+}
+.book-fee,
+.tuition-fee {
+  text-align: left;
 }
 .form-row label:not(.radio-group label) {
   font-weight: 500;
@@ -1793,6 +1894,11 @@ textarea {
 }
 .date-container input[type="date"] {
   width: 100%;
+}
+.cash-type {
+  display: flex;
+  gap: 5px;
+  align-items: center;
 }
 .info-note {
   font-size: 14px;
@@ -2106,6 +2212,10 @@ input[name="bookFee"] {
 .counsel-header {
   margin: 25px 0 10px 0;
 }
+.select-arrow {
+  position: relative;
+  display: inline-block;
+}
 .select-status {
   padding: 5px 10px;
   border-radius: 5px;
@@ -2162,7 +2272,8 @@ button.select-status::after {
   height: 155px;
 }
 .memo-etc textarea {
-  height: 130px;
+  height: 140px;
+  width: 100%;
 }
 .consult-table td {
   height: 185px;
@@ -2551,31 +2662,37 @@ textarea#consult-memo {
   text-decoration: none;
   font-size: 18px;
 }
+.move-summary {
+  padding: 15px 0 0 15px;
+}
 .cal-adjust {
   width: 200px;
   margin-bottom: 15px;
-}
-.second-frame {
-  display: flex;
-  gap: 30px;
-  background: #fff;
-  height: 100%;
-  width: 100%;
-  padding: 20px;
 }
 .move-desc {
   flex: 2;
   border-left: 1px solid #d6d6d6;
 }
+.move-desc::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -15px; /* padding 만큼 왼쪽으로 빼기 */
+  width: 1px;
+  background: #d6d6d6;
+}
 .move-summary {
   flex: 6;
+}
+.move-reason {
+  padding: 20px;
 }
 .move-summary,
 .move-reason {
   height: 100%;
   background: #fff;
   border-radius: 20px;
-  padding: 20px;
 }
 .full-section {
   width: 100%;
@@ -2638,26 +2755,27 @@ textarea#consult-memo {
   flex-direction: column;
   gap: 10px;
 }
+.inout-cal {
+  padding-left: 10px;
+}
 
 /* ======================= student-inout modal ======================= */
-.student-frame {
-  height: 100%;
-}
 .student-out-inner {
   display: flex;
   height: 100%;
 }
 .stats-left {
-  flex: 2;
+  flex: 1;
 }
 .stats-right {
-  flex: 3;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 .stats-filter {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
 }
 .stats-item-left {
   display: flex;
@@ -2694,8 +2812,6 @@ textarea#consult-memo {
   border-radius: 12px;
   padding: 30px;
   width: 100%;
-  max-width: 900px;
-  margin: auto;
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
   text-align: center;
 }
@@ -2730,7 +2846,14 @@ textarea#consult-memo {
   text-align: right;
   font-size: 14px;
 }
-
+.modal-bflex {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.move-frame {
+  height: 60vh;
+}
 
 /* ======================= class-timetable page ======================= */
 .time-table tbody td {
@@ -2927,7 +3050,6 @@ input[type="time" i] {
   height: 100%;
   gap: 20px;
   background: #fff;
-  /* padding: 20px 30px 0px 30px; */
 }
 .reset-btn {
   background: #9c9c9c;
@@ -2936,7 +3058,7 @@ input[type="time" i] {
   background: #009844;
 }
 .student-pick-left {
-  flex: 2;
+  flex: 2.3;
   border: 1px solid #494470;
   border-radius: 5px;
   height: 850px;
@@ -3023,6 +3145,11 @@ input[type="time" i] {
 .stu-chocie-table td {
   padding: 5px 0;
 }
+.time-boxes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .time-boxes > div:first-child {
   margin-bottom: 10px;
 }
@@ -3036,6 +3163,9 @@ input[type="time" i] {
 }
 .size-160 {
   width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .mini-select > .basic-select {
   width: calc(50% - 2.5px); /* gap이 5px이니까 절반에서 gap 절반씩 뺌 */
@@ -3050,11 +3180,14 @@ input[type="time" i] {
 .timeview .second-frame {
   gap: 60px;
 }
+.time-table-index {
+  padding: 15px 0 0 15px;
+}
 .month-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 16px;
+  margin: 16px 0;
 }
 .month-title {
   display: flex;
@@ -3077,7 +3210,7 @@ input[type="time" i] {
 .member {
   flex: 1;
   border-left: 1px solid #d6d6d6;
-  padding: 0 30px;
+  padding: 15px 15px 0 30px;
 }
 /* timeview 테이블 */
 .timetable-lookup-table {
@@ -3553,7 +3686,7 @@ input[type="time" i] {
   height: 400px;
 }
 
-/* ======================= montly-test page ======================= */
+/* ======================= monthly-test page ======================= */
 .class-list {
   height: 720px;
 }
@@ -3671,12 +3804,144 @@ input[type="time" i] {
 .pre-table td {
   height: 55px;
 }
+/* ======================= learning-content page ======================= */
+
+.select-class {
+  flex: 1;
+}
+.select-student {
+  flex: 2;
+  border: 1px solid #494470;
+  border-radius: 5px;
+}
+.intro-lesson {
+  flex: 5;
+  background: #fffcee;
+  border-radius: 10px;
+}
+.learn-middle {
+  padding: 20px;
+}
+.learn-table {
+  text-align: center;
+}
+.learn-table th {
+  height: 45px;
+}
+.learn-table td {
+  height: 55px;
+}
+.lm-title {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.intro-inner {
+  padding: 20px;
+}
+.intro-book {
+  display: flex;
+  gap: 20px;
+  font-weight: bold;
+  font-size: 24px;
+  align-items: flex-end;
+}
+.book-kind {
+  color: #df6961;
+}
+.hanja-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 16px;
+  line-height: 1.7;
+  padding: 30px 0;
+}
+.hanja-row {
+  display: flex;
+  align-items: flex-start;
+}
+.hanja-label {
+  background-color: #f3d5d3;
+  color: #ba6f6a;
+  padding: 4px;
+  border-radius: 5px;
+  min-width: 75px;
+  text-align: center;
+  margin-right: 10px;
+  font-weight: bold;
+  width: 83px;
+  font-size: 12px;
+}
+.hanja-text {
+  color: #333;
+}
+/* 어휘력 성향 분석  */
+.voca-tendency {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+}
+.tag-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.tag-desc {
+  flex: 1;
+}
+.tag-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #fff;
+  border-radius: 5px;
+  padding: 16px;
+}
+.hash-block {
+  gap: 6px;
+}
+.tag-box {
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  width: 100px;
+  text-align: center;
+  height: 100%;
+}
+.hash-block {
+  align-self: flex-end;
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+.tag-blue    { background: #c8e2fd; color: #438edd; }
+.tag-orange  { background: #ffd08c; color: #d7631e; }
+.tag-pink    { background: #ffc0e2; color: #ba4d88; }
+.tag-purple  { background: #d3c0ff; color: #7f60c6; }
+.tag-green   { background: #c2eace; color: #3b9a4f; }
+/* 해시태그 색상 (선택적) */
+.hash-blue   { color: #438edd; }
+.hash-orange { color: #d7631e; }
+.hash-pink   { color: #ba4d88; }
+.hash-purple { color: #7f60c6; }
+.hash-green  { color: #3b9a4f; }
+
+
 /* ======================= supplement page ======================= */
 .sup-left {
   flex: 1;
+  padding: 20px 0 0 15px ;
 }
 .sup-right {
   flex: 1;
+  padding: 20px 15px 0 0 ;
 }
 .divider {
   width: 1px;
@@ -3856,6 +4121,11 @@ input[type="time" i] {
 .clock-day::before {
   content: "\ea2c";
   font-family: xeicon;
+}
+.clock-day,
+.view-eyes {
+  display: flex;
+  align-items: center;
 }
 .clock-day::before,
 .view-eyes::before {
@@ -4079,6 +4349,10 @@ input[type="time" i] {
 .made-select.open .select-options {
   display: block;
 }
+.pre-modal .pre-divide {
+  margin-top: 45px;
+  gap: 30px;
+}
 
 
 
@@ -4230,9 +4504,11 @@ input[type="time" i] {
 /* ======================= pay-edu page ======================= */
 .edu-left {
   flex: 2;
+  padding: 20px 0 0 15px;
 }
 .edu-right {
   flex: 1;
+  padding: 20px 15px 0 0;
 }
 .edu-l-con {
   padding-right: 70px;
@@ -4246,6 +4522,12 @@ input[type="time" i] {
 }
 .pay-table tr:first-child {
   height: 36px;
+}
+.kind-charge {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 .pay-box {
   width: 50px;
@@ -4282,7 +4564,7 @@ input[type="time" i] {
 }
 .btn-groups {
   display: flex;
-  width: 490px;
+  width: 100%;
   gap: 10px;
   margin-top: 20px;
 }

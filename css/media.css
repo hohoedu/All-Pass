@@ -33,14 +33,14 @@
   #sidebar-load {
   }
   .radio-group {
-    gap: 1px;
+    gap: 4px;
   }
   .radio-group input[type="radio"], 
-  .checkbox-group input[type="checkbox"] {
+  .checkbox-group input[type="checkbox"],
+  .checkbox-group2 input[type="checkbox"] {
     width: 18px;
     height: 18px;
     font-size: 18px;
-    margin-right: 0;
   }
   label {
     font-size: 14px;
@@ -159,7 +159,6 @@
     gap: 30px;
   }
   .member {
-    padding: 0 0 0 30px;
   }
   .time-table-index {
     flex: 3;
@@ -322,100 +321,104 @@
   .overall-top, .overall-bottom {
     height: 240px;
   }
-
-
-  /* ======================= afclass page ======================= */
-  .class-log-section {
-    flex: 4;
+  .notice-modal .pre-divide {
+    margin-top: 10px;
+    gap: 30px;
   }
-  .details-frame {
-    width: 100%;
-  }
-  .log-table th:nth-child(4) {
-    width: 10%;
-  }
-  .consult-box {
-    flex-direction: column;
-    height: 450px;
-  }
-  .consult-type {
-    width: 100%;
-    height: 200px;
-  }
-  .consult-desc {
-    width: 100%;
-  }
-  .consult-desc th:nth-child(2) {
-    width: 10%;
-  }
-  .jumpup-test label {
-    margin: 0px 10px 0px 0px;
-  }
-  .attend-btn {
-    font-size: 14px;
-  }
-  .jumpup-test .checkbox-group, 
-  .book-table .checkbox-group {
-    display: flex;
-    justify-content: flex-start;
-  }
-  .book-table .checkbox-group {
-    margin: 0 10px;
-  }
-  .personal-sms {
-    display: block;
-    height: auto;
-  }
-  .sms-type {
-    width: 100%;
-    height: 200px;
-    margin-bottom: 20px;
-  }
-  .sms-table {
-    background: #fff;
-  }
-
   /* ======================= consult page ======================= */
-  .counsel-write th {
-  padding: 5px;
+  .consult-table {
+
   }
-  .counsel-write td:nth-child(8), 
-  .counsel-write td:nth-child(9) {
-    padding: 0px 5px;
+  .consult-table td:nth-child(1),
+  .consult-table th:nth-child(1) {
+    width: 2%;
   }
-  .counsel-write td:nth-child(10) {
-    margin: 0px 10px;
+  .consult-table td:nth-child(2),
+  .consult-table th:nth-child(2) {
+    width: 2%;
   }
-  .join-btn {
-    font-size: 12px;
-    display: inline-block;
-    width: 100px;
+  .consult-table td:nth-child(3),
+  .consult-table th:nth-child(3) {
+    width: 8%;
   }
-  .counsel-write .date-input {
-    width: 100%;
+  .consult-table td:nth-child(4),
+  .consult-table th:nth-child(4) {
+    width: 4%;
   }
-  /* ======================= order page ======================= */
-  .order-frame {
-    width: 100%;
+  .consult-table td:nth-child(5),
+  .consult-table th:nth-child(5) {
+    width: 8%;
   }
-  
-  /* ======================= manage-sms page ======================= */
-  .manage-sms-frame {
-    width: 100%;
+  .consult-table td:nth-child(6),
+  .consult-table th:nth-child(6) {
+    width: 2%;
   }
-  .sms-word-table td:first-child {
+  .consult-table td:nth-child(7),
+  .consult-table th:nth-child(7) {
+    width: 7%;
+  }
+  .consult-table td:nth-child(8),
+  .consult-table th:nth-child(8) {
     width: 30%;
   }
-  #check-point {
-    font-size: 12px;
+  .consult-table td:nth-child(9),
+  .consult-table th:nth-child(9) {
+    width: 15%;
   }
-  /* ======================= manage-teacher page ======================= */
-  .manage-frame {
-    width: 100%;
+  .consult-table td:nth-child(10),
+  .consult-table th:nth-child(10) {
+    width: 15%;
   }
-  .manager-list,
-  .manager-info {
-    flex: 1;
+  .memo-etc {
+    width: 250px;
+  }
+
+  /* ======================= pay-edu page ======================= */
+  .edu-l-con {
+    padding-right: 0px;
+  }
+  .edu-left {
+    flex: 1.8;
+  }
+  .edu-l-con .month-header2 {
+    flex-direction: column;
+  }
+  .btn-basic {
+    font-size: 15px;
+  }
+  .btn-basic {
+    padding: 5px 0;
+  }
+  .member-status-table tbody td {
+    padding: 15px;
+  }
+
+  /* ======================= pay-list page ======================= */
+  .acon-divide {
+    gap: 0px;
+  }
+  .pay-list-t {
+    line-height: 1.8rem;
+  }
+  .acon-title {
+    font-size: 19px;
+  }
+  .app-style {
+    height: 100%;
+  }
+  .acon-right img {
+    width: 155px;
+  }
+  .pre-view {
+    height: 90%;
+  }
+  .learn-divide {
+    margin-top: 10px;
+    gap: 30px;
+  }
+  /* ======================= manage-sms page ======================= */
+  .app-l-con {
+    padding-right: 0;
   }
 
   /* ======================= menu page ======================= */

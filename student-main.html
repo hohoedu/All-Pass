@@ -24,7 +24,7 @@
           <section class="info-summary">
             <div class="common-title">
               <h2>학생 정보</h2>
-              <div>
+              <div class="header-btns">
                 <div class="grade-up common-btn">학년 내리기</div>
                 <div class="grade-down common-btn">학년 올리기</div>
                 <div class="new-regist common-btn">+ 신규 등록</div>
@@ -35,7 +35,7 @@
                 <div class="stu-left">
                   <div class="basic-select sl1">
                     <select name="student" id="student-filter">
-                      <option value="student1">전체 학생</option>
+                      <option value="student1">전체</option>
                       <option value="student2">김호일</option>
                       <option value="student3">김호이</option>
                       <option value="student3">김호삼</option>
@@ -70,7 +70,7 @@
                 </div>
               </div>
             </div>
-            <div class="bt">
+            <div class="mt">
               <div class="table-frame stu-info-t">
                 <table class="basic-table yh">
                   <colgroup>
@@ -714,11 +714,21 @@
                           <input type="tel" name="parentPhone" value="010-1234-5678">
                         </td>
                         <th>학생과의 관계</th>
-                        <td class="choose-group" style="border-bottom: none;">
+                        <td class="choose-group">
                           <button type="button" class="btn-choose" data-value="부">부</button>
                           <button type="button" class="btn-choose active" data-value="모">모</button>
                           <button type="button" class="btn-choose" data-value="기타">기타</button>
                           <input type="hidden" name="relationship" value="모">
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>현금영수증</th>
+                        <td>
+                          <div class="checkbox-group round cash-type" style="margin-bottom: 10px;">
+                            <input type="checkbox" name="personal" checked> 개인 소득공제용
+                            <input type="checkbox" name="corporate" style="margin-left: 10px;"> 법인 지출증빙용
+                          </div>
+                          <input type="tel" name="cashReceipt" placeholder="010-1234-5678" style="border: 1px solid #e9eaec; padding: 8px; width: 290px; border-radius: 5px;">
                         </td>
                       </tr>
                     </tbody>
@@ -801,13 +811,13 @@
                       </td>
                     </tr>
                     <tr>
-                      <th>교육비</th>
+                      <th class="tuition-fee">교육비</th>
                       <td>
                         <input type="number" name="tuition" class="no-spin">
                       </td>
-                      <th>교재비</th>
+                      <th class="book-fee">교재비</th>
                       <td>
-                        <input type="number" name="bookFee" class="no-spin">
+                        <input type="number" name="bookFee" class="no-spin" class="book-fee">
                       </td>
                     </tr>
                   </tbody>
@@ -837,7 +847,9 @@
                     </tr>
                     <tr>
                       <th>담당 선생님</th>
-                      <td><span>유슬기</span></td>
+                      <td>
+                        <input type="text" name="teacherName" value="이하정">
+                      </td>
                       <th>시작일자</th>
                       <td class="icon-field day-picker" style="position: relative;">
                         <div class="day-display"></div> <!-- 표시 영역 -->
@@ -850,12 +862,12 @@
                       </td>
                     </tr>
                     <tr>
-                      <th>교육비</th>
+                      <th class="tuition-fee">교육비</th>
                       <td>
                         <input type="number" name="tuition" class="no-spin">
                       </td>
                       <th>교재비</th>
-                      <td>
+                      <td class="book-fee">
                         <input type="number" name="bookFee" class="no-spin">
                       </td>
                     </tr>
