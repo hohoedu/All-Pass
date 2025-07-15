@@ -31,7 +31,7 @@
       <main class="main-info" style="width: 95%;">
         <div class="student-frame class-info-frame">
           <!-- section:top -->
-          <section class="class-info-section" style="">
+          <section class="class-info-section">
             <div class="class-desc">
               <div class="class-header">
                 <div class="common-title">
@@ -422,6 +422,13 @@
       </div>
     </div>
   </div>
-
+  <script>
+    document.querySelectorAll('.btn-number').forEach(btn => {
+      btn.addEventListener('click', function() {
+        this.classList.toggle('active');
+      });
+    });
+  </script>
+  
 </body>
 </html>

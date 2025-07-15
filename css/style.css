@@ -3731,7 +3731,7 @@ input[type="time" i] {
 
 /* ======================= monthly-test page ======================= */
 .class-list {
-  height: 720px;
+  height: 68vh;
 }
 .evaluation {
   display: flex;
