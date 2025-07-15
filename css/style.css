@@ -954,7 +954,7 @@ input[type="checkbox"]:checked::after {
 .join-group select,
 textarea {
   width: 100%;
-  padding: 15px;
+  padding: 12px;
   border: 1px solid #e2e2e2;
   background: #FFFBEB;
   border-radius: 5px;
@@ -2247,7 +2247,7 @@ input[name="bookFee"] {
   width: 100%;
 }
 .counsel-header {
-  margin: 25px 0 10px 0;
+  margin: 15px 0 10px 0;
 }
 .select-arrow {
   position: relative;
@@ -2321,7 +2321,7 @@ button.select-status::after {
   margin-top: 5px;
 }
 .consult-frame {
-height: 720px;
+height: 80vh;
 }
 /* consult section modal */
 .consult-record {
@@ -3616,6 +3616,7 @@ input[type="time" i] {
   border-radius: 4px;
   cursor: pointer;
   background: #fff;
+  font-size: 14px;
 }
 .counsel-type button.active {
   background-color: #4c3fbc;
@@ -3631,7 +3632,7 @@ input[type="time" i] {
   padding: 10px;
 }
 .counsel-box {
-  width: 220px;
+  width: 250px;
   height: 150px;
   margin: 20px;
 }
@@ -3642,7 +3643,7 @@ input[type="time" i] {
   border: none;
 }
 .counsel-box textarea {
-  height: 90px;
+  height: 80%;
 }
 .after-comment textarea {
   height: 120px;
@@ -3664,13 +3665,17 @@ input[type="time" i] {
   margin-top: 15px;
 }
 /* 특이사항 modal */
+.remark {
+  height: 95%;
+  width: 80%;
+}
 .remark-sub {
   color: #9b9ba8;
   margin-bottom: 30px;
   text-align: center;
 }
 .remarks-tframe {
-  max-height: 290px;
+  max-height: 70vh;
 }
 .remarks-frame {
   padding: 20px;
@@ -3856,6 +3861,7 @@ input[type="time" i] {
   flex: 2;
   border: 1px solid #494470;
   border-radius: 5px;
+  height: 80vh;
 }
 .intro-lesson {
   flex: 5;
@@ -4592,7 +4598,7 @@ input[type="time" i] {
   color: #be2727;
 }
 .pay-frame {
-  height: 670px;
+  height: 75vh;
 }
 .issue-sub {
   color: #878787;

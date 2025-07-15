@@ -98,10 +98,10 @@
                       <col width="10%">
                       <col width="10%">
                       <col width="15%">
-                      <col width="10%">
                       <col width="15%">
                       <col width="20%">
-                      <col width="10%">
+                      <col width="25%">
+                      <col width="5%">
                     </colgroup>
                     <thead>
                       <tr>
@@ -307,11 +307,14 @@
                           </div>
                         </td>
                         <td>
-                          <div class="icon-field basic-input cal-adjust">
-                            <span>2024-07 ~ 2025-06</span>
-                            <button class="icon-btn" style="background: transparent;">
-                              <img src="image/calendar.png" alt="달력 아이콘">
-                            </button>
+                          <div class="cal-content">
+                            <div class="icon-field time-input cal-adjust" style="margin-bottom: 0;">
+                              <span class="selected-datetime">날짜를 선택하세요</span>
+                              <input type="datetime-local" class="datetime-input hidden-picker" />
+                              <button type="button" class="icon-btn calendar-btn" style="background: transparent;">
+                                <img src="image/calendar.png" alt="달력 아이콘" />
+                              </button>
+                            </div>
                           </div>
                         </td>
                         <td>
@@ -409,14 +412,14 @@
               </tbody>
             </table>
           </div>
-        <div class="save-btn-frame" style="margin-top: 30px;">
+        <div class="save-btn-frame" style="margin-top: 20px;">
           <button type="submit" class="save-btn">저장</button>
         </div>
       </div>
     </div>
   </div>
   <!-- section: 수업 안내 발송 modal -->
-  <div class="modal class-guide-modal">
+  <!-- <div class="modal class-guide-modal">
     <div class="guidance">
       <div class="guide-frame">
         <div class="m-t-line">
@@ -470,9 +473,10 @@
         </div>
       </div>
     </div>
-  </div>
+    </div>
+  </div> -->
   <!-- section: 확인해주세요 modal -->
-  <div class="modal inform-modal">
+  <!-- <div class="modal inform-modal">
     <div class="information">
       <div class="inform-frame">
         <div class="m-t-line">
@@ -492,6 +496,6 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </body>
 </html>
