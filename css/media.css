@@ -15,7 +15,6 @@
     height: auto;
   }
   .sidebar {
-    height: 100vh;
   }
   .quick-nav ul {
     gap: 10px;
@@ -29,8 +28,6 @@
   }
   .title {
     font-size: 18px;
-  }
-  #sidebar-load {
   }
   .radio-group {
     gap: 4px;

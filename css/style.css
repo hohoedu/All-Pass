@@ -174,19 +174,22 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 /* textarea, table bar custom */
 textarea::-webkit-scrollbar,
 .table-frame::-webkit-scrollbar,
-.modal-scroll::-webkit-scrollbar {
+.modal-scroll::-webkit-scrollbar,
+.table-body-scroll::-webkit-scrollbar {
   width: 9px;
   height: 189px;
 }
 textarea::-webkit-scrollbar-track,
 .table-frame::-webkit-scrollbar-track,
-.modal-scroll::-webkit-scrollbar-track {
+.modal-scroll::-webkit-scrollbar-track,
+.table-body-scroll::-webkit-scrollbar-track {
   background: #eef3ff;
   border-radius: 5px;
 }
 textarea::-webkit-scrollbar-thumb,
 .table-frame::-webkit-scrollbar-thumb,
-.modal-scroll::-webkit-scrollbar-thumb {
+.modal-scroll::-webkit-scrollbar-thumb,
+.table-body-scroll::-webkit-scrollbar-thumb {
   background: #d5dfed;
   border-radius: 5px;
 }
@@ -244,7 +247,9 @@ tbody tr {
   /* border: 1px solid #DCE4F5; */
   line-height: 2.5rem;
 }
-
+.basic-table td {
+  margin: auto;
+}
 /* common input, select custom */
 input::placeholder {
   color: #B8BFCE;
@@ -1080,7 +1085,7 @@ textarea {
 #sidebar-load {
   width: 186px;
   flex: 0 0 auto; /* 고정 너비 */
-  min-height: 100vh;
+  /* min-height: 100vh; */
   height: auto;
 }
 .main-info {
@@ -1105,8 +1110,36 @@ textarea {
   height: 100%;
   width: 59px;
 }
+.sidebar-line {
+  border: 1px solid #6d698d;
+  width: 80%;
+  margin: auto;
+}
+.left-top {
+  height: 80vh;
+}
+.left-bottom {
+  margin: auto;
+  text-align: center;
+}
+.left-bottom img {
+  width: 40px;
+}
+.ecl-icon img {
+  padding: 30px 0 10px 0;
+}
+.dokcl-icon {
+  margin: 10px 0 30px 0;
+}
 .sidebar-item:hover .sidebar-right {
   display: block;
+}
+.sidebar-con {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 .sidebar-right {
   background: #241D5E;
@@ -1624,7 +1657,8 @@ textarea {
 .sibling-table {
   max-height: 200px;
 }
-.table-frame
+.table-frame,
+.stu-chocie-frame,
 .info-table,
 .sibling-table,
 .move-frame,
@@ -1641,7 +1675,10 @@ textarea {
 .pay-frame,
 .pay-edu-frame,
 .choose-frame,
-.time-table-frame {
+.time-table-frame,
+.left-top,
+.table-body-scroll,
+.supple1, .supple2 {
   overflow: hidden;
   overflow-y: auto;
 }
@@ -1709,7 +1746,7 @@ textarea {
   flex: 1;
 }
 .stu-info-t {
-  max-height: 790px;
+  max-height: 83vh;
 }
 .stu-info-t tr {
   cursor: pointer;
@@ -2716,7 +2753,7 @@ textarea#consult-memo {
   margin-left: 10px;
 }
 .move-t-frame {
-  max-height: 780px;
+  max-height: 83vh;
 }
 .blank-adjust {
   padding-top: 20px;
@@ -2766,9 +2803,11 @@ textarea#consult-memo {
 }
 .stats-left {
   flex: 1;
+  height: 80vh;
 }
 .stats-right {
   flex: 1;
+  height: 80vh;
   display: flex;
   justify-content: flex-end;
 }
@@ -2804,7 +2843,7 @@ textarea#consult-memo {
   width: 100%;
 }
 .table-body-scroll {
-  height: 80%;
+  max-height: 70vh;
 }
 .chart-box {
   background: #fff;
@@ -2867,8 +2906,8 @@ textarea#consult-memo {
   font-weight: bold;
 }
 .time-table-frame {
-  max-height: 800px;
   margin-top: 20px;
+  height: 73.5vh;
 }
 .time-frame {
   width: 85%;
@@ -3063,6 +3102,10 @@ input[type="time" i] {
   border-radius: 5px;
   height: 850px;
 }
+.student-pick-left,
+.student-pick-right {
+  height: 80vh;
+}
 .student-pick-frame {
   border-bottom: 1px solid #494470;
 }
@@ -3139,8 +3182,6 @@ input[type="time" i] {
 }
 .stu-chocie-frame {
   height: 80%;
-  overflow-y: auto;
-
 }
 .stu-chocie-table td {
   padding: 5px 0;
@@ -3414,7 +3455,9 @@ input[type="time" i] {
   padding: 16px;
   width: 160px;
   border-radius: 8px;
-  height: 800px;
+}
+.class-log-left {
+  height: 80vh;
 }
 .class-log-left h4 {
   font-size: 17px;
@@ -3471,7 +3514,7 @@ input[type="time" i] {
   text-align: center;
 }
 .lesson-frame {
-  max-height: 800px;
+  max-height: 80vh;
 }
 .lesson-log-table tr th {
   padding: 20px 0;
@@ -3974,6 +4017,9 @@ input[type="time" i] {
 .pre-view {
   width: 1200px;
   height: 85%
+}
+.supple1 tbody, .supple2 tbody {
+  max-height: 80vh;
 }
 
 /* ======================= book-list page ======================= */
