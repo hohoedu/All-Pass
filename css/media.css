@@ -60,6 +60,9 @@
   .month-title2, .month-title {
     font-size: 20px;
   }
+  .basic-input {
+    height: 34px;
+  }
   /* ======================= student-main page ======================= */
   .subtitle {
     font-size: 18px;
@@ -236,6 +239,9 @@
     display: flex;
     align-items: center;
     line-height: 2rem;
+  }
+  .remark {
+    height: 93vh;
   }
   
   /* ======================= supplement page ======================= */

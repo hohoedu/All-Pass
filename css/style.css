@@ -117,6 +117,10 @@ table thead th {
 .no-spin {
   -moz-appearance: textfield;
 }
+.light-font td:nth-child(1) {
+  color: #a8a8a8;
+  font-size: 16px;
+}
 
 /* ############################# Common.css ############################# */
 /* time custom */
@@ -216,7 +220,6 @@ tbody tr {
 }
 .stu-info-t tbody tr td:first-child {
   color: #a8a8a8;
-  font-size: 16px;
 }
 /* table border 비티 */
 .bt {
@@ -449,7 +452,9 @@ table .checkbox-group {
 .record-save,
 .stas-btn,
 .join-link,
-.pay-save {
+.pay-save,
+.pay-issue,
+.stu-explore {
   background: #4C3FBC;
 }
 .grade-up,
@@ -504,7 +509,7 @@ table .checkbox-group {
 }
 
 /* ======================= pay-list.html ======================= */
-.money-input {
+.td-input {
   width: 130px;
   height: 27px;
   border: 1px solid #bdbdbd;
@@ -514,7 +519,7 @@ table .checkbox-group {
   color: #404040;
   text-align: center;
 }
-.money-range {
+.td-inputs {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -526,7 +531,7 @@ table .checkbox-group {
   justify-content: center;
 }
 .method-box:not(:last-child) {
-  margin-bottom: 5px;
+  margin-bottom: 7px;
 }
 .method-box {
   padding: 5px 10px;
@@ -578,8 +583,7 @@ table .checkbox-group {
   color: #78819c;
 }
 .origin {
-  font-weight: bold;
-  font-size: 20px;
+  font-size: 19px;
   color: #241d5e;
 }
 .total-amount {
@@ -588,6 +592,116 @@ table .checkbox-group {
 }
 .bill-icon {
   width: 20px;
+}
+.pay-list {
+  height: 80%;
+  width: 80%;
+}
+.pay-list-t td {
+  padding: 10px;
+}
+.pay-list-t td:nth-child(9) img:hover {
+  cursor: pointer;
+}
+.minus-charge {
+  color: #1855c5;
+}
+.plus-charge {
+  color: #e84572;
+}
+.regist-btn {
+  background: #4c3fbc;
+  padding: 5px 30px;
+  margin: 0;
+}
+.plt-adjust table th:nth-child(1),
+.plt-adjust table td:nth-child(1) { width: 5%; }
+
+.plt-adjust table th:nth-child(2),
+.plt-adjust table td:nth-child(2) { width: 4%; }
+
+.plt-adjust table th:nth-child(3),
+.plt-adjust table td:nth-child(3) { width: 11%; }
+
+.plt-adjust table th:nth-child(4),
+.plt-adjust table td:nth-child(4) { width: 7%; }
+
+.plt-adjust table th:nth-child(5),
+.plt-adjust table td:nth-child(5) { width: 12%; }
+
+.plt-adjust table th:nth-child(6),
+.plt-adjust table td:nth-child(6) { width: 23%; }
+
+.plt-adjust table th:nth-child(7),
+.plt-adjust table td:nth-child(7) { width: 12%; }
+
+.plt-adjust table th:nth-child(8),
+.plt-adjust table td:nth-child(8) { width: 10%; }
+
+.plt-adjust table th:nth-child(9),
+.plt-adjust table td:nth-child(9) { width: 8%; }
+.cash-check .checkbox-group.round label {
+  margin-right: 20px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: normal;
+}
+.cash-check .checkbox-group.round input::placeholder {
+  text-align: left;
+}
+.m-scroll {
+  height: 70vh;
+}
+.pay-m-list {
+  width: 80vw; 
+  height: 90vh;
+}
+.plt-m-inner {
+  width: 78%;
+  margin: auto;
+  max-height: 80vh;
+}
+.pay-issue {
+  padding: 5px 30px;
+}
+.plt-m-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+/* <!-- section: modal(납부내역추가) --> */
+.add-m-list {
+  width: 80vw;
+  height: 88vh;
+}
+.add-m-left {
+  flex: 1.8;
+  border: 1px solid #494470;
+  border-radius: 5px;
+  max-width: 420px;
+  height: 65vh;
+}
+.add-m-right {
+  flex: 4;
+  border: 1px solid #000;
+}
+.stu-explore {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+.pay-add-t th,
+.pay-add-t td {
+  height: 55px;
+}
+.pay-add-t {
+}
+.pay-add-tf {
+  max-height: 50vh;
 }
 
 /* ======================= login page ======================= */
@@ -1196,7 +1310,7 @@ textarea {
 .submenu p {
   color: #fff;
   font-size: 14px;
-  padding: 0 15px;
+  padding: 3px 15px;
 }
 .submenu a:hover {
   font-weight: 400;
@@ -1521,8 +1635,6 @@ textarea {
 .unpaid-tbody {
   border-radius: 5px;
   background-color: #F4F7FA;
-  overflow-y: auto;
-  overflow: hidden;
   min-height: 120px;
 }
 .unpaid-frame {
@@ -1678,7 +1790,13 @@ textarea {
 .time-table-frame,
 .left-top,
 .table-body-scroll,
-.supple1, .supple2 {
+.supple1, .supple2,
+.m-scroll,
+.class-tbody,
+.unpaid-tbody,
+.all-add,
+.add-m-left,
+.student-pick-left {
   overflow: hidden;
   overflow-y: auto;
 }
@@ -2347,7 +2465,7 @@ textarea#consult-memo {
   height: 100vh;
   display: none;
   z-index: 100;
-  /* display: block; */
+  display: block;
 }
 .modal > div {
   background: #fff;
@@ -2979,17 +3097,37 @@ textarea#consult-memo {
 .time-chocie-frame > table td:first-child {
   font-weight: 600;
 }
-.badge-han, .badge-book {
-  padding: 0px 3px;
+.badge-han,
+.badge-book,
+.badge-han-gray,
+.badge-book-gray {
+  margin-right: 5px;
   border-radius: 5px;
   color: #fff;
-  margin-right: 5px;
+  font-size: 12px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .badge-han {
   background: #F33E8F;
 }
 .badge-book {
   background: #0F95BC;
+}
+.badge-han-gray,
+.badge-book-gray {
+  background: #C7C7C7;
+}
+.stu-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.names {
+  margin-right: 5px;
 }
 .student-badge {
   margin: 1px 3px;
@@ -3100,7 +3238,6 @@ input[type="time" i] {
   flex: 2.3;
   border: 1px solid #494470;
   border-radius: 5px;
-  height: 850px;
 }
 .student-pick-left,
 .student-pick-right {
@@ -3666,7 +3803,7 @@ input[type="time" i] {
 }
 /* 특이사항 modal */
 .remark {
-  height: 95%;
+  height: 90%;
   width: 80%;
 }
 .remark-sub {
@@ -4524,8 +4661,6 @@ input[type="time" i] {
 }
 .all-add {
   max-height: 180px;
-  overflow: hidden;
-  overflow-y: auto;
 }
 .add-extra {
   display: flex;
@@ -4556,14 +4691,14 @@ input[type="time" i] {
 /* ======================= pay-edu page ======================= */
 .edu-left {
   flex: 2;
-  padding: 20px 0 0 15px;
+  padding: 15px;
 }
 .edu-right {
   flex: 1;
-  padding: 20px 15px 0 0;
+  padding: 15px;
 }
 .edu-l-con {
-  padding-right: 70px;
+  /* padding-right: 70px; */
 }
 .charge {
   color: #241d5e;
@@ -4788,16 +4923,7 @@ td.middle {
   width: 80%;
   height: 80%;
 }
-.pay-list {
-  height: 80%;
-  width: 80%;
-}
-.regist-btn {
-  background: #4c3fbc;
-  padding: 5px 30px;
-  margin: 0;
-}
-.save-btn-frame button:first-child
+
 /* ======================= manage-tuition page ======================= */
 .lump-sum  {
   display: flex;

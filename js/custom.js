@@ -260,6 +260,16 @@ if (select) {
     });
 
 
+    /* ====== consult.html ====== */
+    // modal
+    $('.consult-add').click(function() {
+      $('.consult-modal').fadeIn();
+    });
+    $('.btn-close').click(function() {
+      $('.consult-modal').fadeOut();
+    });
+
+
     /* ====== pay-edu.html ====== */
   // modal
   $('.pay-table td').click(function (e) {
