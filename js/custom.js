@@ -310,6 +310,15 @@ if (select) {
       $('.modal').fadeIn();
     });
     
+    /* ====== pay-list.html ====== */
+    // remarks modal
+    $('.issue-payment').click(function() {
+      $('.pl-modal').fadeIn();
+    });
+    $('.add-payment').click(function() {
+      $('.add-modal').fadeIn();
+    });
+
     /* ====== bfclass.html ====== */
     // remarks modal
     $('.remarks').click(function() {
