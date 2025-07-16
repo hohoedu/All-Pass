@@ -1457,11 +1457,11 @@ textarea {
 }
 .edu-card,
 .unpaid-card {
-  height: 500px;
+  height: 50vh;
 }
 .makeup-card,
 .status-card {
-  height: 360px;
+  height: 36vh;
 }
 .student-num, .absence-num, .edu-card, .makeup-card, .payment-area {
   background: #fff;
@@ -1491,6 +1491,7 @@ textarea {
 .status-title {
   display: flex;
   justify-content: space-between;
+  margin-top: -5px;
 }
 .pax {
   font-size: 45px;
@@ -1511,7 +1512,7 @@ textarea {
 .unpaid-lists {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 5px;
   height: 100%;
   justify-content: space-between;
 }
@@ -1536,7 +1537,7 @@ textarea {
   color: #202020;
 }
 .payment-area {
-  height: 240px;
+  height: 24vh;
 }
 .payment-chart {
   flex: 1;
@@ -1544,6 +1545,7 @@ textarea {
 .unpaid-arrange {
   display: flex;
   justify-content: space-between;
+  height: 18vh;
 }
 .unpaid-stats {
   display: flex;
@@ -1700,20 +1702,24 @@ textarea {
   text-align: center;
 }
 .class-table-frame {
-  height: 420px;
+  height: 41vh;
 }
 .makeup-table-frame {
-  height: 260px;
+  height: 27vh;
+}
+.unpaid-tbody  {
 }
 .class-tbody,
 .unpaid-tbody {
   border-radius: 5px;
   background-color: #F4F7FA;
-  min-height: 120px;
+}
+.unpaid-table {
+  width: 100%;
+  text-align: center;
 }
 .unpaid-frame {
-  height: 160px;
-  overflow: hidden;
+  height: 18vh;
 }
 .class-status-table {
   width: 100%;
@@ -1721,7 +1727,8 @@ textarea {
   border-spacing: 0;
   text-align: center;
 }
-.class-status-table thead th {
+.class-status-table thead th,
+.unpaid-table thead th {
   font-weight: 600;
   font-size: 17px;
   color: #8f8f8f;
@@ -1729,12 +1736,6 @@ textarea {
   background: #ffffff !important;
   z-index: 2;
   padding-top: 10px;
-}
-.class-status-table thead th {
-  font-weight: 600;
-  color: #777777;
-  padding: 8px;
-  background: transparent;
 }
 .class-status-table td {
   color: #333;
@@ -1812,7 +1813,12 @@ textarea {
   gap: 10px;
   align-items: center;
 }
-
+.class-tbody-scroll {
+  height: 37vh;
+}
+.makeup-tbody-scroll {
+  height: 23vh;
+}
 
 /* ======================= student-main page ======================= */
 .student-frame > section {
@@ -1872,7 +1878,8 @@ textarea {
 .add-m-left,
 .student-pick-left,
 .add-m-right,
-.mamage-tbl-frame {
+.mamage-tbl-frame,
+.class-tbody-scroll {
   overflow: hidden;
   overflow-y: auto;
 }
