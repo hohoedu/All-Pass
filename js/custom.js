@@ -418,3 +418,13 @@ if (select) {
       }
     });
   });
+
+// 스크롤 위치 저장
+window.addEventListener("beforeunload", function () {
+  sessionStorage.setItem("scroll-position", window.scrollY);
+});
+// 스크롤 위치 복원
+window.addEventListener("DOMContentLoaded", function () {
+  const scrollY = sessionStorage.getItem("scroll-position");
+  if (scrollY) window.scrollTo(0, scrollY);
+});

@@ -14,163 +14,330 @@
 <body>
   <div class="a4-print">
     <section class="move-summary">
-      <a class="print-title" href="print-student-inout.html">
+      <div class="inout-head">
         <div class="common-title">
           <h2>전입 / 전출</h2>
         </div>
-      </a>
+        <div class="inout-btns">
+          <a class="print" href="print-student-inout.html">
+            인쇄
+          </a>
+          <div class="common-btn inout-btn" id="btn-inout" data-type="inout">전입/전출내역</div>
+        </div>
+      </div>
       <div class="info-filters">
-        <div class="basic-select">
-          <select name="subject" id="subject-filter">
-            <option value="all">과목 전체</option>
-            <option value="">영재</option>
-            <option value="">수재</option>
-            <option value="">신동</option>
-            <option value="">천재</option>
-          </select>
-        </div>
-        <div class="basic-select">
-          <select name="in-teacher" id="inTeacher">
-            <option value="teacher1">김호호 선생님</option>
-            <option value="teacher2">김호이 선생님</option>
-            <option value="teacher3">김호삼 선생님</option>
-          </select>
+        <div class="info-arrange">
+          <div class="stu-left">
+            <div class="basic-select sl1">
+              <select name="student" id="student-filter">
+                <option value="student1">전체</option>
+                <option value="student2">김호일</option>
+                <option value="student3">김호이</option>
+                <option value="student3">김호삼</option>
+              </select>
+            </div>
+            <div class="basic-select sl2">
+              <select name="subject" id="subject-filter">
+                <option value="all">화 19:00~19:50 초등천재 3호</option>
+                <option value="">영재</option>
+                <option value="">수재</option>
+                <option value="">신동</option>
+                <option value="">천재</option>
+              </select>
+            </div>
+          </div>
+          <div class="stu-right">
+            <div class="sl3">
+              <div class="basic-select" style="flex: 1;">
+                <select name="stuName" id="stu-name">
+                  <option value="all">이름</option>
+                  <option value="">김호호</option>
+                  <option value="">김호호</option>
+                  <option value="">김호호</option>
+                  <option value="">김호호</option>
+                </select>
+              </div>
+              <div class="search-box" style="flex: 2;">
+                <input type="text" id="search-name" name="searchName">
+              </div>
+            </div>
+            <div class="explore common-btn sl4">검색</div>
+          </div>
         </div>
       </div>
-      <div class="student-search join-group">
-        <input type="text" id="search-name" name="searchName" placeholder="이름으로 검색">
-      </div>
-      <div class="time-order">
-        <div></div>
-        <div class="basic-select time-select">
-          <select name="timeLine" id="time-line">
-            <option value="lately">최신 등록순</option>
-            <option value="past">과거 등록순</option>
-          </select>
+      <div class="mt">
+        <div class="table-frame move-t-frame">
+          <table class="basic-table yh">
+            <colgroup>
+              <col width="5%">
+              <col width="5%">
+              <col width="15%">
+              <col width="10%">
+              <col width="20%">
+              <col width="15%">
+              <col width="20%">
+            </colgroup>
+            <thead>
+              <tr>
+                <th class="checkbox-group">
+                  <input type="checkbox" id="" name="">
+                </th>
+                <th>No</th>
+                <th><img src="image/sort_checked.svg" alt="" class="svg-sort">이름</th>
+                <th><img src="image/sort.svg" alt="" class="svg-sort">학년</th>
+                <th><img src="image/sort.svg" alt="" class="svg-sort">수강과목</th>
+                <th><img src="image/sort.svg" alt="" class="svg-sort">전입일</th>
+                <th><img src="image/sort.svg" alt="" class="svg-sort">담임</th>
+              </tr>
+            </thead>
+            <div class="table-body">
+              <tbody id="student-tbody" class="stripe">
+                <tr>
+                  <td class="checkbox-group">
+                    <input type="checkbox" id="" name="">
+                  </td>
+                  <td>1</td>
+                  <td>김호일</td>
+                  <td>초1</td>
+                  <td>초등천재, 새움, 독클</td>
+                  <td>2024.09.20.</td>
+                  <td>김하나(한), 김다섯(독)</td>
+                </tr>
+                <tr>
+                  <td class="checkbox-group">
+                    <input type="checkbox" id="" name="">
+                  </td>
+                  <td>2</td>
+                  <td>김호일</td>
+                  <td>초1</td>
+                  <td>초등천재, 새움, 독클</td>
+                  <td>2024.09.20.</td>
+                  <td>김하나(한), 김다섯(독)</td>
+                </tr>
+                <tr>
+                  <td class="checkbox-group">
+                    <input type="checkbox" id="" name="">
+                  </td>
+                  <td>3</td>
+                  <td>김호일</td>
+                  <td>초1</td>
+                  <td>초등천재, 새움, 독클</td>
+                  <td>2024.09.20.</td>
+                  <td>김하나(한), 김다섯(독)</td>
+                </tr>
+                <tr>
+                  <td class="checkbox-group">
+                    <input type="checkbox" id="" name="">
+                  </td>
+                  <td>4</td>
+                  <td>김호일</td>
+                  <td>초1</td>
+                  <td>초등천재, 새움, 독클</td>
+                  <td>2024.09.20.</td>
+                  <td>김하나(한), 김다섯(독)</td>
+                </tr>
+                <tr>
+                  <td class="checkbox-group">
+                    <input type="checkbox" id="" name="">
+                  </td>
+                  <td>5</td>
+                  <td>김호일</td>
+                  <td>초1</td>
+                  <td>초등천재, 새움, 독클</td>
+                  <td>2024.09.20.</td>
+                  <td>김하나(한), 김다섯(독)</td>
+                </tr>
+                <tr>
+                  <td class="checkbox-group">
+                    <input type="checkbox" id="" name="">
+                  </td>
+                  <td>6</td>
+                  <td>김호일</td>
+                  <td>초1</td>
+                  <td>초등천재, 새움, 독클</td>
+                  <td>2024.09.20.</td>
+                  <td>김하나(한), 김다섯(독)</td>
+                </tr>
+                <tr>
+                  <td class="checkbox-group">
+                    <input type="checkbox" id="" name="">
+                  </td>
+                  <td>7</td>
+                  <td>김호일</td>
+                  <td>초1</td>
+                  <td>초등천재, 새움, 독클</td>
+                  <td>2024.09.20.</td>
+                  <td>김하나(한), 김다섯(독)</td>
+                </tr>
+                <tr>
+                  <td class="checkbox-group">
+                    <input type="checkbox" id="" name="">
+                  </td>
+                  <td>8</td>
+                  <td>김호일</td>
+                  <td>초1</td>
+                  <td>초등천재, 새움, 독클</td>
+                  <td>2024.09.20.</td>
+                  <td>김하나(한), 김다섯(독)</td>
+                </tr>
+                <tr>
+                  <td class="checkbox-group">
+                    <input type="checkbox" id="" name="">
+                  </td>
+                  <td>9</td>
+                  <td>김호일</td>
+                  <td>초1</td>
+                  <td>초등천재, 새움, 독클</td>
+                  <td>2024.09.20.</td>
+                  <td>김하나(한), 김다섯(독)</td>
+                </tr>
+                <tr>
+                  <td class="checkbox-group">
+                    <input type="checkbox" id="" name="">
+                  </td>
+                  <td>10</td>
+                  <td>김호일</td>
+                  <td>초1</td>
+                  <td>초등천재, 새움, 독클</td>
+                  <td>2024.09.20.</td>
+                  <td>김하나(한), 김다섯(독)</td>
+                </tr>
+                <tr>
+                  <td class="checkbox-group">
+                    <input type="checkbox" id="" name="">
+                  </td>
+                  <td>11</td>
+                  <td>김호일</td>
+                  <td>초1</td>
+                  <td>초등천재, 새움, 독클</td>
+                  <td>2024.09.20.</td>
+                  <td>김하나(한), 김다섯(독)</td>
+                </tr>
+                <tr>
+                  <td class="checkbox-group">
+                    <input type="checkbox" id="" name="">
+                  </td>
+                  <td>12</td>
+                  <td>김호일</td>
+                  <td>초1</td>
+                  <td>초등천재, 새움, 독클</td>
+                  <td>2024.09.20.</td>
+                  <td>김하나(한), 김다섯(독)</td>
+                </tr>
+                <tr>
+                  <td class="checkbox-group">
+                    <input type="checkbox" id="" name="">
+                  </td>
+                  <td>13</td>
+                  <td>김호일</td>
+                  <td>초1</td>
+                  <td>초등천재, 새움, 독클</td>
+                  <td>2024.09.20.</td>
+                  <td>김하나(한), 김다섯(독)</td>
+                </tr>
+                <tr>
+                  <td class="checkbox-group">
+                    <input type="checkbox" id="" name="">
+                  </td>
+                  <td>14</td>
+                  <td>김호일</td>
+                  <td>초1</td>
+                  <td>초등천재, 새움, 독클</td>
+                  <td>2024.09.20.</td>
+                  <td>김하나(한), 김다섯(독)</td>
+                </tr>
+                <tr>
+                  <td class="checkbox-group">
+                    <input type="checkbox" id="" name="">
+                  </td>
+                  <td>14</td>
+                  <td>김호일</td>
+                  <td>초1</td>
+                  <td>초등천재, 새움, 독클</td>
+                  <td>2024.09.20.</td>
+                  <td>김하나(한), 김다섯(독)</td>
+                </tr>
+                <tr>
+                  <td class="checkbox-group">
+                    <input type="checkbox" id="" name="">
+                  </td>
+                  <td>14</td>
+                  <td>김호일</td>
+                  <td>초1</td>
+                  <td>초등천재, 새움, 독클</td>
+                  <td>2024.09.20.</td>
+                  <td>김하나(한), 김다섯(독)</td>
+                </tr>
+                <tr>
+                  <td class="checkbox-group">
+                    <input type="checkbox" id="" name="">
+                  </td>
+                  <td>14</td>
+                  <td>김호일</td>
+                  <td>초1</td>
+                  <td>초등천재, 새움, 독클</td>
+                  <td>2024.09.20.</td>
+                  <td>김하나(한), 김다섯(독)</td>
+                </tr>
+                <tr>
+                  <td class="checkbox-group">
+                    <input type="checkbox" id="" name="">
+                  </td>
+                  <td>14</td>
+                  <td>김호일</td>
+                  <td>초1</td>
+                  <td>초등천재, 새움, 독클</td>
+                  <td>2024.09.20.</td>
+                  <td>김하나(한), 김다섯(독)</td>
+                </tr>
+                <tr>
+                  <td class="checkbox-group">
+                    <input type="checkbox" id="" name="">
+                  </td>
+                  <td>14</td>
+                  <td>김호일</td>
+                  <td>초1</td>
+                  <td>초등천재, 새움, 독클</td>
+                  <td>2024.09.20.</td>
+                  <td>김하나(한), 김다섯(독)</td>
+                </tr>
+                <tr>
+                  <td class="checkbox-group">
+                    <input type="checkbox" id="" name="">
+                  </td>
+                  <td>14</td>
+                  <td>김호일</td>
+                  <td>초1</td>
+                  <td>초등천재, 새움, 독클</td>
+                  <td>2024.09.20.</td>
+                  <td>김하나(한), 김다섯(독)</td>
+                </tr>
+                <tr>
+                  <td class="checkbox-group">
+                    <input type="checkbox" id="" name="">
+                  </td>
+                  <td>14</td>
+                  <td>김호일</td>
+                  <td>초1</td>
+                  <td>초등천재, 새움, 독클</td>
+                  <td>2024.09.20.</td>
+                  <td>김하나(한), 김다섯(독)</td>
+                </tr>
+                <tr>
+                  <td class="checkbox-group">
+                    <input type="checkbox" id="" name="">
+                  </td>
+                  <td>14</td>
+                  <td>김호일</td>
+                  <td>초1</td>
+                  <td>초등천재, 새움, 독클</td>
+                  <td>2024.09.20.</td>
+                  <td>김하나(한), 김다섯(독)</td>
+                </tr>
+              </tbody>
+            </div>
+          </table>
         </div>
-      </div>
-      <div class="table-frame move-t-frame">
-        <table class="basic-table move-table yh">
-          <colgroup>
-            <col width="10%">
-            <col width="15%">
-            <col width="25%">
-            <col width="15%">
-            <col width="35%">
-          </colgroup>
-          <thead>
-            <tr>
-              <th class="checkbox-group">
-                <input type="checkbox" id="" name="">
-              </th>
-              <th>이름</th>
-              <th>학교/유치원</th>
-              <th>학년</th>
-              <th>수강과목</th>
-            </tr>
-          </thead>
-          <tbody id="" class="stripe">
-            <tr>
-              <td class="checkbox-group">
-                <input type="checkbox" id="" name="">
-              </td>
-              <td>김호호</td>
-              <td>호호초등학교</td>
-              <td>초1</td>
-              <td>초등전체, 새움, 독클</td>
-            </tr>
-            <tr>
-              <td class="checkbox-group">
-                <input type="checkbox" id="" name="">
-              </td>
-              <td>김호이</td>
-              <td>호호유치원</td>
-              <td>예비</td>
-              <td>호호하니, 호호루키</td>
-            </tr>                
-            <tr>
-              <td class="checkbox-group">
-                <input type="checkbox" id="" name="">
-              </td>
-              <td>김호이</td>
-              <td>호호유치원</td>
-              <td>예비</td>
-              <td>호호하니, 호호루키</td>
-            </tr>                
-            <tr>
-              <td class="checkbox-group">
-                <input type="checkbox" id="" name="">
-              </td>
-              <td>김호이</td>
-              <td>호호유치원</td>
-              <td>예비</td>
-              <td>호호하니, 호호루키</td>
-            </tr>                
-            <tr>
-              <td class="checkbox-group">
-                <input type="checkbox" id="" name="">
-              </td>
-              <td>김호이</td>
-              <td>호호유치원</td>
-              <td>예비</td>
-              <td>호호하니, 호호루키</td>
-            </tr>                
-            <tr>
-              <td class="checkbox-group">
-                <input type="checkbox" id="" name="">
-              </td>
-              <td>김호이</td>
-              <td>호호유치원</td>
-              <td>예비</td>
-              <td>호호하니, 호호루키</td>
-            </tr>                
-            <tr>
-              <td class="checkbox-group">
-                <input type="checkbox" id="" name="">
-              </td>
-              <td>김호이</td>
-              <td>호호유치원</td>
-              <td>예비</td>
-              <td>호호하니, 호호루키</td>
-            </tr>                
-            <tr>
-              <td class="checkbox-group">
-                <input type="checkbox" id="" name="">
-              </td>
-              <td>김호이</td>
-              <td>호호유치원</td>
-              <td>예비</td>
-              <td>호호하니, 호호루키</td>
-            </tr>                
-            <tr>
-              <td class="checkbox-group">
-                <input type="checkbox" id="" name="">
-              </td>
-              <td>김호이</td>
-              <td>호호유치원</td>
-              <td>예비</td>
-              <td>호호하니, 호호루키</td>
-            </tr>                
-            <tr>
-              <td class="checkbox-group">
-                <input type="checkbox" id="" name="">
-              </td>
-              <td>김호이</td>
-              <td>호호유치원</td>
-              <td>예비</td>
-              <td>호호하니, 호호루키</td>
-            </tr>                
-            <tr>
-              <td class="checkbox-group">
-                <input type="checkbox" id="" name="">
-              </td>
-              <td>김호이</td>
-              <td>호호유치원</td>
-              <td>예비</td>
-              <td>호호하니, 호호루키</td>
-            </tr>                
-          </tbody>
-        </table>
       </div>
     </section>
   </div>
