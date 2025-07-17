@@ -86,7 +86,7 @@ table td {
   text-overflow: ellipsis;
   vertical-align: middle;
 }
-table thead th {
+table thead th:not(.timetable-lookup-table th) {
   position: sticky;
   top: 0;
   z-index: 100;
@@ -1737,6 +1737,13 @@ textarea {
   z-index: 2;
   padding-top: 10px;
 }
+.class-status-table th:nth-child(1),
+.class-status-table th:nth-child(2),
+.class-status-table th:nth-child(3),
+.class-status-table th:nth-child(4),
+.class-status-table th:nth-child(5) {
+  width: 20%;
+}
 .class-status-table td {
   color: #333;
   padding: 8px 0;
@@ -1876,7 +1883,6 @@ textarea {
 .unpaid-tbody,
 .all-add,
 .add-m-left,
-.student-pick-left,
 .add-m-right,
 .mamage-tbl-frame,
 .class-tbody-scroll {
@@ -3482,7 +3488,7 @@ input[type="time" i] {
   font-weight: 500;
 }
 .stu-chocie-frame {
-  height: 80%;
+  height: 63vh;
 }
 .stu-chocie-table td {
   padding: 5px 0;
@@ -3512,9 +3518,12 @@ input[type="time" i] {
 .mini-select > .basic-select {
   width: calc(50% - 2.5px); /* gap이 5px이니까 절반에서 gap 절반씩 뺌 */
 }
+.count-num {
+  color: #0081FF;
+}
 
 
-/* ======================= time-view page ======================= */
+/* ======================= timeview page ======================= */
 .timeview-frame {
   height: auto;
   width: 75%;

@@ -528,3 +528,40 @@
 @media (min-width:481) and (max-width: 768px) {
 
 }
+
+/* 14inch notebook 1280px~1440px */
+@media (min-width: 1441px) and (max-width: 1599px) {
+  .subtitle {
+    font-size: 18px;
+  }
+  .all-amounts,
+  .pax  {
+    font-size: 40px;
+  }
+  .unpaid.percent {
+    width: 100px;
+    font-size: 13px;
+  }
+  .status-box {
+    font-size: 15px;
+  }
+  .info-summary {
+    width: 100%;
+  }
+  .stu-m-con {
+    width: 1200px;
+  }
+  .all-info {
+    width: 100%;
+  }
+  .stu-m-con {
+    width: 90%;
+  }
+  .counsel-box textarea {
+    height: 70%;
+  }
+  .lesson-log-table tr th {
+  }
+  
+}@media (min-width: 1600px) {
+}
