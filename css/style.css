@@ -88,6 +88,9 @@ table td {
 }
 table thead th:not(.timetable-lookup-table th) {
   position: sticky;
+}
+table thead th {
+  position: sticky;
   top: 0;
   z-index: 100;
   background: white;
@@ -98,6 +101,7 @@ table thead th:not(.timetable-lookup-table th) {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 4px;
 }
 .light {
   font-weight: 300;
@@ -455,8 +459,25 @@ table .checkbox-group {
 .join-link,
 .pay-save,
 .pay-issue,
-.stu-explore {
+.stu-explore,
+.regist-btn {
   background: #4C3FBC;
+  border: 1px solid transparent;
+}
+.explore:hover,
+.record-save:hover,
+.stas-btn:hover,
+.join-link:hover,
+.pay-save:hover,
+.pay-issue:hover,
+.stu-explore:hover,
+.save-btn:hover,
+.regist-btn:hover {
+  background: #4C3FBC;
+  border: 1px solid #4C3FBC;
+  color: #4C3FBC;
+  background: #fff;
+  font-weight: bold;
 }
 .grade-up,
 .grade-down,
@@ -2158,12 +2179,14 @@ textarea {
 .save-btn {
   padding: 13px 50px;
   background: #4c3fbc;
+  border: 1px solid #4c3fbc;
   border: none;
   border-radius: 30px;
   color: #fff;
   line-height: 1;
   font-size: 20px;
   margin: auto;
+  transition: .3s ease;
 }
 #tab2 .save-btn {
   margin-top: 0px;
@@ -3325,7 +3348,6 @@ input:checked + .slider::before {
 .badge-week {
   color: #17AAB2;
 }
-
 .manager-add {
   width: 95%;
   margin: auto;
@@ -4104,10 +4126,11 @@ input[type="time" i] {
 .pre-search img {
   width: 25px;
   cursor: pointer;
+  transition: .3s ease;
 }
-/* .pre-search img:hover {
-  filter: grayscale(0.5) !important;
-} */
+.pre-search img:hover {
+  filter: brightness(0) invert(0);
+}
 .pre-title {
   font-size: 22px;
   color: #404040;
