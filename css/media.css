@@ -1,4 +1,4 @@
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1279px) {
   button, input, select {
     font-size: 13px;
   }
@@ -234,7 +234,7 @@
 
 }
 /* ########################## 13inch notebook 1280px~1440px ########################## */
-@media (min-width: 1025px) and (max-width: 1440px) {
+@media (min-width: 1280px) and (max-width: 1440px) {
   body {
     font-size: 14px;
     /* background-color: lightgray; */
@@ -296,13 +296,16 @@
   .basic-input {
     height: 34px;
   }
-  /* ======================= student-main page ======================= */
+  /* ======================= main page ======================= */
+  .student-status-boxes {
+    gap: 6px;
+  }
   .subtitle {
     font-size: 18px;
   }
   .all-amounts,
   .pax  {
-    font-size: 40px;
+    font-size: 36px;
   }
   .unpaid.percent {
     width: 100px;
@@ -657,7 +660,7 @@
     padding-right: 0;
   }
 
-  /* ======================= menu page ======================= */
+  /* ======================= index page ======================= */
   .menu-title {
     margin: 0 30px;
   }
@@ -680,14 +683,13 @@
     width: 130px;
   }
   .menu-item h2 {
-    font-size: 30px;
+    font-size: 26px;
   }
   .menu-item p {
     font-size: 16px;
   }
   .menu-item {
-    background: #fff;
-    padding: 5px 30px 30px 30px;
+    padding: 5px 15px 30px 25px;
   }
   .menu-item > button {
     font-size: 16px;
@@ -726,10 +728,6 @@
     /* ======================= notice page ======================= */
   .notice-inner {
     width: 1000px;
-  }
-  /* ======================= manage-teache page ======================= */
-  .manager-list-frame {
-    padding-right: 0;
   }
   /* ======================= manage-tuition page ======================= */
   button.commission {

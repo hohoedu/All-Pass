@@ -125,6 +125,10 @@ table thead th {
   color: #a8a8a8;
   font-size: 16px;
 }
+.light-font2 td:nth-child(2) {
+  color: #a8a8a8;
+  font-size: 16px;
+}
 
 /* ############################# Common.css ############################# */
 /* time custom */
@@ -2838,7 +2842,7 @@ textarea#consult-memo {
   display: flex;
 }
 .manager-list-frame {
-  padding-right: 50px;
+  padding-right: 15px;
 }
 .manager-list .common-title, 
 .manager-info .common-title {
