@@ -334,7 +334,7 @@ input[type="text"]:focus {
   border-radius: 50%;
 }
 .checkbox-group2 input[type="checkbox"],
-.radio-group input[type="radio"],
+/* .radio-group input[type="radio"], */
 .join-group input[type="checkbox"] {
   margin-right: 5px;
 }
@@ -360,7 +360,7 @@ input[type="text"]:focus {
   vertical-align: middle;
 }
 .radio-group input[type="radio"] {
-  background: #d6d6d6;
+  background: #fff;
 }
 .checkbox-group input[type="checkbox"],
 .checkbox-group2 input[type="checkbox"] {
@@ -454,7 +454,8 @@ table .checkbox-group {
 .cancel-cash {
   background: #f05a21;
 }
-.issue-payment {
+.issue-payment,
+.commission {
   background: #03adaa;
 }
 .checked-btn {
@@ -1732,8 +1733,9 @@ textarea {
 .class-table-frame {
   height: 41vh;
 }
-.makeup-table-frame {
-  height: 27vh;
+.makeup-table {
+  height: 60vh;
+  margin-top: 15px;
 }
 .unpaid-tbody  {
 }
@@ -1893,7 +1895,7 @@ textarea {
 .remarks-tframe,
 .student-pick-frame,
 .class-table-frame,
-.makeup-table-frame,
+.makeup-table,
 .stu-info-t,
 .move-t-frame,
 .move-frame,
@@ -2057,10 +2059,6 @@ textarea {
 .student-search:hover {
   cursor: pointer;
 }
-#institute-exist + label,
-.radio-group label {
-  margin-right: 20px;
-}
 .time-order {
   display: flex;
   align-items: center;
@@ -2187,7 +2185,6 @@ textarea {
   padding: 13px 50px;
   background: #4c3fbc;
   border: 1px solid #4c3fbc;
-  border: none;
   border-radius: 30px;
   color: #fff;
   line-height: 1;
@@ -4759,26 +4756,19 @@ input[type="time" i] {
 }
 
 
-
 /* ======================= order page ======================= */
-.order-frame  {
-  width: 85%;
-}
-.book-order {
-  width: 35%;
-}
-.pre-order {
-  width: 65%;
+.order-flex {
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .order-info {
   font-size: 13px;
-  margin: 12px 0px;
+  margin: 12px 0;
 }
 .order-info span {
   color: #334DD7;
-}
-.order-table {
-  max-height: 600px;
 }
 
 /* spinner custom */
@@ -4850,7 +4840,8 @@ input[type="time" i] {
   background: #334DD7;
 }
 .preorder-frame {
-  max-height: 70vh;
+  max-height: 68vh;
+  margin-top: 15px;
 }
 .preorder-select {
   display: flex;
@@ -4870,23 +4861,29 @@ input[type="time" i] {
   color: #334DD7;
 }
 
-/* ======================= order page ======================= */
+/* ======================= reorder page ======================= */
 .return-table {
   max-height: 300px;
+  margin-top: 15px;
 }
 .all-add {
-  max-height: 180px;
+  max-height: 11vh;
 }
 .add-extra {
   display: flex;
   gap: 10px;
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
 }
 .add-extra .custom-spinner {
   height: 30px;
 }
 .add-extra .trash-icon::after {
   color: #e65d3a;
+}
+.add-extra select {
+  width: 8vw;
 }
 .book-add,
 .discount-add {
@@ -4901,7 +4898,16 @@ input[type="time" i] {
   font-family: xeicon;
   margin-right: 5px;
   font-size: 24px;
+  transition: .3s ease;
 }
+.etc-add {
+  margin-top: 20px;
+}
+.book-add:hover,
+.discount-add:hover {
+  color: gray;
+}
+
 
 /* ======================= pay-edu page ======================= */
 .edu-left {
@@ -5161,43 +5167,59 @@ td.middle {
   display: flex;
   margin-top: 10px;
 }
-.lump-sum input[type="text"] {
+.lump-sum input[type="number"] {
   width: 30%;
+  margin-left: 10px;
+}
+.book-order,
+.pre-order {
+  padding: 15px;
 }
 .book-order {
-  width: 40%;
+  flex: 1;
 }
 .pre-order {
-  width: 60%;
+  flex: 1.2;
 }
 .book-order .radio-group {
   font-size: 14px;
 }
 .tuition-frame {
-  max-height: 70vh;
+  /* max-height: 77vh; */
   margin-top: 15px;
 }
-.tuition-table input {
-  width: 70%;
-  vertical-align: middle;
+.tution-table tr th {
+  border-right: 1px solid #949CB4;
+}
+.tution-table tr th:last-child,
+.tution-table tr td:last-child {
+  border-right: 1px solid transparent !important;
+}
+.tution-table tr td {
+  font-size: 16px;
+  background: #fff !important;
+  color: #949CB4 !important;
+}
+.tution-table tr > td[rowspan] {
+  background: #F7F7F7 !important;
+  font-weight: bold;
 }
 .discount-row {
   display: flex;
   gap: 10px;
   align-items: center;
-  width: 90%;
   margin-bottom: 10px;
 }
 .discount-row label{
-  width: 55px;
-  font-size: 14px;
+  width: 4.5vw;
+  font-size: 16px;
   font-weight: 500;
 }
 .discount-row input {
   flex: 4;
 }
 .ma {
-  margin-right: 30px;
+  margin-right: 20px;
 }
 .discount-row .basic-select {
   flex: 3;
